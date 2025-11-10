@@ -1,15 +1,16 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces So sánh các hệ thống quản lý tài chính cá nhân hiện có\relax }}{2}{table.caption.12}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces So sánh các hệ thống quản lý tài chính cá nhân hiện có}}{2}{table.caption.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Use Case: Playing a song\relax }}{8}{table.3.1}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Use Case: Sửa danh mục\relax }}{9}{table.3.2}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Use Case: Báo cáo chi tiêu\relax }}{10}{table.3.3}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Use Case: Trò chuyện với chatbot\relax }}{10}{table.3.4}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Use Case: Playing a song}}{8}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Use Case: Đăng ký}}{9}{table.3.2}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Use Case: Login}}{10}{table.3.3}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Use Case: Logout}}{11}{table.3.4}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Use Case: SearchingSong}}{12}{table.3.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Các ca kiểm thử phi chức năng của hệ thống\relax }}{34}{table.6.1}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Các ca kiểm thử chức năng của hệ thống\relax }}{38}{table.6.2}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Các ca kiểm thử phi chức năng của hệ thống}}{36}{table.6.1}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Các ca kiểm thử chức năng của hệ thống}}{40}{table.6.2}%
 \addvspace {10\p@ }
 \contentsfinish 

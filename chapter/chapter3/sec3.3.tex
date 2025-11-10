@@ -71,120 +71,220 @@ nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong
 
 
 
-\subsection{Sửa danh mục}
+\subsection{Đăng ký}
 \begin{longtable}{|p{4.5cm}|p{10cm}|}
 	\hline
-	\textbf{Mã Use case} & 9 \\
+	\textbf{Mã Use case} & UC-Register \\
 	\hline
-	\textbf{Tên Use case} & Sửa danh mục\\
+	\textbf{Tên Use case} & Đăng ký\\
+	\hline
+	\textbf{Tác nhân} & Người dùng\\
+	\hline
+	\textbf{Mô tả} & Người dùng tạo đăng ký để tạo tài khoản\\
+	\hline
+	\textbf{Điều kiện kích hoạt} & Người dùng bấm vào nút "Sign up free"\\
+	\hline
+	\textbf{Pre-condition} &
+	\begin{itemize}
+		\item Giao diện đăng ký được hiển thị.
+		\item Kết nối internet ổn định.
+	\end{itemize}
+	\\
+	\hline
+	\textbf{Basic flow} &
+	\begin{tabular}{|p{1cm}|p{7.5cm}|}
+		\hline
+		\textbf{STT} & \textbf{Sự kiện} \\
+		\hline
+		1 & Người dùng nhập email, password, confirmPassword, firstName, lastName vào form đăng ký \\
+		\hline
+		2 & Hệ thống kiểm tra định dạng và tính hợp lệ của các trường\\
+		\hline
+		3 & Nếu hợp lệ, hệ thống gửi thông tin đến server\\
+		\hline
+		4 & Server lưu thông tin và phản hồi kết quả \\
+		\hline
+		5 & Hệ thống thông báo đăng ký thành công và chuyển đến giao diện đăng nhập \\
+		\hline
+	\end{tabular}
+	\\
+	\hline
+	\textbf{Alternate flow:} Các thao tác thay thế trong quá trình đăng ký &
+	\begin{tabular}{|p{1cm}|p{7.5cm}|}
+		\hline
+		\textbf{STT} & \textbf{Sự kiện} \\
+		\hline
+		5.1.1 & Người dùng nhấn “Hiện mật khẩu” để hiển thị rõ password và confirm password \\
+		\hline
+		5.1.2 & Người dùng nhấn “Quay lại” để quay lại giao diện bắt đầu \\
+		\hline
+	\end{tabular}
+	\\
+	\hline
+	\textbf{Post-condition} & Người dùng có thể đăng nhập bằng thông tin vừa đăng ký \\
+	\hline
+	\textbf{Other} &
+	\begin{itemize}
+		\item Email đăng ký được đảm bảo đúng dịnh dạng và chưa từng được đăng ký trước đây.
+		\item Thông tin yêu cầu được điền đầy đủ.
+	\end{itemize}
+	\\
+	\hline
+	\caption{Use Case: Đăng ký} \label{tab:usecase-dangky} \\
+\end{longtable}
+
+\subsection{Đăng nhập}
+\begin{longtable}{|p{4.5cm}|p{10cm}|}
+	\hline
+	\textbf{Mã Use case} & UC-Login \\
+	\hline
+	\textbf{Tên Use case} & Login \\
 	\hline
 	\textbf{Tác nhân} & Người dùng \\
 	\hline
-	\textbf{Mô tả} & Người dùng sửa một danh mục đã tạo\\
+	\textbf{Mô tả} & Người dùng đăng nhập để sử dụng hệ thống. \\
 	\hline
-	\textbf{Điều kiện kích hoạt} & Bấm icon sửa bên cạnh một danh mục trong phần "All category"\\
+	\textbf{Sự kiện kích hoạt} & Người dùng bấm vào nút "Log in" \\
 	\hline
-	\textbf{Pre-condition} &  Người dùng đã đăng nhập\\
-	\hline
-	\textbf{Post-condition} &  Không\\
+	\textbf{Pre-condition} &
+	\begin{itemize}
+		\item Giao diện đăng nhập đã hiển thị.
+		\item Kết nối internet ổn định.
+	\end{itemize}
+	\\
 	\hline
 	\textbf{Basic flow} &
 	\begin{tabular}{|p{1cm}|p{7.5cm}|}
 		\hline
 		\textbf{STT} & \textbf{Sự kiện} \\
 		\hline
-		1 & Người dùng chọn danh mục cần sửa \\
+		1 & Người dùng nhập email và mật khẩu vào form \\
 		\hline
-		2 & Hệ thống hiển thị thông tin danh mục\\
+		2 & Người dùng nhấn nút "Log in" \\
 		\hline
-		3 & Người dùng chỉnh sửa thông tin danh mục và xác nhận\\
+		3 & Hệ thống gửi thông tin đến server \\
 		\hline
-		4 & Hệ thống cập nhật danh mục và lưu vào CSDL \\
+		4 & Server kiểm tra thông tin và phản hồi kết quả \\
 		\hline
-	\end{tabular}
-	\\
-	\hline
-	\textbf{Alternate flow:} Người dùng nhập thông tin lỗi &
-	\begin{tabular}{|p{1cm}|p{7.5cm}|}
-		\hline
-		\textbf{STT} & \textbf{Sự kiện} \\
-		\hline
-		4b & Hệ thống yêu cầu nhập lại thông tin\\
+		5 & Client load giao diện home của ứng dụng cho người dùng sử dụng \\
 		\hline
 	\end{tabular}
 	\\
 	\hline
-	\caption{Use Case: Sửa danh mục} \label{tab:usecase-xoaloaigiaodich} \\
+	\textbf{Alternate flow:} Đăng nhập cách khác & Nhấn để đăng nhập bằng Google
+	\\
+	\hline
+	\textbf{Post-condition} & 
+	\begin{itemize}
+		\item Hệ thống khởi tạo phiên làm việc hợp lệ cho người dùng.
+		\item Giao diện chính được hiển thị để bắt đầu sử dụng hệ thống.
+	\end{itemize} \\
+	\hline
+	\textbf{Other} & Thông tin đăng nhập hợp lệ \\
+	\hline
+	\caption{Use Case: Login} \label{tab:usecase-login} \\
 \end{longtable}
 
-\subsection{Báo cáo chi tiêu}
+\subsection{Đăng xuất}
 \begin{longtable}{|p{4.5cm}|p{10cm}|}
 	\hline
-	\textbf{Mã Use case} & 10 \\
+	\textbf{Mã Use case} & UC-Logout \\
 	\hline
-	\textbf{Tên Use case} & Báo cáo chi tiêu\\
+	\textbf{Tên Use case} & Logout \\
 	\hline
 	\textbf{Tác nhân} & Người dùng \\
 	\hline
-	\textbf{Mô tả} & Báo cáo thu chi của người dùng trong một khoảng thời gian \\
+	\textbf{Mô tả} & Người dùng đăng xuất khỏi hệ thống. \\
 	\hline
-	\textbf{Điều kiện kích hoạt} & Bấm nút "Statistics" \\
+	\textbf{Sự kiện kích hoạt} & Người dùng bấm vào nút "Log out" \\
 	\hline
-	\textbf{Pre-condition} & Người dùng đã đăng nhập\\
-	\hline
-	\textbf{Post-condition} & Người dùng nhận được báo cáo\\
+	\textbf{Pre-condition} &
+	\begin{itemize}
+		\item Người dùng đã đăng nhập thành công.
+		\item Kết nối internet ổn định.
+	\end{itemize}
+	\\
 	\hline
 	\textbf{Basic flow} &
 	\begin{tabular}{|p{1cm}|p{7.5cm}|}
 		\hline
 		\textbf{STT} & \textbf{Sự kiện} \\
 		\hline
-		1 & Người dùng vào phần "Statistics" \\
+		1 & Người dùng ấn vào "Setting" \\
 		\hline
-		2 & Người dùng chọn khoảng thời gian muốn thống kê \\
+		2 & Người dùng nhấn nút "Log out" \\
 		\hline
-		3 & Hệ thống truy vấn và hiển thị biểu đồ giá trị thu chi theo danh mục\\
+		3 & Hệ thống gửi thông tin đến server \\
+		\hline
+		4 & Server kiểm tra thông tin và xóa token \\
+		\hline
+		5 & Client load giao diện bắt đầu \\
 		\hline
 	\end{tabular}
 	\\
 	\hline
-	\caption{Use Case: Báo cáo chi tiêu} \label{tab:usecase-baocaochitieu} \\
+	\textbf{Alternate flow:} & None
+	\\
+	\hline
+	\textbf{Post-condition} & 
+	\begin{itemize}
+		\item Giao diện bắt đầu được hiển thị.
+	\end{itemize} \\
+	\hline
+	\textbf{Other} & None \\
+	\hline
+	\caption{Use Case: Logout} \label{tab:usecase-logout} \\
 \end{longtable}
 
-\subsection{Trò chuyện với chatbot}
+\subsection{Tìm kiếm bài hát}
 \begin{longtable}{|p{4.5cm}|p{10cm}|}
 	\hline
-	\textbf{Mã Use case} & 11 \\
+	\textbf{Mã Use case} & UC-SeachingSong \\
 	\hline
-	\textbf{Tên Use case} & Trò chuyện với chatbot \\
+	\textbf{Tên Use case} & Seach songs \\
 	\hline
-	\textbf{Tác nhân} & Người dùng, Chatbot \\
+	\textbf{Tác nhân} & Người dùng \\
 	\hline
-	\textbf{Mô tả} & Người dùng giao tiếp với chatbot để được hỗ trợ truy vấn, xem báo cáo, nhận cảnh báo, hoặc được tư vấn chi tiêu \\
+	\textbf{Mô tả} & Người dùng tìm kiếm bài hát. \\
 	\hline
-	\textbf{Điều kiện kích hoạt} & Gửi message trong phần trò chuyện với chatbot \\
+	\textbf{Sự kiện kích hoạt} & Người dùng nhập keyword vào ô search \\
 	\hline
-	\textbf{Pre-condition} & Người dùng đã đăng nhập \\
-	\hline
-	\textbf{Post-condition} & Người dùng nhận được câu trả lời từ chatbot \\
+	\textbf{Pre-condition} &
+	\begin{itemize}
+		\item Người dùng đã đăng nhập thành công.
+		\item Kết nối internet ổn định.
+	\end{itemize}
+	\\
 	\hline
 	\textbf{Basic flow} &
 	\begin{tabular}{|p{1cm}|p{7.5cm}|}
 		\hline
 		\textbf{STT} & \textbf{Sự kiện} \\
 		\hline
-		1 & Người dùng truy cập vào trang chat\\
+		1 & Người dùng ấn vào nút "Search" \\
 		\hline
-		2 & Người dùng nhập tin nhắn và gửi\\
+		2 & Người dùng nhập tên bài hát \\
 		\hline
-		4 & Chatbot phân tích và xử lý yêu cầu \\
+		3 & Hệ thống gửi tên bài hát đến server \\
 		\hline
-		5 & Hệ thống hiển thị phản hồi của chatbot\\
+		4 & Server kiểm tra thông tin và trả về kết quả \\
+		\hline
+		5 & Client load các bài hát lên giao diện \\
 		\hline
 	\end{tabular}
 	\\
 	\hline
-	\caption{Use Case: Trò chuyện với chatbot} \label{tab:usecase-chatbot} \\
+	\textbf{Alternate flow:} Tìm kiếm theo tác giả &  Người dùng nhập tên tác giả \\
+	\hline
+	\textbf{Post-condition} & 
+	\begin{itemize}
+		\item Các bài hát được hiển thị trên giao diện và người dùng có thể phát nhạc.
+	\end{itemize} \\
+	\hline
+	\textbf{Other} & None \\
+	\hline
+	\caption{Use Case: SearchingSong} \label{tab:usecase-seahcsong} \\
 \end{longtable}
+
 
 

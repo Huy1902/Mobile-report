@@ -1,34 +1,34 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Biểu đồ ca sử dụng\relax }}{6}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Biểu đồ hoạt động chức năng "Sửa giao dịch"\relax }}{11}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Biểu đồ hoạt động chức năng "Xem thống kê chi tiêu"\relax }}{12}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Biểu đồ hoạt động chức năng "Sửa loại giao dịch"\relax }}{13}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Biểu đồ hoạt động chức năng "Trò chuyện với AI"\relax }}{14}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Biểu đồ ca sử dụng}}{6}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Biểu đồ hoạt động chức năng "Sửa giao dịch"}}{13}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Biểu đồ hoạt động chức năng "Xem thống kê chi tiêu"}}{14}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Biểu đồ hoạt động chức năng "Sửa loại giao dịch"}}{15}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Biểu đồ hoạt động chức năng "Trò chuyện với AI"}}{16}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Kiến trúc của hệ thống\relax }}{15}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Kiến trúc của server backend\relax }}{16}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Biểu đồ tuần tự cho chatbot\relax }}{18}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Biểu đồ tuần tự cho chức năng chỉnh sửa giao dịch\relax }}{20}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Biểu đồ tuần tự cho chức năng xem báo cáo chi tiêu\relax }}{22}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Biểu đồ tuần tự cho chức năng thêm giao dịch mới\relax }}{23}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Sơ đồ ERD cho user\relax }}{24}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Sơ đồ ERD cho AI system\relax }}{25}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Kiến trúc của hệ thống}}{17}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Kiến trúc của server backend}}{18}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Biểu đồ tuần tự cho chatbot}}{20}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Biểu đồ tuần tự cho chức năng chỉnh sửa giao dịch}}{22}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Biểu đồ tuần tự cho chức năng xem báo cáo chi tiêu}}{24}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Biểu đồ tuần tự cho chức năng thêm giao dịch mới}}{25}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Sơ đồ ERD cho user}}{26}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Sơ đồ ERD cho AI system}}{27}{figure.caption.25}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Query Agent\relax }}{26}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Supervisor Agent\relax }}{27}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Các phương pháp lưu trữ ngữ cảnh\relax }}{28}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Vertex AI Embedding-004\relax }}{28}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Search recall memories\relax }}{29}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Tavily workflow\relax }}{30}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Query Agent}}{28}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Supervisor Agent}}{29}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Các phương pháp lưu trữ ngữ cảnh}}{30}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Vertex AI Embedding-004}}{30}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Search recall memories}}{31}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Tavily workflow}}{32}{figure.caption.32}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Giao diện đăng nhập\relax }}{31}{figure.caption.33}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Giao diện trang chủ\relax }}{31}{figure.caption.34}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Giao diện danh sách giao dịch\relax }}{32}{figure.caption.35}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Giao diện thêm giao dịch\relax }}{32}{figure.caption.36}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Giao diện danh sách danh mục\relax }}{33}{figure.caption.37}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Giao diện thống kê chi tiêu\relax }}{33}{figure.caption.38}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Giao diện chat bot\relax }}{34}{figure.caption.39}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Giao diện đăng nhập}}{33}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Giao diện trang chủ}}{33}{figure.caption.34}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Giao diện danh sách giao dịch}}{34}{figure.caption.35}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Giao diện thêm giao dịch}}{34}{figure.caption.36}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Giao diện danh sách danh mục}}{35}{figure.caption.37}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Giao diện thống kê chi tiêu}}{35}{figure.caption.38}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Giao diện chat bot}}{36}{figure.caption.39}%
 \addvspace {10\p@ }
 \contentsfinish 

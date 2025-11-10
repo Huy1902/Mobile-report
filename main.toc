@@ -1,9 +1,9 @@
 \contentsline {chapter}{Lời cam đoan}{}{section*.3}%
 \contentsline {chapter}{Đóng góp}{i}{section*.5}%
 \contentsline {chapter}{Mục lục}{ii}{section*.7}%
-\contentsline {chapter}{Danh mục hình vẽ}{iv}{section*.8}%
-\contentsline {chapter}{Danh mục bảng biểu}{v}{section*.9}%
-\contentsline {chapter}{Danh mục thuật ngữ và từ viết tắt}{vi}{section*.10}%
+\contentsline {chapter}{Danh mục hình vẽ}{v}{section*.8}%
+\contentsline {chapter}{Danh mục bảng biểu}{vi}{section*.9}%
+\contentsline {chapter}{Danh mục thuật ngữ và từ viết tắt}{vii}{section*.10}%
 \contentsline {chapter}{\numberline {1}GIỚI THIỆU}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Hiện trạng}{2}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Vài nét về các hệ thống tương tự}{2}{section.1.2}%
@@ -21,48 +21,49 @@
 \contentsline {section}{\numberline {3.2}Biểu đồ ca sử dụng}{5}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Đặc tả ca sử dụng}{7}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Phát bài hát}{7}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Sửa danh mục}{8}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Báo cáo chi tiêu}{9}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Trò chuyện với chatbot}{10}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Biểu đồ hoạt động}{11}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Chỉnh sửa giao dịch}{11}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Xem thống kê chi tiêu}{12}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Chỉnh xóa loại giao dịch}{13}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Trò chuyện với AI}{14}{subsection.3.4.4}%
-\contentsline {chapter}{\numberline {4}PHÂN TÍCH KIẾN TRÚC HỆ THỐNG}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Kiến trúc hệ thống}{15}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Client}{15}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Server}{15}{subsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.2.1}Presentation layer}{17}{subsubsection.4.1.2.1}%
-\contentsline {subsubsection}{\numberline {4.1.2.2}Bussiness layer}{17}{subsubsection.4.1.2.2}%
-\contentsline {subsubsection}{\numberline {4.1.2.3}Data access layer}{17}{subsubsection.4.1.2.3}%
-\contentsline {section}{\numberline {4.2}Biểu đồ tuần tự}{17}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Chatbot}{17}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Chỉnh sửa giao dịch}{19}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Xem báo cáo chi tiêu}{20}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Thêm giao dịch mới}{22}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Cơ sở dữ liệu}{23}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Cho user}{23}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Cho hệ thống AI}{24}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}XÂY DỰNG HỆ THỐNG AI}{26}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Query agent và bộ dữ liệu}{26}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Bộ dữ liệu}{26}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Query agent}{26}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Supervisor agent và các loại câu hỏi hỗ trợ}{26}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Các loại câu hỏi hỗ trợ}{26}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Supervisor}{27}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Quản lý ngữ cảnh}{27}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Embedding}{28}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Tìm kiếm recall memories}{28}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Tavily và search agent}{29}{section.5.4}%
-\contentsline {chapter}{\numberline {6}CÀI ĐẶT VÀ KIỂM THỬ}{31}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Giao diện hệ thống}{31}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Kiểm thử hệ thống}{34}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Yêu cầu phi chức năng}{34}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Yêu cầu chức năng}{38}{subsection.6.2.2}%
-\contentsline {chapter}{\numberline {7}TỔNG KẾT VÀ ĐỊNH HƯỚNG TƯƠNG LAI}{46}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Tổng kết}{46}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Điểm cộng của hệ thống}{46}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Hạn chế của hệ thống}{46}{subsection.7.1.2}%
-\contentsline {section}{\numberline {7.2}Định hướng tương lai}{46}{section.7.2}%
+\contentsline {subsection}{\numberline {3.3.2}Đăng ký}{8}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Đăng nhập}{9}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Đăng xuất}{10}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Tìm kiếm bài hát}{11}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}Biểu đồ hoạt động}{13}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Chỉnh sửa giao dịch}{13}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Xem thống kê chi tiêu}{14}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Chỉnh xóa loại giao dịch}{15}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Trò chuyện với AI}{16}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}PHÂN TÍCH KIẾN TRÚC HỆ THỐNG}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Kiến trúc hệ thống}{17}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Client}{17}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Server}{17}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}Presentation layer}{19}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}Bussiness layer}{19}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}Data access layer}{19}{subsubsection.4.1.2.3}%
+\contentsline {section}{\numberline {4.2}Biểu đồ tuần tự}{19}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Chatbot}{19}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Chỉnh sửa giao dịch}{21}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Xem báo cáo chi tiêu}{22}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Thêm giao dịch mới}{24}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Cơ sở dữ liệu}{25}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Cho user}{25}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Cho hệ thống AI}{26}{subsection.4.3.2}%
+\contentsline {chapter}{\numberline {5}XÂY DỰNG HỆ THỐNG AI}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Query agent và bộ dữ liệu}{28}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Bộ dữ liệu}{28}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Query agent}{28}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Supervisor agent và các loại câu hỏi hỗ trợ}{28}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Các loại câu hỏi hỗ trợ}{28}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Supervisor}{29}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Quản lý ngữ cảnh}{29}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Embedding}{30}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Tìm kiếm recall memories}{30}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Tavily và search agent}{31}{section.5.4}%
+\contentsline {chapter}{\numberline {6}CÀI ĐẶT VÀ KIỂM THỬ}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Giao diện hệ thống}{33}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Kiểm thử hệ thống}{36}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Yêu cầu phi chức năng}{36}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Yêu cầu chức năng}{40}{subsection.6.2.2}%
+\contentsline {chapter}{\numberline {7}TỔNG KẾT VÀ ĐỊNH HƯỚNG TƯƠNG LAI}{48}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Tổng kết}{48}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Điểm cộng của hệ thống}{48}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Hạn chế của hệ thống}{48}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Định hướng tương lai}{48}{section.7.2}%
 \contentsfinish 
