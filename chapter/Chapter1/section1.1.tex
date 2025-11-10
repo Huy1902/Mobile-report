@@ -1,15 +1,46 @@
 \section{Hiện trạng}
 
-Hiện nay, âm nhạc trở nên phổ biến và dễ tiếp cận hơn bao giờ hết nhờ sự phát triển
-của công nghệ và Internet. Thay thế cho những hệ thống lưu trữ âm nhạc truyền thống 
-là những phần mềm nghe nhạc trực tuyến. Những phần mềm này đều thuộc sở hữu của 
-các công ty lớn và có mã nguồn đóng. Điều này làm chúng tôi quyết định muốn tạo ra 
-một phần mềm tối giản, mã nguồn mở có độ tùy chỉnh cao để phục vụ nhu cầu nghe nhạc
-của người dùng cũng như là nền tàng cho những người muốn phát triển thêm những tính
-năng mới cho phần mềm nghe nhạc.
+Âm nhạc là điều không thể thiếu trong cuộc sống hiện đại ngày nay. Những phần mềm 
+nghe nhạc đã ra đời từ rất lâu. Chúng chỉ đơn giản là những trình phát nhạc cơ bản,
+cho phép người dùng phát các file âm thanh có sẵn trên thiết bị. Tuy nhiên, với sự
+phát triển của công nghệ và Internet, các phần mềm nghe nhạc trực tuyến dần ra đời
+thay thế những phần mềm này trong kỷ nguyên của công nghệ đám mây và phi tập trung
+hóa.
 
-Gần đây, trí tuệ nhân tạo (AI) đã có những bước tiến vượt bậc và được ứng dụng rộng rãi
-trong nhiều lĩnh vực khác nhau, bao gồm cả âm nhạc. Nhiều sản phẩm
+Những phần mềm nghe nhạc trực tuyến cùng cấu trúc phi tập trung này cho phép người
+dùng phát nhạc tốc độ cao từ các hệ thống lưu trữ đám mây mà không cần phải tải các file âm thanh
+về thiết bị. Điều này giúp người dùng  tiết kiệm dung lượng lưu trữ trên thiết bị cũng
+như dễ dàng tiếp cận với kho âm nhạc khổng lồ từ Internet. Người dùng khi đối mặt với
+nhiều lựa chọn khi nghe như vậy lại cảm thấy bối rối vì không biết nên chọn sản phẩm
+âm nhạc nào để nghe. Để giải quyết vấn đề này, các phần mềm nghe nhạc ngày nay đang
+dần tích hợp các công nghệ trí tuệ nhân tạo (AI) để cá nhân hóa trải nghiệm nghe nhạc
+cho người dùng.
 
-Chúng tôi xin giới thiệu SpoTube, ứng dụng nghe
-nhạc 
+Công nghệ trí tuệ nhân tạo (AI) đã và đang được ứng dụng rộng rãi trong nhiều lĩnh
+vực khác nhau, bao gồm cả ngành công nghiệp âm nhạc. Trong lĩnh vực âm nhạc, AI có 
+hai ứng dụng lớn dựa trên hai nhánh công nghệ của AI: mô hình ngôn ngữ lớn (Large Language Models - LLMs)
+và hệ thống gợi ý (Recommender Systems - RS). LLMs mở ra cơ hội tạo ra những Chatbot như
+một trợ lý ảo giúp người dùng tìm kiếm, lựa chọn và quản lý âm nhạc một cách dễ dàng.
+Điều này tối ưu hóa, đơn giản hóa trải nghiệm người dùng khi tương tác với phần mềm
+nghe nhạc. Hệ thống gợi ý (Recommender Systems) sử dụng các thuật toán học máy để phân tích
+hành vi nghe nhạc của người dùng, từ đó đề xuất các bài hát, nghệ sĩ hoặc danh sách phát phù hợp với
+sở thích cá nhân của họ. Điều này giúp người dùng khám phá âm nhạc mới một cách hiệu quả
+và nâng cao trải nghiệm nghe nhạc tổng thể. Những phần mềm nghe nhạc hiện 
+nay đều cố gắng tích hợp những công nghệ này để nâng cao và cá nhân hóa
+trải nghiệm người dùng. Tuy nhiên, với những phần mềm sẵn có
+
+Những phần mềm nghe nhạc tích hợp AI hiện nay
+đều đã có cấu trúc rất lớn và phức tạp. Vấn đề lớn ở đây là chúng thường là phần mềm
+có mã nguồn đóng, và việc thêm tính năng hay tích hợp những công nghệ mới vào chúng
+là điều khó khăn đặc biệt đối với những nhà phát triển độc lập hoặc các nhóm nhỏ.
+Vì vậy, chúng tôi xin giời thiệu InsightTune, một ứng dụng nghe nhạc mã nguồn mở tích hợp AI.
+
+Những đóng góp chính và mục tiêu của dự án của chúng tôi khi phát triển InsightTune bao gồm:
+\begin{itemize}
+  \item Phát triển một ứng dụng nghe nhạc mã nguồn mở, miễn phí và dễ dàng tùy chỉnh: 
+  front end mobile app với giao diện đơn giản dễ dàng sử dụng, 
+  xây dựng back end server theo kiến trúc Microservices như một framework mở rộng sau này.
+  \item Tích hợp các công nghệ AI tiên tiến: LLMs và RS trong ứng dụng.
+  \item Xây dựng mẫu triển khai trên nền tảng đám mây.
+  \item Cung cấp các ca kiểm thử để đảm bảo chất lượng và tính ổn định hệ thống.
+\end{itemize}

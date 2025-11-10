@@ -1,4 +1,3 @@
-% --- Start of the snippet to be \input into main.tex ---
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{Lời cam đoan}
@@ -13,28 +12,17 @@ hoàn toàn chịu trách nhiệm.
 \vspace{1cm}
 \hspace{7cm}\textit{\today}
 
-% "Sinh viên" heading, positioned with \hspace
+
 \hspace{9.4cm}\textbf{Sinh viên}
+\vspace{0.5cm}
 
-% Removed original \vspace{2.5cm}. 
-% Add some initial vertical space after "Sinh viên" before the signature block.
-\vspace{0.5cm} % Adjust this space as needed
 
-% The \hspace positions the entire following block (the minipage).
-\hspace{7.2cm}{ % Start of the group that is indented
-    \begin{minipage}[t]{6cm} % A minipage to hold the signature lines and names.
-                              % [t] aligns the top of this minipage with the current line.
-                              % Adjust the width (e.g., 6cm) as needed.
-        \centering % Center the content (lines and names) within this minipage
+\hspace{7.2cm}{
+    \begin{minipage}[t]{6cm} 
+        \centering 
         {\textbf{\fontsize{14}{14}\selectfont{Đoàn Minh Hoàng}}}\\
-        {\textbf{\fontsize{14}{14}\selectfont{Trần Quan Đỉnh}}}\\
+        {\textbf{\fontsize{14}{14}\selectfont{Trần Quang Đỉnh}}}\\
         {\textbf{\fontsize{14}{14}\selectfont{Nguyễn Quốc Huy}}}\\
         {\textbf{\fontsize{14}{14}\selectfont{Trần Trung Hậu}}}\\
-        % No \vspace after the last name unless you want extra space at the bottom of the minipage.
     \end{minipage}
-} % End of the group that is indented by \hspace{9.3cm}
-
-% You can add \vspace here if you need more space after the entire signature block.
-% For example: \vspace{2cm}
-
-% --- End of the snippet to be \input into main.tex ---
+}

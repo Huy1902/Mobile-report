@@ -1636,6 +1636,11 @@ INPUT ./chapter/Chapter1/section1.1.tex
 INPUT chapter/Chapter1/section1.1.tex
 INPUT ./chapter/Chapter1/section1.1.tex
 INPUT chapter/Chapter1/section1.1.tex
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT ./chapter/Chapter1/section1.2.tex
 INPUT chapter/Chapter1/section1.2.tex
 INPUT ./chapter/Chapter1/section1.2.tex
@@ -1655,11 +1660,6 @@ INPUT ./chapter/Chapter1/section1.3.tex
 INPUT chapter/Chapter1/section1.3.tex
 INPUT ./chapter/Chapter1/section1.3.tex
 INPUT chapter/Chapter1/section1.3.tex
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./chapter/Chapter1/section1.4.tex
