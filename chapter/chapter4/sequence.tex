@@ -35,36 +35,35 @@ Hình trang tiếp theo mô tả quá trình này.
   \includegraphics[width=1\textwidth]{figures/chatbot.png}
   \caption{Biểu đồ tuần tự cho chatbot}
 \end{figure}
-\subsection{Chỉnh sửa giao dịch}
+
+\subsection{Đăng ký}
 \begin{itemize}
-	\item User điền thông tin giao dịch cần chỉnh sửa.
-	\item Giao diện người dùng (UI) đóng gói dữ liệu thành DTO (Data Transfer Object) và gửi đến Controller.
-	\item TransactionController nhận DTO và thực hiện validate.
-	\item Nếu DTO hợp lệ, controller gọi service để cập nhật.
-	\item TransactionService nhận yêu cầu và validate Entity.
-	\item Nếu Entity hợp lệ, UI hiển thị thông báo thành công. Nếu Entity không hợp lệ, UI hiển thị thông báo lỗi.
+	\item Người dùng nhấn "Sign up for free", giao diện hiển thị form đăng ký.
+	\item Gửi thông tin đăng ký tới Controller, kiểm tra định dạng và tính hợp lệ của dữ liệu.
+	\item Nếu thông tin hợp lệ, gửi thông tin cho Service kiểm tra email đã tồn tại chưa, nếu không hiển thị thông báo lỗi.
+	\item Nếu email chưa tồn tại, gửi thông tin qua Repo, lưu vào CSDl, nếu không hiển thị thông báo lỗi.
+	\item Chuyển đến giao diện đăng nhập.
 \end{itemize}
 \newpage
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{figures/edit-transac-sq.png}
-	\caption{Biểu đồ tuần tự cho chức năng chỉnh sửa giao dịch}
+	\includegraphics[width=1\textwidth]{figures/sequence-register.png}
+	\caption{Biểu đồ tuần tự cho chức năng đăng ký}
 \end{figure}
 
-\subsection{Xem báo cáo chi tiêu}
+\subsection{Đăng nhập}
 \begin{itemize}
-	\item Người dùng yêu cầu báo cáo.
-	\item Chọn thời gian (vd: tháng 7/2023).
-	\item Hệ thống truy vấn database để lấy tất cả giao dịch trong khoảng thời gian người dùng chọn.
-	\item Nếu không có giao dịch nào → Trả về biểu đồ trống
-	\item Nếu có giao dịch → Tiếp tục xử lý.
-	\item Phân tích dữ liệu: Gộp các giao dịch cùng loại, Tính tổng tiền cho từng danh mục -> Xây dựng biểu đồ thống kê.
+	\item Người dùng nhấn "Login" và nhập email và mật khẩu hoặc nhấn "Login with Google".
+	\item Gửi thông tin đăng nhập tới Controller, kiểm tra định dạng.
+	\item Nếu thông tin hợp lệ, gửi cho Service kiểm tra email đã tồn tại trong CSDl chưa, nếu không thông báo lỗi.
+	\item Nếu email tồn tại, kiểm tra thông tin mật khẩu.
+	\item Nếu mật khẩu đúng, thông báo thành công, giao diện chuyển sang home, nếu không thông báo lỗi.
 \end{itemize}
 \newpage
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{figures/view-report-sq.png}
-	\caption{Biểu đồ tuần tự cho chức năng xem báo cáo chi tiêu}
+	\includegraphics[width=1\textwidth]{figures/sequence-login.png}
+	\caption{Biểu đồ tuần tự cho chức năng đăng nhập}
 	\end{figure}
 
 \subsection{Thêm giao dịch mới}

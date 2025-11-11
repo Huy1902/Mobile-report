@@ -104,7 +104,7 @@ Ca sử dụng đăng ký cho phép người dùng tạo tài khoản để sử
 		\hline
 		3 & Nếu hợp lệ, hệ thống gửi thông tin đến server\\
 		\hline
-		4 & Server lưu thông tin và phản hồi kết quả \\
+		4 & Server kiểm tra thông tin, nếu chưa tồn tại thì lưu thông tin và phản hồi kết quả \\
 		\hline
 		5 & Hệ thống thông báo đăng ký thành công và chuyển đến giao diện đăng nhập \\
 		\hline
@@ -116,9 +116,9 @@ Ca sử dụng đăng ký cho phép người dùng tạo tài khoản để sử
 		\hline
 		\textbf{STT} & \textbf{Sự kiện} \\
 		\hline
-		1.1.1 & Người dùng nhấn “Hiện mật khẩu” để hiển thị rõ password và confirm password \\
+		3.1 & Nếu thông tin không hợp lệ, hiển thị thông báo lỗi \\
 		\hline
-		1.1.2 & Người dùng nhấn “Quay lại” để quay lại giao diện bắt đầu \\
+		4.1 & Nếu email đã tồn tại, hiển thị thông báo lỗi \\
 		\hline
 	\end{tabular}
 	\\
