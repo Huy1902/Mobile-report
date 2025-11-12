@@ -3,7 +3,16 @@
 \chapter[{PHÂN TÍCH KIẾN TRÚC HỆ THỐNG}]{PHÂN TÍCH KIẾN TRÚC HỆ THỐNG}
 \label{chapter:architecture}
 
+Chương 4 trình bày về kiến trúc hệ thống, bao gồm yêu cầu thiết kế, thiết kế bậc cao, thiết kế cơ sở dữ liệu, luồng xử lý của hệ thống.
+Chúng tôi trình bày các yêu cầu thiết kế của hệ thống trong \ref{sec:requirement}. Các giải pháp cụ thể sẽ được thể hiện trong kiến
+trúc tổng quát tại \ref{sec:architecture}. Luồng chạy của hệ thống được biểu diễn qua các biểu đồ tuần tự ở \ref{sec:sequence}.
+Phần \ref{sec:database} trình bày về thiết kế cơ sở dữ liệu để phù hợp với kiến trúc bậc cao của hệ thống. Kiến trúc của hệ thống khi 
+triển khai trên AWS được mô tả trong phần \ref{sec:deployment}. Xuyên suốt chương này, chúng tôi sẽ trình bày các đặc trưng thiết kế
+của hệ thống tuân theo trình tự nêu ra vấn đề, yêu cầu, giải pháp và thiết kế chi tiết ứng dụng các giải pháp đó vào hệ thống của \textbf{InsightTune}.
+
+\clearpage
+\input{chapter/chapter4/requirement.tex}
 \input{chapter/chapter4/architecture.tex}
 \input{chapter/chapter4/sequence.tex}
 \input{chapter/chapter4/database.tex}
-\input{chapter/chapter4/conclusion.tex}
+\input{chapter/chapter4/deployment.tex}

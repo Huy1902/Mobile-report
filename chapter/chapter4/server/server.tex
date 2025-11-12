@@ -1,21 +1,3 @@
 \subsection{Server}
 \label{subsection:server}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{figures/server-architecture.png}
-	\caption{Kiến trúc của server backend}
-\end{figure}
-
-\subsubsection{Presentation layer}
-Presentation layer là tầng trên cùng và trừu tượng nhất trong kiến trúc. Tầng này
-chịu trách nhiệm tương tác trực tiếp với Client thông qua việc đặt ra định dạng dữ liệu,
-xác thực dữ liệu, xác định dữ liệu trả về và metadata như Response code, v.v...
-
-\subsubsection{Bussiness layer}
-Bussiness layer là thành phần tiếp theo của kiến trúc server. Tầng này bao gồm các
-thành phần đảm nhiệm việc xử lí các tác vụ nặng tính chuyên môn.
-
-\subsubsection{Data access layer}
-Tầng Data access là tầng thấp nhất. Tầng này bao gồm các thành phần đảm nhiệm
-vai trò tương tác trực tiếp với CSDL và mô hình dữ liệu đấy thành các class.

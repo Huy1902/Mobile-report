@@ -1,13 +1,27 @@
-\setcounter{section}{0}
+% \setcounter{section}{0}
 \section{Kiến trúc hệ thống}
 \label{sec:architecture}
 
-Hệ thống được xây dựng theo kiến trúc Client-Server.
+Trong phần này, chúng tôi sẽ trình bày, phân tích thiết kế hệ thống được sử dụng tuân theo các yêu cầu được trình bày trong \ref{sec:requirement}.
+
+Để tách biệt front end và back end, hệ thống của chúng tôi được thiết kế theo kiến trúc \textbf{Client - Server}. Trong đó Server được thiết kế theo kiến trúc 
+\textbf{Microservice} và Client theo  \textbf{MVVC}. Điều này giải quyết yêu cầu \ref{req:scale} giúp hệ thống trở nên linh hoạt trong việc phát triển và mở rộng, nhà 
+phát triển có thể dễ dàng thêm các chức năng mới bằng việc thiết kế thêm các hệ thống mới. 
+
+Yêu cầu \ref{req:lang} nhằm giúp mã nguồn trở nên đơn giản bằng cách tận dụng kiến trúc của Spring Boot. Kiến trúc \textbf{controller - service - repository} 
+của Spring Boot sẽ được áp dụng cho từng service của hệ thống.
+
+Việc đảm bảo hiệu năng \ref{req:perf} được thực hiện thông qua thiết kế API và các phương thức cân bằng tải. Vai trò và vị trí của chúng sẽ được biểu diễn trong 
+phần server dưới đây.
+
+Các phương thức giao tiếp giữa các service và API cũng sẽ được nhắc tới và trình bày chi tiết nhằm đảm bảo yêu cầu \ref{req:sec}.
+
+Bằng việc tận dụng dịch vụ sẵn có của AWS và công cụ của Spring Boot, chúng tôi thiết kế công cụ ghi lỗi và theo dõi cơ sở dữ liệu cho yêu cầu \ref{req:obs}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/architecture.png}
-	\caption{Kiến trúc của hệ thống}
+	\caption{Kiến trúc client-server của hệ thống}
 \end{figure}
 
 \input{chapter/chapter4/client/client.tex}

@@ -1,0 +1,25 @@
+\section{Yêu cầu thiết kế hệ thống}
+\label{sec:requirement}
+
+Như chúng tôi đã trình bày trong chương 1 về các vấn đề cần giải quyết, trong đó rất nhiều vấn đề sẽ được đề cập và giải quyết trong chương này
+thông qua các yêu cầu về thiết kế hệ thống.
+
+Các yêu cầu được đề ra nhằm để giải quyết các \textbf{vấn đề} sau:
+\begin{itemize}
+    \item Độ phức tạp và khả năng mở rộng của các hệ thống.
+    \item Khả năng tái sử dụng các thành phần trong hệ thống.
+    \item Khả năng triển khai đơn giản trên nền tảng đám mây AWS.
+\end{itemize}
+
+Xem xét các vấn đề này, chúng tôi thiết lập các ràng buộc cho hệ thống \textbf{InsightTune} như sau:
+\begin{enumerate}[label=(\arabic*),ref=(\arabic*)]
+  \item \label{req:lang} Về ngôn ngữ: Java Spring Boot backend, Kotlin frontend.
+  \item \label{req:scale} Về khả năng mở rộng: mở rộng theo chiều ngang, tách backend và frontend.
+  \item \label{req:perf} Về hiệu năng: chịu tải lớn.
+  \item \label{req:sec} Về bảo mật: tách phương thức bên trong và bên ngoài, giao tiếp nội bộ an toàn.
+  \item \label{req:obs} Về quan sát: ghi lỗi, theo dõi cơ sở dữ liệu và hệ thống.
+\end{enumerate}
+
+Chúng tôi không trình bày chi tiết thông số của các yêu cầu trên, chi tiết các thông số và dữ liệu để đo độ đạt của thiết kế hệ thống
+sẽ được trình bày ở chương \ref{chapter:testing}. Chương này sẽ chỉ tập trung vào tích các yêu cầu, đưa ra giải pháp trên phương diện
+thiết kế bậc cao của hệ thống.
