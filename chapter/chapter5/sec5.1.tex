@@ -1,13 +1,6 @@
-\section{Query agent và bộ dữ liệu}
-\subsection{Bộ dữ liệu}
-Sử dụng bộ dữ liệu giả sinh bằng thư viện Faker của Python để tạo ra một tập dữ liệu gồm 10 test user, mỗi user 
-có 10 categories và 100 giao dịch liên quan. Xem thêm tại \textbf{~\ref{sec:database}}.
+\subsection{Quản lí bộ nhớ của Chatbot}
+Ở đây chúng tôi quản lí bộ nhớ của chatbot thông qua việc sử dụng LangGraph Checkpointer.
+Mỗi cuộc trò chuyện với người dùng sẽ được định danh trong một thread\_id riêng biệt,
+giúp chatbot có thể hiểu ngữ cảnh tốt hơn.
+Và Checkpointer sẽ lưu trữ toàn bộ lịch sử tin nhắn của từng thread_id. Điều này làm Chatbot duy trì được ngữ cảnh và cá nhân hóa với mỗi người dùng.
 
-\subsection{Query agent}
-Agent có các tool như: truy vấn, chấm điểm kết quả trả về, tối ưu câu lệnh,... Các tool này sẽ được agent sử dụng để sinh câu lệnh tối ưu
-và trả kết quả query về cho supervisor agent.
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.3\textwidth]{figures/querier.png}
-\caption{Query Agent}
-\end{figure}

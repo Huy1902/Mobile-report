@@ -36,3 +36,22 @@ Những kiến thức cần có để triển khai hiệu quả là:
 \end{itemize}
 
 \subsection{Trợ lý ảo}
+ 
+Chúng tôi xây dựng một hệ thống chatbot agent kết hợp với các tool:
+\begin{itemize}
+    \item Duckduckgo tool: là công cụ tra cứu, tìm kiếm thông tin trên mạng.
+    \item Scrape Website tool: là công cụ để lấy dữ liệu từ một trang web.
+\end{itemize}
+
+Hệ thống sử dụng LLM là gemini-2.5-pro làm model chính để xử lí input đầu vào và kết hợp những tool để trả lời người dùng.
+Dưới đây là kiến thức cần có để xây dựng hệ thống chatbot agent này:
+\begin{itemize}
+    \item Nguyên lý hoạt động của LLM và cơ chế function calling/tool use.
+    \item Kiến thức Agent-base Chatbot.
+    \item Thiết kế và tích hợp tools vào LLM.
+    \item Kỹ năng viết prompt hiệu quả.
+    \item Framework Langgraph để xây dựng stateful multi-agent workflows.
+    \item Quản lí bộ nhớ hội thoại (memory management) với Checkpointer.
+\end{itemize}
+
+Và được triển khai thông qua FastAPI.
