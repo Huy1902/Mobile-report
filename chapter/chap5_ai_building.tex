@@ -19,10 +19,9 @@ Dưới đây là hình ảnh mô tả luồng hoạt đồng cơ bản của h�
 Khi người dùng nhập input đầu ra, hệ thống sẽ gửi input này tới chatbot thông qua FastAPI. Chatbot sẽ xử lý input này và quyết định xem việc nên dùng tools nào phù hợp.
 Khi cần tra cứu thêm thông tin này từ trên mạng, chatbot agent sẽ gọi function calling để gọi đến tool Duckduckgo Search và trả về các link liên quan đến kiến thức mà chatbot cần.
 Đến đây, chatbot vẫn chưa có lượng thông tin cần thiết để trả lời bởi vì mới chỉ lấy được các link liên quan. Do đó, chatbot sẽ cần đến tool là Scape Website để lấy dữ liệu từ trang web về ở dạng html.
-Lúc này tool Scape Website sẽ trả về input mong muốn cho chatbot. Và rồi chatbot có thông tin và từ đó dựa trên những thông tin ấy trả lời cho người dùng
+Lúc này tool Scape Website sẽ trả về input mong muốn cho chatbot. Và rồi chatbot có thông tin và từ đó dựa trên những thông tin ấy trả lời cho người dùng.
 
-Các phần sau đây sẽ mô tả thêm về tool duckduckgo, scrape website, tool phát nhạc.
+Các phần sau đây sẽ mô tả thêm về tool duckduckgo, scrape website.
 \input{chapter/chapter5/sec5.1.tex}
 \input{chapter/chapter5/sec5.2.tex}
 \input{chapter/chapter5/sec5.3.tex}
-\input{chapter/chapter5/sec5.4.tex}
