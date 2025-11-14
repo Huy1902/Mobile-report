@@ -1,0 +1,25 @@
+\subsection{Luồng hoạt động chính}
+\label{main_workflow}
+
+Trong phần này sẽ mô tả luồng hoạt động cơ bản của hệ thống chatbot agent mà chúng tôi xây dựng.
+Dưới đây là sơ đồ luồng hoạt động chính của agent
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{figures/General_flow.png} 
+    \caption{Luồng hoạt động của agent trong hệ thống chatbot AI}
+    \label{fig:General_flow}
+\end{figure}
+
+Khi người dùng nhập input đầu vào, hệ thống sẽ gửi input này tới chatbot thông qua FastAPI. 
+Chatbot sẽ xử lý input này và quyết định xem việc nên dùng tools nào phù hợp.
+
+Khi cần tra cứu thêm thông tin này từ trên mạng, chatbot agent sẽ gọi function calling để 
+gọi đến tool Duckduckgo Search và trả về các link liên quan đến kiến thức mà chatbot cần.
+
+Đến đây, chatbot vẫn chưa có lượng thông tin cần thiết để trả lời bởi vì mới chỉ lấy được các 
+link liên quan. Do đó, chatbot sẽ cần đến tool là Scape Website để lấy dữ liệu từ trang web 
+về ở dạng html.
+
+Lúc này tool Scape Website sẽ trả về input mong muốn cho chatbot. 
+Và rồi chatbot có thông tin và từ đó dựa trên những thông tin ấy trả lời cho người dùng.

@@ -1,8 +1,57 @@
-\section{Kiến thức về AI}
+\section{Xây dựng hệ thống AI}
+
+Hệ thống \textbf{InsightTune} có tích hợp hai dịch vụ (service) AI, hai dịch vụ này được triển khai sao cho tương thích tốt với toàn bộ
+hệ thống và có tính đặc trưng cao (phân biệt với những dịch vụ AI cho đa tác vụ như: Gemini hay ChatGPT). Chúng tôi xin trình bày
+những kiến thức nền tảng để xây dựng hiệu quả hai dịch vụ này qua hai phần riêng biệt dưới đây: dịch vụ gợi ý và trợ lý ảo.
+
+\subsection{Dịch vụ gợi ý}
+Để xây được một dịch vụ gợi ý tốt trong một thống lớn của \textbf{InsightTune}, ta cần hiểu hai miền kiến thức chính:
 \begin{itemize}
-    \item Cách xây dựng hệ thống AI
-    \item Kiến trúc một RAG-based system
-    \item Lập trình Python, sử dụng thư viện
-    \item Cách viết prompt cho LLM, xây dựng agents, quản lý ngữ cảnh
-    \item Langchain (xây dựng hệ thống), Langsmith (test, debug)
+    \item Một là về kiến trúc hệ thống, để từ đó hiểu được đầu vào và đầu ra của dịch vụ cũng như phương thức giao tiếp với những tác vụ khác của hệ thống.
+    \item Hai là về xây dựng và triển khai một mô hình gợi ý.
 \end{itemize}
+Những yêu cầu kiến thức về kiến trúc hệ thống đã được trình bày tại \ref{sec:arch_knowledge} nên ở phần này chúng tôi chỉ tập trung vào giải thích ngắn
+gọn những kiến thức xây dựng và triển khai mô hình gợi ý.
+
+\subsubsection{Xây dựng}
+Xây dựng mô hình gợi ý tức là chuẩn bị tập dữ liệu mẫu chia ra làm tập huấn luyện và tập kiểm tra, sau khi hoàn tất quá trình huấn luyện
+trên tập huấn luyện, ta thu được một mô hình hoạt động tốt trên tập kiểm tra.
+
+Kiến thức cần có để xây dựng lại một mô hình gợi ý như chúng tôi làm đó là:
+\begin{itemize}
+    \item Kiến thức về học tăng cường
+    \item Xử lý dữ liệu
+    \item Các thư viện học máy trong Python: Pytorch, numpy, pandas
+    \item Công cụ đo lường và biểu diễn: wandb
+\end{itemize}
+
+\subsubsection{Triển khai}
+Sau khi có được một mô hình gợi ý, chúng tôi triển khai mô hình như một dịch vụ trong hệ thống. Điều này phải tương thích với yêu cầu đầu vào và đầu ra của 
+dịch vụ.
+
+Những kiến thức cần có để triển khai hiệu quả là:
+\begin{itemize}
+    \item Kiến thức xây dựng dịch vụ bằng FastAPI
+    \item Thiết lập đóng gọi dịch vụ bằng Docker
+\end{itemize}
+
+\subsection{Trợ lý ảo}
+ 
+Chúng tôi xây dựng một hệ thống chatbot agent kết hợp với các tool:
+\begin{itemize}
+    \item Duckduckgo tool: là công cụ tra cứu, tìm kiếm thông tin trên mạng.
+    \item Scrape Website tool: là công cụ để lấy dữ liệu từ một trang web.
+\end{itemize}
+
+Hệ thống sử dụng LLM là gemini-2.5-pro làm model chính để xử lí input đầu vào và kết hợp những tool để trả lời người dùng.
+Dưới đây là kiến thức cần có để xây dựng hệ thống chatbot agent này:
+\begin{itemize}
+    \item Nguyên lý hoạt động của LLM và cơ chế function calling/tool use.
+    \item Kiến thức Agent-base Chatbot.
+    \item Thiết kế và tích hợp tools vào LLM.
+    \item Kỹ năng viết prompt hiệu quả.
+    \item Framework Langgraph để xây dựng stateful multi-agent workflows.
+    \item Quản lí bộ nhớ hội thoại (memory management) với Checkpointer.
+\end{itemize}
+
+Và được triển khai thông qua FastAPI.

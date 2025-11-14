@@ -1,0 +1,25 @@
+\section{Xây dựng trợ lý ảo}
+\label{build_chatbot}
+
+Chúng tôi xây dựng một hệ thống chatbot agent kết hợp với các tool tìm kiếm và 
+lấy thông tin từ trên mạng để cung cấp dữ liệu cho agent với model chính mà chúng tôi sử dụng là gemini-2.5-pro. 
+Điểm mạnh của chatbot của chúng tôi chính là khả năng tìm kiếm thông tin từ trên mạng, có thể tự động cập nhật
+những tri thức mới nhất để trả lời cho người dùng mà không bị thiếu kiến thức hay bị sai lệch thông tin
+so với các hệ thống chatbot truyền thống dùng các model tĩnh kết hợp RAG (retrieval-augmented generation) để cung
+cấp ngữ cảnh cho LLM.
+Ngoài ra chúng tôi cũng tự làm thêm tính năng phát nhạc khi người dùng yêu cầu hoặc có mong muốn 
+nghe nhạc trong app của mình và có thể yêu cầu bằng giọng nói hoặc nhập yêu cầu bằng văn bản.
+
+Chatbot agent được xây dựng chủ yếu bằng framework mạnh mẽ cho agent là Langgraph và một 
+số các thư viện cần thiết khác để phục vụ cho việc triển khai hệ thống dễ dàng hơn.
+Langgraph giúp chúng tôi xây dựng chatbot agent theo dạng đồ thị (graph) với các node 
+đại diện cho các thành phần như tool hay agent. Ngoài ra việc dùng Langgraph giúp chúng tôi 
+có thể dễ dàng mở rộng hơn vì nó tối ưu và dễ dàng phát triển để mở rộng thành hệ thống 
+multi-agent trong tương lai. 
+
+Các phần sau đây sẽ mô tả thêm về cách luồng hoạt động chính của chatbot agent, 
+cách xây dựng bộ nhớ, các tool duckduckgo, scrape website.
+\input{chapter/chapter5/chatbot/main_workflow.tex}
+\input{chapter/chapter5/chatbot/memory.tex}
+\input{chapter/chapter5/chatbot/search.tex}
+\input{chapter/chapter5/chatbot/scrape.tex}
