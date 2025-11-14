@@ -1,0 +1,235 @@
+\subsection{Các ca kiểm thử}
+\begin{longtable}[H]{ p{0.7cm}|p{1.9cm}|p{3.3cm}|p{1.4cm}|p{2cm}|p{2cm}|p{2.8cm}|}
+    \caption{Các ca kiểm thử của hệ thống} \\
+    \hline
+    \textbf{STT} & \textbf{Chức năng} & \textbf{Nội dung kiểm thử} 
+    & \textbf{Người kiểm thử} & \textbf{Ngày kiểm thử} 
+    & \textbf{Kết quả kiểm thử} & \textbf{Kết quả kỳ vọng}\\
+    \hline
+    \endfirsthead
+
+    \hline
+    \textbf{STT} & \textbf{Chức năng} & \textbf{Nội dung kiểm thử} 
+    & \textbf{Người kiểm thử} & \textbf{Ngày kiểm thử} 
+    & \textbf{Kết quả kiểm thử} & \textbf{Kết quả kỳ vọng}\\
+    \hline
+    \endhead
+        \rownumber & Giao diện đăng ký tài khoản & Kiểm tra giao diện đăng ký có hiển thị chính xác lỗi khi không nhập thông tin mật khẩu không 
+            & Trung Hiếu & 29/03/2025 & Đạt & Thông báo lỗi "Password must not be empty" được hiển thị dưới ô nhập password\\
+            \hline
+	\rownumber & Thêm phân loại giao dịch & Bỏ trống thông tin trong mẫu và nhấn lưu 
+            & Trung Hiếu & 01/04/2025 & Đạt & Hiển thị thông báo lỗi yêu cầu nhập lại.\\
+	\hline
+        \rownumber & Thêm phân loại giao dịch & Thêm phân loại với đầy đủ thông tin (tên, màu đại diện)
+            & Trung Hiếu & 01/04/2025 & Đạt & Giao diện hiển thị thông báo thêm thành công\\
+            \hline
+        \rownumber & Thêm phân loại giao dịch & Thêm phân loại giao dịch nhưng không nhập tên
+            & Trung Hiếu & 30/03/2025 & Không đạt, giao diện vẫn hiển thị thông báo thành công & Giao diện hiển thị thông báo lỗi\\
+            \hline
+        \rownumber & Xem phân loại giao dịch & Kiểm tra màu chữ của phân loại có dễ nhìn không 
+            & An Huy & 03/04/2025 & Không đạt, màu chữ đen bị mất trên nền tối & Màu chữ đổi theo màu (nền) đại diện của loại giao dịch\\
+            \hline
+        \rownumber & Thêm giao dịch & Nhấn nút "Add transaction" & Trung Hiếu & 07/04/2025 & Đạt & Form hiển thị với các trường: Name, Amount, Timestamp, category, notes. \\
+	\hline
+	\rownumber & Thêm giao dịch & Nhập đầy đủ thông tin hợp lệ và nhấn lưu & Trung Hiếu & 07/04/2025 & Đạt & Giao dịch xuất hiện trên danh sách, hộp thoại thêm giao dịch biến mất, có thông báo thêm thành công. \\
+	\hline
+	\rownumber & Thêm giao dịch & Nhấn lưu khi các trường bỏ trống & Trung Hiếu & 07/04/2025 & Không đạt, không có thông báo gì & Hiển thị thông báo lỗi yêu cầu nhập đủ. \\
+	\hline
+	\rownumber & Thêm giao dịch & Nhấn lưu khi các trường bỏ trống & Trung Hiếu & 08/04/2025 & Đạt & Hiển thị thông báo lỗi yêu cầu nhập đủ. \\
+	\hline
+        \rownumber & Xóa loại giao dịch & Nhấn nút xóa danh mục (không có giao dịch) và xác nhận xóa & Trung Hiếu & 12/4/2025 & Đạt & Giao diện thông báo xóa thành công, danh mục không hiển thị. \\
+	\hline
+        \rownumber & Xem phân loại giao dịch & Kiểm tra màu chữ của phân loại có dễ nhìn không 
+            & An Huy & 10/04/2025 & Không đạt, màu chữ luôn là đen & Màu chữ đổi theo màu (nền) đại diện của loại giao dịch\\
+            \hline
+	\rownumber & Sửa giao dịch & Nhấn nút sửa trên một giao dịch bất kỳ & An Huy & 13/04/2025 & Đạt & Hiển thị form với thông tin giao dịch đã chọn. \\
+	\hline
+	\rownumber & Sửa giao dịch & Bỏ trống trường Amount khi sửa & An Huy & 13/04/2025 & Không đạt & Hiển thị thông báo lỗi yêu cầu nhập hợp lệ. \\
+	\hline
+	\rownumber & Sửa loại giao dịch & Nhấn nút "Edit" trên 1 giao dịch sẵn có & Trung Hiếu & 15/4/2025 & Đạt & Hiển thị hộp thoại Edit category. \\
+        \hline
+	\rownumber & Xóa giao dịch & Nhấn nút Xóa trên một giao dịch và xác nhận xóa & Trung Hiếu & 17/04/2025 & Đạt & Giao diện thông báo đã xóa thành công \\
+	\hline
+	\rownumber & Thống kê chi tiêu & Chọn lại khoảng thời gian thống kê & Trung Hiếu & 20/04/2025 & Đạt & Biểu đồ cập nhập lại theo khoảng thời gian đã chọn. \\
+	\hline
+        \rownumber & SQLAgent & Kiểm tra độ trễ của hệ thống khi trả lời câu hỏi
+            & Nguyễn Huy & 15/04/2025 & Không đạt & P50 không vượt quá 1s\\
+            \hline
+        \rownumber & SQLAgent & Kiểm tra độ trễ của hệ thống khi trả lời câu hỏi
+            & Nguyễn Huy & 16/04/2025 & Đạt & P50 không vượt quá 1s\\
+            \hline
+        \rownumber & SQLAgent & Kiếm tra độ trễ mà không làm thay đổi error rate
+            & Nguyễn Huy & 16/04/2025 & Không đạt & P50 không vượt 1s, error rate đạt 0\%\\
+            \hline
+        \rownumber & SQLAgent & Kiếm tra độ trễ mà không làm thay đổi error rate
+            & Nguyễn Huy & 17/04/2025 & Đạt & P50 không vượt 3s, error rate đạt 0\%\\
+            \hline
+        \rownumber & SQLAgent & Kiểm tra khả năng chịu tải của hệ thống khi có 2 người dùng
+            & Nguyễn Huy & 17/04/2025 & Đạt & P99 không quá 5s\\
+            \hline
+        \rownumber & SQLAgent & Kiểm tra khả năng chịu tải khi có 3 người dùng
+            & Nguyễn Huy & 17/04/2025 & Không đạt & P99 không quá 5s\\
+            \hline
+        \rownumber & SQLAgent & Kiểm tra khả năng trả lời, tỷ lệ lỗi và độ trễ của hệ thống khi có 2 người dùng 
+            & Nguyễn Huy & 17/04/2025 & Đạt &P50 dưới 3s, P99 dưới 6s, error rate 0\%\\
+            \hline
+        \rownumber & Xem phân loại giao dịch & Kiểm tra màu chữ của phân loại có dễ nhìn không 
+            & An Huy & 12/04/2025 & Đạt & Màu chữ đổi phù hợp, dễ đọc theo màu (nền) đại diện của loại giao dịch\\
+            \hline
+        \rownumber & Supervisor & Kiểm tra độ trễ của hệ thống khi gọi API
+            & Nguyễn Huy & 18/04/2025 & Không đạt & P50 không quá 5s\\
+            \hline
+        \rownumber & Supervisor & Kiểm tra độ trễ của hệ thống khi gọi API
+            & Nguyễn Huy & 18/04/2025 & Đạt & P50 không quá 5s\\
+            \hline
+        \rownumber & Chatbot & Kiểm tra khả năng trả lời khi có 2 người dùng
+            & Nguyễn Huy & 21/04/2025 & Đạt & P50 dưới 6s\\
+            \hline
+% \end{longtable}
+
+% \subsection{Yêu cầu chức năng}
+
+% \setcounter{testrownum}{0}
+
+% \begin{longtable}[H]{ p{0.7cm}|p{1.9cm}|p{3.3cm}|p{1.4cm}|p{2cm}|p{2cm}|p{2.8cm}|}
+%     \caption{Các ca kiểm thử chức năng của hệ thống} \\
+%     \hline
+%     \textbf{STT} & \textbf{Chức năng} & \textbf{Nội dung kiểm thử} 
+%     & \textbf{Người kiểm thử} & \textbf{Ngày kiểm thử} 
+%     & \textbf{Kết quả kiểm thử} & \textbf{Kết quả kỳ vọng}\\
+%     \hline
+%     \endfirsthead
+
+%     \hline
+%     \textbf{STT} & \textbf{Chức năng} & \textbf{Nội dung kiểm thử} 
+%     & \textbf{Người kiểm thử} & \textbf{Ngày kiểm thử} 
+%     & \textbf{Kết quả kiểm thử} & \textbf{Kết quả kỳ vọng}\\
+%     \hline
+%     \endhead
+        \rownumber & Đăng ký & Đăng ký tài khoản với thông tin: Tên: "user" (không bị trùng), email "user@test.com" (không trùng), mật khẩu "user"
+            & Hữu Đức & 20/03/2025 & Đạt & Tài khoản mới với thông tin tương ứng được thêm vào CSDL\\
+            \hline
+        \rownumber & Đăng ký & Đăng ký với tên tài khoản bị trùng "user"
+            & Hữu Đức & 20/03/2025 & Đạt & Tài khoản không được tạo trong CSDL\\
+            \hline
+        \rownumber & Đăng ký & Đăng ký với mật khẩu rỗng
+            & Hữu Đức & 20/03/2025 & Đạt & Tài khoản không được tạo trong CSDL\\
+            \hline
+        \rownumber & Đăng ký & Đăng ký với tên tài khoản rỗng
+            & Hữu Đức & 20/03/2025 & Đạt & Tài khoản không được tạo trong CSDL\\
+            \hline
+        \rownumber & Đăng nhập & Đăng nhập với thông tin không tồn tại trong CSDL
+            & Hữu Đức & 27/03/2025 & Đạt & Người dùng không đăng nhập được\\
+            \hline
+        \rownumber & Đăng nhập, xác thực người dùng & Xác thực người dùng và bắt đầu session mới với thông tin đúng trong CSDL
+            & Hữu Đức & 27/03/2025 & Đạt & Người dùng được xác thực bằng thông tin đã đăng kí, được đăng nhập\\
+            \hline
+        \rownumber & Thêm phân loại giao dịch & Thêm phân loại với đầy đủ thông tin (tên, màu đại diện)
+            & An Huy & 30/03/2025 & Không đạt, không có phân loại mới trong CSDL & Phân loại mới được thêm vào CSDL với thông tin chính xác \\
+            \hline
+        \rownumber & Thêm phân loại giao dịch & Thêm phân loại giao dịch nhưng không nhập tên
+            & An Huy & 30/03/2025 & Đạt & Phân loại mới không được thêm vào CSDL \\ 
+            \hline
+        \rownumber & Thêm phân loại giao dịch & Thêm phân loại với đầy đủ thông tin (tên, màu đại diện)
+            & An Huy & 01/04/2025 & Không đạt, màu đại diện của phân loại mới không đúng như đã chọn & Phân loại mới được thêm vào CSDL với thông tin chính xác \\
+            \hline
+        \rownumber & Thêm giao dịch & Thêm giao dịch mới với đầy đủ thông tin (tên, phân loại, thời gian, giá trị)
+            & An Huy & 01/04/2025 & Đạt & Giao dịch mới được thêm vào CSDL\\
+            \hline
+        \rownumber & Thêm giao dịch & Thêm giao dịch mới mà không chọn phân loại
+            & An Huy & 01/04/2025 & Đạt & Không có giao dịch mới trong CSDL\\
+            \hline
+        \rownumber & Thêm giao dịch & Thêm giao dịch mới mà không điền giá trị
+            & An Huy & 01/04/2025 & Đạt & Không có giao dịch mới trong CSDL\\
+            \hline
+        \rownumber & Thêm phân loại giao dịch & Thêm phân loại với đầy đủ thông tin (tên, màu đại diện)
+            & An Huy & 02/04/2025 & Đạt & Phân loại mới được thêm vào CSDL với thông tin giống như đã nhập \\
+            \hline
+        \rownumber & Thêm giao dịch & Thêm giao dịch mới với đầy đủ thông tin (tên, phân loại, thời gian, giá trị; giá trị > 0)
+            & An Huy & 06/04/2025 & Đạt & Giao dịch mới được thêm vào CSDL theo thông tin đã nhập\\
+            \hline
+        \rownumber & Thêm giao dịch & Thêm giao dịch mới với đầy đủ thông tin, giá trị < 0
+            & An Huy & 06/04/2025 & Không đạt, không có giao dịch mới trong CSDL & Giao dịch mới được thêm vào CSDL theo thông tin đã nhập\\
+            \hline
+        \rownumber & Sửa giao dịch & Sửa tên giao dịch "cat food" thành "food cat"
+            & Hữu Đức & 08/04/2025 & Đạt & Giao dịch đã chọn được cập nhật trên CSDL \\
+            \hline
+        \rownumber & Sửa giao dịch & Sửa tên giao dịch thành rỗng
+            & Hữu Đức & 08/04/2025 & Đạt & Giao dịch đã chọn không bị thay đổi, giao diện thông báo sửa thất bại\\
+            \hline
+        \rownumber & Sửa giao dịch & Sửa giá trị giao dịch thành rỗng
+            & Hữu Đức & 08/04/2025 & Đạt & Giao dịch đã chọn không bị thay đổi, giao diện thông báo sửa thất bại\\
+            \hline
+        \rownumber & Sửa giao dịch & Sửa giá trị giao dịch từ "1000" thành "-1"
+            & Hữu Đức & 08/04/2025 & Không đạt, không cập nhật được giao dịch & Giá trị giao dịch đã chọn được cập nhật thành -1\\
+            \hline
+        \rownumber & Sửa giao dịch & Sửa giá trị giao dịch thành rỗng
+            & Hữu Đức & 08/04/2025 & Đạt & Giá trị giao dịch đã chọn không bị thay đổi\\
+            \hline
+        \rownumber & Sửa giao dịch & Sửa giá trị giao dịch từ "1000" thành 100
+            & Hữu Đức & 08/04/2025 & Đạt & Giá trị giao dịch đã chọn được cập nhật thành 100\\
+            \hline
+        \rownumber & Thêm giao dịch & Thêm giao dịch mới với đầy đủ thông tin (tên, phân loại, thời gian, giá trị; giá trị > 0)
+            & An Huy & 08/04/2025 & Đạt & Giao dịch mới được thêm vào CSDL theo thông tin đã nhập\\
+            \hline
+        \rownumber & Thêm giao dịch & Thêm giao dịch mới với đầy đủ thông tin, giá trị < 0
+            & An Huy & 08/04/2025 & Đạt & Giao dịch mới được thêm vào CSDL theo thông tin đã nhập\\
+            \hline
+        \rownumber & Xóa phân loại giao dịch & Xóa phân loại giao dịch không có giao dịch
+            & Hữu Đức & 09/04/2025 & Đạt & Phân loại đã chọn được xóa khỏi CSDL\\
+            \hline
+        \rownumber & Xóa phân loại giao dịch & Xóa phân loại giao dịch có giao dịch
+            & Hữu Đức & 09/04/2025 & Đạt & Phân loại không bị xóa khỏi CSDL\\
+            \hline
+        \rownumber & Sửa giao dịch & Sửa giá trị giao dịch từ "1000" thành "-1"
+            & Hữu Đức & 09/04/2025 & Đạt & Giá trị giao dịch đã chọn được cập nhật thành -1\\
+            \hline
+        \rownumber & SQLAgent & Kiểm tra khả năng trả lời các câu hỏi truy vấn 
+            & Nguyễn Huy & 09/04/2025 & Không đạt & Trả lời đúng 15/30 câu hỏi trong bộ dữ liệu\\
+            \hline
+        \rownumber & Sửa phân loại giao dịch & Sửa tên phân loại giao dịch từ "Food" thành "Groceries"
+            & Hữu Đức & 09/04/2025 & Đạt & Tên phân loại được cập nhật trong CSDL thành "Groceries"\\
+            \hline
+        \rownumber & Sửa phân loại giao dịch & Sửa tên phân loại "Catstuff" thành rỗng
+            & Hữu Đức & 09/04/2025 & Đạt & Tên của phân loại tương ứng được giữ nguyên\\
+            \hline
+        \rownumber & Sửa phân loại giao dịch & Sửa màu đại diện phân loại giao dịch từ "\#F0FFFF" thành "\#4b0082"
+            & Hữu Đức & 09/04/2025 & Đạt & Màu của phân loại tương ứng được cập nhật thành "\#4b0082"\\
+            \hline
+        \rownumber & SQLAgent & Kiểm tra trả lời các câu hỏi truy vấn
+            & Nguyễn Huy & 12/04/2025 & Đạt & Trả lời đúng 15/30 câu hỏi trong bộ dữ liệu\\
+            \hline
+        \rownumber & SQLAgent & Kiểm tra trả lời các câu hỏi truy vấn
+            & Nguyễn Huy & 15/04/2025 & Đạt & Trả lời đúng 20/30 câu hỏi trong bộ dữ liệu\\
+            \hline
+        \rownumber & Xóa giao dịch & Xóa một giao dịch hiện trong danh sách giao dịch
+            & An Huy & 15/04/2025 & Đạt & Giao dịch tương ứng trong CSDL bị xóa\\
+            \hline
+        \rownumber & Sửa giao dịch & Sửa ghi chú giao dịch từ "alpha" thành "beta"
+            & Hữu Đức & 08/04/2025 & Đạt & Ghi chú của giao dịch đã chọn được cập nhật tương ứng \\
+            \hline
+        \rownumber & Thống kê & Thống kê chi tiêu người dùng có chọn khoảng thời gian
+            & An Huy & 16/04/2025 & Đạt & Chi tiêu người dùng được tính tổng, phân loại và hiển thị đúng\\
+            \hline
+        \rownumber & Đăng xuất & Đăng xuất 
+            & An Huy & 16/04/2025 & Đạt & Người dùng được đăng xuất, được đưa về trang đăng nhập khi cố truy cập tính năng\\
+            \hline
+        \rownumber & Thống kê & Thống kê chi tiêu nhưng không chọn khoảng thời gian thống kê
+            & An Huy & 16/04/2025 & Đạt & Ứng dụng hiện thông báo yêu cầu nhập đầy đủ thời gian, không hiện thống kê\\
+            \hline
+        \rownumber & SQLAgent & Kiểm tra tỷ lệ lỗi của hệ thống khi trả lời câu hỏi
+            & Nguyễn Huy & 16/04/2025 & Đạt & Error rate đạt 0\%\\
+            \hline
+        \rownumber & SQLAgent & Kiểm tra khả năng trả lời khi có 2 người dùng 
+            & Nguyễn Huy & 17/04/2025 & Đạt & Trả lời đúng 80\%\\
+            \hline
+        \rownumber & Supervisor & Kiểm tra khả năng trả lời các câu hỏi yêu cầu search thông tin
+            & Nguyễn Huy & 18/04/2025 & Đạt & Không lỗi trong quá trình gọi API Tavily\\
+            \hline
+        \rownumber & Chatbot & Kiểm tra khả năng trả lời câu hỏi yêu cầu phân loại
+            & Nguyễn Huy & 20/04/2025 & Đạt & Trả lời đúng 80\%\\
+            \hline
+        \rownumber & Chatbot & Kiểm tra khả năng trả lời khi có 2 người dùng
+            & Nguyễn Huy & 21/04/2025 & Đạt & Trả lời đúng 80\%\\
+            \hline
+\end{longtable}
