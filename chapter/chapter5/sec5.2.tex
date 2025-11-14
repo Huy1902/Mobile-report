@@ -1,17 +1,18 @@
-\section{Supervisor agent và các loại câu hỏi hỗ trợ}
+\section{Duckduckgo Tool}
 
-\subsection{Các loại câu hỏi hỗ trợ}
-\begin{itemize}
-  \item Những câu hỏi yêu cầu truy vấn SQL (Phân tích dữ liệu, thống kê chi tiêu, báo cáo tài chính, ...)
-  \item Những câu hỏi yêu cầu tìm kiếm trên Internet (Thông tin ngân hàng, tỷ giá, thông tin chứng khoán, ...)
-\end{itemize}
+Duckduckgo (viết tắt là DDG) là một công cụ tìm kiếm, cho phép bạn tra cứu thông tin mà không bị theo dõi hay thu thập dữ liệu cá nhân.
+Chatbot sẽ gửi yêu cầu tìm kiếm đến Duckduckgo thông qua chức năng function calling. Duckduckgo sẽ nhận đầu vào là một chuỗi kí tự tìm kiếm và rồi sẽ truy vấn để tìm ra 5 link liên quan nhất và trả về cho agent.
+Dưới đây là hình ảnh mô tả luồng hoạt động của duckduckgo tool trong hệ thống chatbot agent mà chúng tôi phát triển
 
-\subsection{Supervisor}
-Supervisor sử dụng model gemini-2.0 để phân tích câu hỏi dựa trên ngữ cảnh, đẩy vào 2 agent còn lại phân tích, sau đó nhận phản hồi
-và tổng kết và trả về người dùng.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.5\textwidth]{figures/supervisor.png}
-\caption{Supervisor Agent}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/duckduckgo_flow.png} 
+	\caption{Luồng hoạt động của duckduckgo tool trong hệ thống chatbot AI}
+	\label{fig:duckduckgo_flow}
 \end{figure}
+
+Khi LLM quyết định cần tìm kiếm, gọi Duckduckgo tool kèm theo query. 
+Rồi mở context manager \texttt{with DDGS as ddgs} khởi tạo session DuckDuckGo search.
+Sau đó gọi hàm \texttt{ddgs.search(query, max\_results=5)} 
+để lấy 5 link liên quan nhất đến \texttt{query}.
+Sau đó thực thi và trả về tối đa 5 kết quả tìm kiếm phù hợp nhất. Và sau đó LLM nhận được các link và sẽ quyết định sẽ lấy nội dung của link nào cần thiết cho yêu cầu của người dùng.

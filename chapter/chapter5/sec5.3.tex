@@ -1,28 +1,13 @@
-\section{Quản lý ngữ cảnh}
+\section{Scrape Website Tool}
 
-Sử dụng RAG-based method để quản lý ngữ cảnh cho các câu hỏi của người dùng. Các đoạn hội thoại giữa người dùng và chatbot được chia nhỏ,
-sử dụng \textbf{embedding} để lưu vào vector store. Sau đấy, khi người dùng query, hệ thống \textbf{tìm kiếm recall memories}, trả về kết quả cộng với
-thông tin cuộc hội thoại sẽ được sử dụng làm \textbf{ngữ cảnh}. Quản lý ngữ cảnh thực hiện ở \textbf{load memory} trong \textbf{supervisor agent}.
+Scrape Website là một tool được xây dựng để lấy dữ liệu từ các trang web dựa trên link mà LLM cung cấp.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{figures/LCLMsmethod.png}
-\caption{Các phương pháp lưu trữ ngữ cảnh}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/scrape_website_flow.png} 
+  \caption{Luồng hoạt động của scrape website tool trong hệ thống chatbot AI}
+  \label{fig:scrape_website_flow}
 \end{figure}
 
-\subsection{Embedding}
-Sử dụng embedding-004 của Google Vertex.
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{figures/embedding.png}
-\caption{Vertex AI Embedding-004}
-\end{figure}
-
-\subsection{Tìm kiếm recall memories}
-Kết quả là đoạn hội thoại có kết quả tính độ giống nhau cosine cao nhất.
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{figures/recall_search.png}
-\caption{Search recall memories}
-\end{figure}
-
+Tool Scrape Website sẽ nhận đàu vào là một link từ LLM trả về khi dùng duckduckgo tool để tìm kiếm.
+Tool sẽ cào website và trả về toàn bộ text. Lúc này text còn nhiều dữ liệu dư thừa vì ở dạng html, nên chúng tôi sẽ sử dụng framework BeautifulSoup để lọc dữ liệu và trả về chuối chỉ chứa nội dung của trang web.
