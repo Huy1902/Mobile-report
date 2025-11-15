@@ -1,5 +1,15 @@
 \subsection{Quản lí bộ nhớ của Chatbot}
 Ở đây chúng tôi quản lí bộ nhớ của chatbot thông qua việc sử dụng LangGraph Checkpointer.
-Mỗi cuộc trò chuyện với người dùng sẽ được định danh trong một thread\_id riêng biệt,
-giúp chatbot có thể hiểu ngữ cảnh tốt hơn.
-Và Checkpointer sẽ lưu trữ toàn bộ lịch sử tin nhắn của từng thread\_id. Điều này làm Chatbot duy trì được ngữ cảnh và cá nhân hóa với mỗi người dùng.
+Dưới đây là hình ảnh mô tả luồng hoạt động của bộ nhớ trong hệ thống chatbot agent của chúng tôi:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/memory_flow.png} 
+    \caption{Luồng hoạt động của bộ nhớ trong hệ thống chatbot AI}
+    \label{fig:memory_flow}
+\end{figure}
+
+Mỗi cuộc trò chuyện với người dùng sẽ được định danh trong một luồng đã được định danh riêng biệt,
+Và Checkpointer sẽ lưu trữ toàn bộ lịch sử tin nhắn của từng luồng đã được định danh. 
+Và mỗi khi truy vấn, chatbot sẽ lấy dữ liệu theo luồng đó và cung cấp thông tin cho LLM.
+Điều này làm Chatbot duy trì được ngữ cảnh và cá nhân hóa với mỗi lần chat.
