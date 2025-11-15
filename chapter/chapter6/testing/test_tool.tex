@@ -6,6 +6,28 @@ phần cũng như module được tích hợp trong hệ thống hoạt động 
 Kiểm thử hệ thống không chỉ là kiểm thử từng chức năng riêng lẻ mà còn chú trọng đến sự tương tác của các thành phần trong hệ thống, dữ liệu 
 luân chuyển giữa các module cũng như đáp ứng được các trừng hợp có thể xảy ra trong thực tế. 
 
-Để thực hiện kiểm thử hệ thống, nhóm sử dụng một số công cụ và phương pháp hỗ trợ nhằm kiểm tra chức năng, hiệu năng, tính ổn định và độ tin cậy 
+Để thực hiện kiểm thử hệ thống, nhóm sử dụng một số công cụ nhằm kiểm tra chức năng, hiệu năng, tính ổn định và độ tin cậy 
 của ứng dụng: 
 
+\begin{itemize}
+    \item Kiểm thử đơn vị (Unit Test) với JUnit
+        \begin{itemize}
+            \item Mục đích: Đảm bảo logic chính xác của từng thành phần mã nguồn bên phía Backend. 
+            \item Áp dụng: Sử dụng Junit để xây dựng các ca kiểm thử tự động cho các logic nghiệp vụ quan trọng như đăng nhập, mã hóa mật khẩu\dots và các thao tác CRUD với CSDl.
+        \end{itemize}
+    \item Đo lường Độ bao phủ mã (Code Coverage) với JaCoCo:
+        \begin{itemize}
+            \item Mục đích: Đánh giá chất lượng và mức độ đầy đủ của bộ Unit Test.
+            \item Áp dụng: JaCoCo được tích hợp cùng JUnit để tạo báo cáo trực quan, cho biết tỷ lệ phần trăm mã nguồn (lệnh, nhánh, dòng) đã được kiểm thử. Điều này giúp nhóm phát hiện các khu vực mã "chết" hoặc chưa được kiểm thử.
+        \end{itemize}
+    \item Kiểm thử API với Postman 
+        \begin{itemize}
+            \item Mục đích: Xác minh rằng các giao tiếp giữa Client (ứng dụng) và Server hoạt động đúng như thiết kế.
+            \item Áp dụng: Sử dụng Postman để gửi các HTTP request (GET, POST, PUT, DELETE) đến các API của hệ thống.
+        \end{itemize}
+    \item Kiểm thử Hiệu năng với JMeter:
+        \begin{itemize}
+            \item Mục đích: Đánh giá khả năng chịu tải và độ ổn định của hệ thống khi có nhiều người dùng truy cập đồng thời.
+            \item Áp dụng: JMeter được dùng để giả lập kịch bản nhiều người dùng cùng lúc thực hiện các hành động như đăng nhập, phát nhạc, và tìm kiếm. Kết quả kiểm thử giúp đo lường thời gian phản hồi của server và tìm ra các "nút thắt cổ chai" (bottleneck) về hiệu năng.
+        \end{itemize}
+\end{itemize}

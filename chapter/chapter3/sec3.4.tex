@@ -27,7 +27,7 @@ các quyết định quan trọng cũng như tương tác giữa các đối tư
 \subsection{Đăng nhập}
 Activity Diagram "Đăng nhập" mô tả quy trình mà người dùng thực hiện để đăng nhập 
 vào hệ thống. Biểu đồ này thể hiện các hoạt động chính như nhập thông tin đăng nhập, kiểm tra
-tính hợp lệ của dữ liệu, xử lý các trường hợp lỗi và kết thúc bằng việc tạo đăng nhập thành công. 
+tính hợp lệ của dữ liệu, xử lý các trường hợp lỗi và kết thúc bằng việc đăng nhập thành công. 
 
 Biểu đồ giúp minh họa rõ các hoạt động giữa người dùng và hệ thống, cho phép nhìn tổng thể các bước,
 các quyết định quan trọng cũng như tương tác giữa các đối tượng. 
@@ -52,8 +52,8 @@ các quyết định quan trọng cũng như tương tác giữa các đối tư
 
 \subsection{Tìm kiếm bài hát}
 Activity Diagram "Tìm kiếm bài hát" mô tả quy trình mà người dùng thực hiện để tìm kiếm bài hát muốn nghe 
-trên hệ thống. Biểu đồ này thể hiện các hoạt động chính như nhập cách người dùng thao tác với giao diện, nhập thông tin cần tìm kiếm, 
-hệ thống xử lý dữ liệu, xử lý các trường hợp lỗi và kết thúc bằng việc tạo tài khoản tìm thấy một loạt danh sách bài hát thành công. 
+trên hệ thống. Biểu đồ này thể hiện các hoạt động chính như cách người dùng thao tác với giao diện, nhập thông tin cần tìm kiếm, 
+hệ thống xử lý dữ liệu, xử lý các trường hợp lỗi và kết thúc bằng việc tìm thấy một loạt danh sách bài hát thành công. 
 
 Biểu đồ giúp minh họa rõ các hoạt động giữa người dùng và hệ thống, cho phép nhìn tổng thể các bước,
 các quyết định quan trọng cũng như tương tác giữa các đối tượng. 
@@ -63,3 +63,41 @@ các quyết định quan trọng cũng như tương tác giữa các đối tư
 	\caption{Biểu đồ hoạt động chức năng "Tìm kiếm bài hát"}
 \end{figure}
 
+\subsection{Xem bài hát gần đây}
+Activity Diagram "Xem bài hát gần đây" mô tả quy trình mà người dùng thực hiện để xem danh sách các bài hát đã nghe 
+trên hệ thống. Biểu đồ này thể hiện các hoạt động chính như cách người dùng thao tác với giao diện, hệ thống xử lý dữ liệu, xử lý các trường hợp lỗi 
+và kết thúc bằng việc hiện lên một loạt danh sách bài hát thành công. 
+
+Biểu đồ giúp minh họa rõ các hoạt động giữa người dùng và hệ thống, cho phép nhìn tổng thể các bước,
+các quyết định quan trọng cũng như tương tác giữa các đối tượng. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/historysongs-activity.png}
+	\caption{Biểu đồ hoạt động chức năng "Xem bài hát gần đây"}
+\end{figure}
+
+\subsection{Lưu bài hát vào yêu thích}
+Activity Diagram "Lưu bài hát vào yêu thích" mô tả quy trình mà người dùng thực hiện để lưu bài hát vào danh sách các bài hát yêu thích
+trên hệ thống. Biểu đồ này thể hiện các hoạt động chính như cách người dùng thao tác với giao diện, hệ thống xử lý dữ liệu 
+và kết thúc bằng việc lưu bài hát vào danh sách yêu thích thành công. 
+
+Biểu đồ giúp minh họa rõ các hoạt động giữa người dùng và hệ thống, cho phép nhìn tổng thể các bước,
+các quyết định quan trọng cũng như tương tác giữa các đối tượng. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/addfavorite-activity.png}
+	\caption{Biểu đồ hoạt động chức năng "Lưu bài hát vào yêu thích"}
+\end{figure}
+
+\subsection{Sửa thông tin cá nhân}
+Activity Diagram "Sửa thông tin cá nhân" mô tả quy trình mà người dùng thực hiện để cập nhật thông tin cá nhân như firstname,lastname, mật khẩu, avatar,\dots
+. Biểu đồ này thể hiện các hoạt động chính như cách người dùng thao tác với giao diện, hệ thống xử lý dữ liệu 
+và kết thúc bằng việc thông tin người dùng được cập nhật thành công. 
+
+Biểu đồ giúp minh họa rõ các hoạt động giữa người dùng và hệ thống, cho phép nhìn tổng thể các bước,
+các quyết định quan trọng cũng như tương tác giữa các đối tượng. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/updateprofile-activity.png}
+	\caption{Biểu đồ hoạt động chức năng "Sửa thông tin cá nhân"}
+\end{figure}
