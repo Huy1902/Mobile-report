@@ -1,228 +1,183 @@
-\subsection{Các ca kiểm thử}
-\begin{longtable}{ p{0.7cm}|p{1.9cm}|p{2.5cm}|p{3.3cm}|p{2cm}|p{2cm}|p{1.9cm}|}
-    \hline
-    \textbf{STT} & \textbf{Tên ca kiểm thử} & \textbf{Mô tả} & \textbf{Đầu vào} & \textbf{Kết quả mong đợi} & \textbf{Kết quả thực tế} & \textbf{Trạng thái} \\
-    \hline
-    \endfirsthead
-
-    \hline
-    \textbf{STT} & \textbf{Tên ca kiểm thử} & \textbf{Mô tả} & \textbf{Đầu vào} & \textbf{Kết quả mong đợi} & \textbf{Kết quả thực tế} & \textbf{Trạng thái} \\
-    \hline
-    \endhead
-
-    \rownumber & Đăng ký & Kiểm thử chức năng đăng ký thành công &
-    firstname: "tran", lastname: "dinh", email: "23020043@vnu.edu.vn", password: "123456", confirmPassword: "123456" &
-    Tài khoản mới thêm vào CSDL, chuyển hướng đến trang đăng nhập &
-    Tài khoản mới thêm vào CSDL, chuyển hướng đến trang đăng nhập &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng ký-trùng email  & Kiểm thử đăng ký khi tài khoản đã tồn tại &
-    firstname: "tran", lastname: "dinh", email: "23020043@vnu.edu.vn", password: "123456", confirmPassword: "123456" &
-    Thông báo lỗi: "Email already exists" &
-    Thông báo lỗi: "Email already exists" &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng ký-xác nhận mật khẩu sai & Kiểm thử password khác confirmPassword &
-    firstname: "tran", lastname: "dinh", email: "23020044@vnu.edu.vn", password: "123456", confirmPassword: "12345677" &
-    Thông báo lỗi: "Passwords do not match" &
-    Thông báo lỗi: "Passwords do not match" &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng ký-thiếu firstname & Kiểm thử đăng ký thiếu firstname &
-    firstname: "", lastname: "dinh", email: "23020044@vnu.edu.vn", password: "1234567", confirmPassword: "1234567" &
-    Thông báo lỗi: "Field must not be blank" &
-    Thông báo lỗi: "Field must not be blank" &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng ký-thiếu lastname & Kiểm thử đăng ký thiếu lastname &
-    firstname: "tran", lastname: "", email: "23020044@vnu.edu.vn", password: "1234567", confirmPassword: "1234567" &
-    Thông báo lỗi: "Field must not be blank" &
-    Thông báo lỗi: "Field must not be blank" &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng ký-thiếu email & Kiểm thử đăng ký thiếu email &
-    firstname: "tran", lastname: "dinh", email: "", password: "1234567", confirmPassword: "1234567" &
-    Thông báo lỗi: "Field must not be blank" &
-    Thông báo lỗi: "Field must not be blank" &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng ký-thiếu password & Kiểm thử đăng ký thiếu password &
-    firstname: "tran", lastname: "dinh", email: "23020044@vnu.edu.vn", password: "", confirmPassword: "1234567" &
-    Thông báo lỗi: "Field must not be blank" &
-    Thông báo lỗi: "Field must not be blank" &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng ký-thiếu confirmPassword & Kiểm thử đăng ký thiếu confirmPassword &
-    firstname: "tran", lastname: "dinh", email: "23020044@vnu.edu.vn", password: "1234567", confirmPassword: "" &
-    Thông báo lỗi: "Field must not be blank" &
-    Thông báo lỗi: "Field must not be blank" &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng nhập-sai mật khẩu & Kiểm thử sai mật khẩu &
-    email: "23020043@vnu.edu.vn", password: "12345677" &
-    Thông báo lỗi: "Incorrect password" &
-    Thông báo lỗi: "Incorrect password" &
-    Đạt \\
-    \hline
-    
-
-    \rownumber & Đăng nhập-không tìm thấy email & Kiểm thử email chưa được đăng ký &
-    email: "23020044@gmail.com", password: "123456"&
-    Thông báo lỗi: "Email not found" &
-    Thông báo lỗi: "Email not found" &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng nhập-Google & Kiểm thử đăng nhập bằng Google thành công &
-    Người dùng chọn "Login With Google" &
-    Đăng nhập thành công, chuyển hướng đến trang home &
-    Đăng nhập thành công, chuyển hướng đến trang home &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng nhập & Kiểm thử đăng nhập thành công &
-    email: "23020043@vnu.edu.vn", password: "123456" &
-    Đăng nhập thành công, chuyển hướng đến trang home &
-    Đăng nhập thành công, chuyển hướng đến trang home &
-    Đạt \\
-    \hline
-
-    \rownumber & Đăng xuất & Kiểm thử chức năng đăng xuất thành công &
-    Người dùng chọn "Logout" &
-    Đăng xuất thành công, chuyển hướng đến trang đăng nhập &
-    Đăng xuất thành công, chuyển hướng đến trang đăng nhập &
-    Đạt \\
-    \hline
-
-    \rownumber & Quên mật khẩu-gửi otp & Kiểm thử chức năng gửi otp khi quên mật khẩu thành công &
-    email: "23020043@vnu.edu.vn" &
-    Hệ thống gửi OTP: "7184920" đến email người dùng, chuyển đến giao diện xác nhận OTP &
-    Hệ thống gửi OTP: "7184920" đến email người dùng, chuyển đến giao diện xác nhận OTP &
-    Đạt \\
-    \hline
-    
-    \rownumber & Quên mật khẩu-xác nhận otp sai & Kiểm thử chức năng xác nhận otp quên mật khẩu không đúng&
-    OTP: "7184921" &
-    Thông báo lỗi: "Invalid OTP" &
-    Thông báo lỗi: "Invalid OTP" &
-    Đạt \\
-    \hline
-
-    \rownumber & Quên mật khẩu-xác nhận otp & Kiểm thử chức năng xác nhận otp quên mật khẩu thành công &
-    OTP: "7184920" &
-    Hệ thống xác nhận OTP thành công, chuyển đến giao diện tạo mật khẩu mới &
-    Hệ thống xác nhận OTP thành công, chuyển đến giao diện tạo mật khẩu mới &
-    Đạt \\
-    \hline
-
-    \rownumber & Quên mật khẩu-tạo mật khẩu mới & Kiểm thử chức năng xác nhận otp quên mật khẩu thành công &
-    newPassword: "5zz2n8ce", confirmPassword: "5zz2n8ce" &
-    Tạo mật khẩu mới thành công, chuyển đến giao diện đăng nhập &
-    Tạo mật khẩu mới thành công, chuyển đến giao diện đăng nhập &
-    Đạt \\
-    \hline
-
-    \rownumber & Tìm kiếm bài hát & Kiểm thử tìm kiếm theo keyword &
-    keyword: "Taylor" &
-    Hiển thị danh sách bài hát liên quan đến keyword &
-    Hiển thị danh sách bài hát liên quan đến keyword &
-    Đạt \\
-    \hline
-
-    \rownumber & Sửa thông tin cá nhân-mật khẩu & Kiểm thử đổi mật khẩu thành công &
-    oldPassword: "123456", newPassword: "123456789" &
-    Đổi mật khẩu thành công &
-    Đổi mật khẩu thành công &
-    Đạt \\
-    \hline
-
-    \rownumber & Sửa thông tin cá nhân-sai mật khẩu & Kiểm thử đổi mật khẩu khi điền sai mật khẩu cũ &
-    oldPassword: "12345689", newPassword: "12345678" &
-    Thông báo lỗi "Incorrect password" &
-    Thông báo lỗi "Incorrect password" &
-    Đạt \\
-    \hline
-
-    \rownumber & Sửa thông tin cá nhân-avatr & Kiểm thử đổi avatar thành công &
-    Một bức ảnh chọn từ máy hoặc chụp trực tiếp &
-    Avatar cập nhật thành công &
-    Avatar cập nhật thành công &
-    Đạt \\
-    \hline
-
-    \rownumber & Sửa thông tin cá nhân & Kiếm thử đổi thông tin cá nhân của người dùng thành công &
-    firstname: "tran", lastname: "dinh", address: "Hanoi", phone: "0398880776" &
-    Đổi thông tin thành công, giao diện hiện thông tin vừa cập nhật &
-    Đổi thông tin thành công, giao diện hiện thông tin vừa cập nhật &
-    Đạt \\
-    \hline
-
-    \rownumber & Sửa thông tin cá nhân-thiếu firstname & Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu firstname &
-    firstname: "", lastname: "dinh", address: "Hanoi", phone: "0398880776" &
-    Thông báo lỗi: "Field must not be blank" &    
-    Thông báo lỗi: "Field must not be blank" &
-    Đạt \\
-    \hline
-
-    \rownumber & Sửa thông tin cá nhân-thiếu lastname & Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu lastname &
-    firstname: "tran", lastname: "", address: "Hanoi", phone: "0398880776" &
-    Thông báo lỗi: "Field must not be blank" &    
-    Thông báo lỗi: "Field must not be blank" &
-    Đạt \\
-    \hline
-
-    \rownumber & Sửa thông tin cá nhân-thiếu address & Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu address &
-    firstname: "tran", lastname: "dinh", address: "", phone: "0398880776" &
-    Thông báo lỗi: "Field must not be blank" &    
-    Thông báo lỗi: "Field must not be blank" &
-    Đạt \\
-    \hline
-
-    \rownumber & Sửa thông tin cá nhân-thiếu phone & Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu phone &
-    firstname: "tran", lastname: "dinh", address: "hanoi", phone: "" &
-    Thông báo lỗi: "Field must not be blank" &    
-    Thông báo lỗi: "Field must not be blank" &
-    Đạt \\
-    \hline
-
-    \rownumber & Phát bài hát & Kiếm thử phát bài hát thành công &
-    Người dùng chọn bài hát muốn nghe &
-    Chuyển sang giao diện bài hát, bài hát bắt đầu phát nhạc &    
-    Chuyển sang giao diện bài hát, bài hát bắt đầu phát nhạc &    
-    Đạt \\
-    \hline
-
-    \rownumber & Lưu bài hát yêu thích & Kiếm thử lưu bài hát khỏi danh sách yêu thích &
-    Người dùng đang ở trong giao diện bài hát, chọn nút yêu thích &
-    Bài hát được thêm vào danh sách yêu thích &    
-    Bài hát được thêm vào danh sách yêu thích &    
-    Đạt \\
-    \hline
-
-    \rownumber & Xóa bài hát yêu thích & Kiếm thử xóa bài hát khỏi danh sách yêu thích &
-    Người dùng đang ở trong giao diện danh sách bài hát yêu thích, chọn bài hát xóa khỏi yêu thích &
-    Bài hát được xóa khỏi danh sách yêu thích &    
-    Bài hát được xóa khỏi danh sách yêu thích &    
-    Đạt \\
-    \hline
-
-    \rownumber & Xem bài hát gần đây & Kiếm thử xem bài hát người dùng đã nghe &
-    Người dùng đăng nhập thành công &
-    Danh sách bài hát đã nghe gần đây hiện trên giao diện home &    
-    Danh sách bài hát đã nghe gần đây hiện trên giao diện home &    
-    Đạt \\
-    \hline
-
-    \rownumber & Performance register & Number of
-    users: 100,
+\subsection{Thiết kế các ca kiểm thử}
+\begin{longtable}{|p{2.2cm}|p{3cm}|p{5.4cm}|p{4.6cm}|}
+\hline
+\textbf{Tên ca kiểm thử} & \textbf{Mô tả} & \textbf{Đầu vào} & \textbf{Kết quả mong đợi} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Tên ca kiểm thử} & \textbf{Mô tả} & \textbf{Đầu vào} & \textbf{Kết quả mong đợi} \\
+\hline
+\endhead
+\hypertarget{tc:dk-thanhcong}{Đăng ký} &
+Kiểm thử chức năng đăng ký thành công &
+firstname: "tran", lastname: "dinh",
+email: "23020043@vnu.edu.vn",
+password: "123456", confirmPassword: "123456" &
+Tài khoản mới thêm vào CSDL, chuyển hướng đến trang đăng nhập \\
+\hline
+\hypertarget{tc:dk-trungemail}{Đăng ký-trùng email} &
+Kiểm thử đăng ký khi tài khoản đã tồn tại &
+firstname: "tran", lastname: "dinh",
+email: "23020043@vnu.edu.vn",
+password: "123456", confirmPassword: "123456" &
+Thông báo lỗi: "Email already exists" \\
+\hline
+\hypertarget{tc:dk-xnmk-sai}{Đăng ký-xác nhận mật khẩu sai} &
+Kiểm thử password khác confirmPassword &
+firstname: "tran", lastname: "dinh",
+email: "23020044@vnu.edu.vn",
+password: "123456", confirmPassword: "12345677" &
+Thông báo lỗi: "Passwords do not match" \\
+\hline
+\hypertarget{tc:dk-thieu-firstname}{Đăng ký-thiếu firstname} &
+Kiểm thử đăng ký thiếu firstname &
+firstname: "", lastname: "dinh",
+email: "23020044@vnu.edu.vn",
+password: "1234567", confirmPassword: "1234567" &
+Thông báo lỗi: "Field must not be blank" \\
+\hline
+\hypertarget{tc:dk-thieu-lastname}{Đăng ký-thiếu lastname} &
+Kiểm thử đăng ký thiếu lastname &
+firstname: "tran", lastname: "",
+email: "23020044@vnu.edu.vn",
+password: "1234567", confirmPassword: "1234567" &
+Thông báo lỗi: "Field must not be blank" \\
+\hline
+\hypertarget{tc:dk-thieu-email}{Đăng ký-thiếu email} &
+Kiểm thử đăng ký thiếu email &
+firstname: "tran", lastname: "dinh",
+email: "", password: "1234567",
+confirmPassword: "1234567" &
+Thông báo lỗi: "Field must not be blank" \\
+\hline
+\hypertarget{tc:dk-thieu-password}{Đăng ký-thiếu password} &
+Kiểm thử đăng ký thiếu password &
+firstname: "tran", lastname: "dinh",
+email: "23020044@vnu.edu.vn",
+password: "", confirmPassword: "1234567" &
+Thông báo lỗi: "Field must not be blank" \\
+\hline
+\hypertarget{tc:dk-thieu-confirmpw}{Đăng ký-thiếu confirmPassword} &
+Kiểm thử đăng ký thiếu confirmPassword &
+firstname: "tran", lastname: "dinh",
+email: "23020044@vnu.edu.vn",
+password: "1234567", confirmPassword: "" &
+Thông báo lỗi: "Field must not be blank" \\
+\hline
+\hypertarget{tc:dn-sai-mk}{Đăng nhập-sai mật khẩu} &
+Kiểm thử sai mật khẩu &
+email: "23020043@vnu.edu.vn", password: "12345677" &
+Thông báo lỗi: "Incorrect password" \\
+\hline
+\hypertarget{tc:dn-khongthay-email}{Đăng nhập-không tìm thấy email} &
+Kiểm thử email chưa được đăng ký &
+email: "23020044@gmail.com", password: "123456" &
+Thông báo lỗi: "Email not found" \\
+\hline
+\hypertarget{tc:dn-google}{Đăng nhập-Google} &
+Kiểm thử đăng nhập bằng Google thành công &
+Người dùng chọn "Login With Google" &
+Đăng nhập thành công, chuyển hướng đến trang home \\
+\hline
+\hypertarget{tc:dn-thanhcong}{Đăng nhập} &
+Kiểm thử đăng nhập thành công &
+email: "23020043@vnu.edu.vn", password: "123456" &
+Đăng nhập thành công, chuyển hướng đến trang home \\
+\hline
+\hypertarget{tc:dx-thanhcong}{Đăng xuất} &
+Kiểm thử chức năng đăng xuất thành công &
+Người dùng chọn "Logout" &
+Đăng xuất thành công, chuyển hướng đến trang đăng nhập \\
+\hline
+\hypertarget{tc:qpw-gui-otp}{Quên mật khẩu-gửi otp} &
+Kiểm thử chức năng gửi otp khi quên mật khẩu thành công &
+email: "23020043@vnu.edu.vn" &
+Hệ thống gửi OTP: "7184920" đến email người dùng, chuyển đến giao diện xác nhận OTP \\
+\hline
+\hypertarget{tc:qpw-otp-sai}{Quên mật khẩu-xác nhận otp sai} &
+Kiểm thử chức năng xác nhận otp quên mật khẩu không đúng &
+OTP: "7184921" &
+Thông báo lỗi: "Invalid OTP" \\
+\hline
+\hypertarget{tc:qpw-otp-dung}{Quên mật khẩu-xác nhận otp} &
+Kiểm thử chức năng xác nhận otp quên mật khẩu thành công &
+OTP: "7184920" &
+Hệ thống xác nhận OTP thành công, chuyển đến giao diện tạo mật khẩu mới \\
+\hline
+\hypertarget{tc:qpw-tao-mk-moi}{Quên mật khẩu-tạo mật khẩu mới} &
+Kiểm thử chức năng xác nhận otp quên mật khẩu thành công &
+newPassword: "5zz2n8ce", confirmPassword: "5zz2n8ce" &
+Tạo mật khẩu mới thành công, chuyển đến giao diện đăng nhập \\
+\hline
+\hypertarget{tc:search-track}{Tìm kiếm bài hát} &
+Kiểm thử tìm kiếm theo keyword &
+keyword: "Taylor" &
+Hiển thị danh sách bài hát liên quan đến keyword \\
+\hline
+\hypertarget{tc:doi-mk}{Sửa thông tin cá nhân-mật khẩu} &
+Kiểm thử đổi mật khẩu thành công &
+oldPassword: "123456", newPassword: "123456789" &
+Đổi mật khẩu thành công \\
+\hline
+\hypertarget{tc:doi-mk-sai}{Sửa thông tin cá nhân-sai mật khẩu} &
+Kiểm thử đổi mật khẩu khi điền sai mật khẩu cũ &
+oldPassword: "12345689", newPassword: "12345678" &
+Thông báo lỗi "Incorrect password" \\
+\hline
+\hypertarget{tc:doi-avatar}{Sửa thông tin cá nhân-avatr} &
+Kiểm thử đổi avatar thành công &
+Một bức ảnh chọn từ máy hoặc chụp trực tiếp &
+Avatar cập nhật thành công \\
+\hline
+\hypertarget{tc:doi-profile}{Sửa thông tin cá nhân} &
+Kiếm thử đổi thông tin cá nhân của người dùng thành công &
+firstname: "tran", lastname: "dinh", address: "Hanoi", phone: "0398880776" &
+Đổi thông tin thành công, giao diện hiện thông tin vừa cập nhật \\
+\hline
+\hypertarget{tc:doi-profile-missing-first}{Sửa thông tin cá nhân-thiếu firstname} &
+Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu firstname &
+firstname: "", lastname: "dinh", address: "Hanoi", phone: "0398880776" &
+Thông báo lỗi: "Field must not be blank" \\
+\hline
+\hypertarget{tc:doi-profile-missing-last}{Sửa thông tin cá nhân-thiếu lastname} &
+Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu lastname &
+firstname: "tran", lastname: "", address: "Hanoi", phone: "0398880776" &
+Thông báo lỗi: "Field must not be blank" \\
+\hline
+\hypertarget{tc:doi-profile-missing-addr}{Sửa thông tin cá nhân-thiếu address} &
+Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu address &
+firstname: "tran", lastname: "dinh", address: "", phone: "0398880776" &
+Thông báo lỗi: "Field must not be blank" \\
+\hline
+\hypertarget{tc:doi-profile-missing-phone}{Sửa thông tin cá nhân-thiếu phone} &
+Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu phone &
+firstname: "tran", lastname: "dinh", address: "hanoi", phone: "" &
+Thông báo lỗi: "Field must not be blank" \\
+\hline
+\hypertarget{tc:play-track}{Phát bài hát} &
+Kiếm thử phát bài hát thành công &
+Người dùng chọn bài hát muốn nghe &
+Chuyển sang giao diện bài hát, bài hát bắt đầu phát nhạc \\
+\hline
+\hypertarget{tc:add-fav}{Lưu bài hát yêu thích} &
+Kiếm thử lưu bài hát khỏi danh sách yêu thích &
+Người dùng đang ở trong giao diện bài hát, chọn nút yêu thích &
+Bài hát được thêm vào danh sách yêu thích \\
+\hline
+\hypertarget{tc:del-fav}{Xóa bài hát yêu thích} &
+Kiếm thử xóa bài hát khỏi danh sách yêu thích &
+Người dùng đang ở trong giao diện danh sách bài hát yêu thích, chọn bài hát xóa khỏi yêu thích &
+Bài hát được xóa khỏi danh sách yêu thích \\
+\hline
+\hypertarget{tc:view-recent}{Xem bài hát gần đây} &
+Kiếm thử xem bài hát người dùng đã nghe &
+Người dùng đăng nhập thành công &
+Danh sách bài hát đã nghe gần đây hiện trên giao diện home \\
+\hline
+\hypertarget{tc:perf-basic}{Performance register} &
+Kiểm thử hiệu năng luồng hoạt động cơ bản hệ thống &
+Number of
+users: 100,
 Ramp up: 5,
 Host:
 localhost:4010,
@@ -240,14 +195,83 @@ GET /tracks/next/33333333-3333-3333-3333-333333333333
 POST /favorites/add
 GET /favorites
 POST /favorites/delete
-POST /auth/logout
- &
-    Kiểm thử hiệu năng luồng hoạt động cơ bản hệ thống &
-    none &    
-    Max < 1.9s, Fails: 0, RPM/s: 166 &    
-    Đạt \\
-    \hline
+POST /auth/logout  &
+none \\
+\hline
+\end{longtable}
 
+\subsection{Thực thi các ca kiểm thử}
+\begin{longtable}{|p{0.7cm}|p{3.0cm}|p{2.6cm}|p{2.6cm}|p{3.9cm}|p{1.2cm}|}
+\hline
+\textbf{STT} & \textbf{Tên ca kiểm thử} & \textbf{Ngày kiểm thử} & \textbf{Người kiểm thử} & \textbf{Kết quả thực tế} & \textbf{Trạng thái} \\
+\hline
+\endfirsthead
+\hline
+\textbf{STT} & \textbf{Tên ca kiểm thử} & \textbf{Ngày kiểm thử} & \textbf{Người kiểm thử} & \textbf{Kết quả thực tế} & \textbf{Trạng thái} \\
+\hline
+\endhead
 
-    \endlastfoot
+1  & \hyperlink{tc:dk-thanhcong}{Đăng ký} & --- & --- & Tài khoản mới thêm vào CSDL, chuyển hướng đến trang đăng nhập & Đạt \\
+\hline
+2  & \hyperlink{tc:dk-trungemail}{Đăng ký-trùng email} & --- & --- & Thông báo lỗi: ``Email already exists'' & Đạt \\
+\hline
+3  & \hyperlink{tc:dk-xnmk-sai}{Đăng ký-xác nhận mật khẩu sai} & --- & --- & Thông báo lỗi: ``Passwords do not match'' & Đạt \\
+\hline
+4  & \hyperlink{tc:dk-thieu-firstname}{Đăng ký-thiếu firstname} & --- & --- & Thông báo lỗi: ``Field must not be blank'' & Đạt \\
+\hline
+5  & \hyperlink{tc:dk-thieu-lastname}{Đăng ký-thiếu lastname} & --- & --- & Thông báo lỗi: ``Field must not be blank'' & Đạt \\
+\hline
+6  & \hyperlink{tc:dk-thieu-email}{Đăng ký-thiếu email} & --- & --- & Thông báo lỗi: ``Field must not be blank'' & Đạt \\
+\hline
+7  & \hyperlink{tc:dk-thieu-password}{Đăng ký-thiếu password} & --- & --- & Thông báo lỗi: ``Field must not be blank'' & Đạt \\
+\hline
+8  & \hyperlink{tc:dk-thieu-confirmpw}{Đăng ký-thiếu confirmPassword} & --- & --- & Thông báo lỗi: ``Field must not be blank'' & Đạt \\
+\hline
+9  & \hyperlink{tc:dn-sai-mk}{Đăng nhập-sai mật khẩu} & --- & --- & Thông báo lỗi: ``Incorrect password'' & Đạt \\
+\hline
+10 & \hyperlink{tc:dn-khongthay-email}{Đăng nhập-không tìm thấy email} & --- & --- & Thông báo lỗi: ``Email not found'' & Đạt \\
+\hline
+11 & \hyperlink{tc:dn-google}{Đăng nhập-Google} & --- & --- & Đăng nhập thành công, chuyển hướng đến trang home & Đạt \\
+\hline
+12 & \hyperlink{tc:dn-thanhcong}{Đăng nhập} & --- & --- & Đăng nhập thành công, chuyển hướng đến trang home & Đạt \\
+\hline
+13 & \hyperlink{tc:dx-thanhcong}{Đăng xuất} & --- & --- & Đăng xuất thành công, chuyển hướng đến trang đăng nhập & Đạt \\
+\hline
+14 & \hyperlink{tc:qpw-gui-otp}{Quên mật khẩu-gửi otp} & --- & --- & Hệ thống gửi OTP (vd ``7184920''), chuyển đến giao diện xác nhận OTP & Đạt \\
+\hline
+15 & \hyperlink{tc:qpw-otp-sai}{Quên mật khẩu-xác nhận otp sai} & --- & --- & Thông báo lỗi: ``Invalid OTP'' & Đạt \\
+\hline
+16 & \hyperlink{tc:qpw-otp-dung}{Quên mật khẩu-xác nhận otp} & --- & --- & Xác nhận OTP thành công, chuyển đến giao diện tạo mật khẩu mới & Đạt \\
+\hline
+17 & \hyperlink{tc:qpw-tao-mk-moi}{Quên mật khẩu-tạo mật khẩu mới} & --- & --- & Tạo mật khẩu mới thành công, chuyển đến giao diện đăng nhập & Đạt \\
+\hline
+18 & \hyperlink{tc:search-track}{Tìm kiếm bài hát} & --- & --- & Hiển thị danh sách bài hát liên quan đến \textit{keyword} & Đạt \\
+\hline
+19 & \hyperlink{tc:doi-mk}{Sửa thông tin cá nhân-mật khẩu} & --- & --- & Đổi mật khẩu thành công & Đạt \\
+\hline
+20 & \hyperlink{tc:doi-mk-sai}{Sửa thông tin cá nhân-sai mật khẩu} & --- & --- & Thông báo lỗi ``Incorrect password'' & Đạt \\
+\hline
+21 & \hyperlink{tc:doi-avatar}{Sửa thông tin cá nhân-avatar} & --- & --- & Avatar cập nhật thành công & Đạt \\
+\hline
+22 & \hyperlink{tc:doi-profile}{Sửa thông tin cá nhân} & --- & --- & Đổi thông tin thành công, giao diện hiện thông tin vừa cập nhật & Đạt \\
+\hline
+23 & \hyperlink{tc:doi-profile-missing-first}{Sửa thông tin cá nhân-thiếu firstname} & --- & --- & Thông báo lỗi: ``Field must not be blank'' & Đạt \\
+\hline
+24 & \hyperlink{tc:doi-profile-missing-last}{Sửa thông tin cá nhân-thiếu lastname} & --- & --- & Thông báo lỗi: ``Field must not be blank'' & Đạt \\
+\hline
+25 & \hyperlink{tc:doi-profile-missing-addr}{Sửa thông tin cá nhân-thiếu address} & --- & --- & Thông báo lỗi: ``Field must not be blank'' & Đạt \\
+\hline
+26 & \hyperlink{tc:doi-profile-missing-phone}{Sửa thông tin cá nhân-thiếu phone} & --- & --- & Thông báo lỗi: ``Field must not be blank'' & Đạt \\
+\hline
+27 & \hyperlink{tc:play-track}{Phát bài hát} & --- & --- & Chuyển sang giao diện bài hát, bài hát bắt đầu phát nhạc & Đạt \\
+\hline
+28 & \hyperlink{tc:add-fav}{Lưu bài hát yêu thích} & --- & --- & Bài hát được thêm vào danh sách yêu thích & Đạt \\
+\hline
+29 & \hyperlink{tc:del-fav}{Xóa bài hát yêu thích} & --- & --- & Bài hát được xóa khỏi danh sách yêu thích & Đạt \\
+\hline
+30 & \hyperlink{tc:view-recent}{Xem bài hát gần đây} & --- & --- & Danh sách bài hát đã nghe gần đây hiện trên giao diện home & Đạt \\
+\hline
+31 & \hyperlink{tc:perf-basic}{Hiệu năng - luồng cơ bản} & --- & --- & Max $< 1.9$s, Fails: 0, RPM/s: 166 & Đạt \\
+\hline
+
 \end{longtable}
