@@ -4,38 +4,41 @@
 
 \subsection{Chatbot}
 \label{sec:sequence_chatbot}
-Supervisor trực tiếp nhận câu hỏi từ chatbot system, phân tích (áp dụng
-Chain of Thinking). Khi nhận được câu hỏi, hệ thống gửi cho Supervisor, 
-Supervisor sẽ quyết định đây có yêu cầu query database
-hay không. Nếu có, định tuyến tới Querier, ngược lại tới Researcher (search agent).
+Quá trình hoạt động của chatbot được mô tả như sau. Khi người dùng gửi câu hỏi thì 
+sẽ có 2 loại dữ liệu nhận vào là văn bản và âm thanh.
+Đối với dữ liệu là âm thanh, hệ thống sẽ chuyển đổi âm thanh thành văn bản và trả ngược về cho ứng dụng.
+Sau đó, ứng dụng sẽ trả về cho ứng dụng là văn bản đã được chuyển đổi từ giọng nói. Sau đó,
+ứng dụng sẽ gọi API của chatbot với đầu vào là dạng văn bản.
+Ở đây chúng tôi sử dụng model Whisper để chuyển đổi giọng nói thành văn bản. 
+Dưới đây là hình ảnh mô tả quá trình này:
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{figures/voice_to_text.png}
+	\caption{Biểu đồ tuần tự cho quá trình chuyển đổi giọng nói thành văn bản}
+	\label{fig:voice_to_text}
+\end{figure}
 
-Querier làm các bước sau:
+Còn đối với dữ liệu là văn bản, người dùng sẽ gọi trực tiếp API của chatbot với đầu vào là văn bản.
+Và sau khi nhận được yêu cầu từ ứng dụng, chatbot sẽ lấy dữ liệu cũ (nếu có) theo luồng được định danh đối với mỗi chuỗi đầu vào.
+Nếu chưa có dữ liệu cũ, chatbot sẽ tạo một luồng mới để lưu trữ dữ liệu dùng cho sau này.
+Sau đó, chatbot sẽ tổng hợp cả dữ liệu cũ theo luồng và dữ liệu mới từ người dùng để tạo thành một đầu vào hoàn chỉnh.
+Tiếp theo, chatbot sẽ đưa chuỗi đã được tổng hợp nào tạo thành một yêu cầu hoàn chỉnh và gửi đến LLM để xử lý.
+Lúc này LLM sẽ phân tích và xử lý yêu cầu. Nếu cần phải dùng đến các tool hỗ trợ, LLM sẽ có thể gọi các tool như:
 \begin{itemize}
-    \item Sinh câu lệnh SQL, yêu cầu Verifier xác nhận (1)
-    \item Nếu không có lỗi, gửi câu lệnh SQL tới database, nếu có lỗi
-    lặp lại từ (1) (2)
-    \item Nhận kết quả từ database (3)
-    \item Yêu cầu Evaluator đánh giá kết quả (4)
-    \item Nhận kết quả đánh giá từ Evaluator, đạt gửi tới Supervisor,
-    nếu không lặp lại từ bước (1) (5)
+	\item Duckduckgo: để tìm kiếm các trang web liên quan đến dữ liệu mà LLM yêu cầu.
+	\item ScrapeWebsite: để trích xuất dữ liệu từ các trang web mà LLM muốn lấy thông tin.
 \end{itemize}
-
-Researcher làm các bước sau:
-\begin{itemize}
-    \item Nhận câu hỏi từ Supervisor (1)
-    \item Gọi Tavily để tìm kiếm thông tin (2)
-    \item Nhận kết quả từ Tavily (3)
-    \item Reformat và gửi trả lại cho Supervisor (4)
-\end{itemize}
-Sau đó, Supervisor sẽ tổng hợp kết quả,
-đưa ra câu trả lời cho người dùng. 
+Sau khi có được đầy đủ các thông tin cần thiết để LLM sẽ tổng hợp và tạo ra câu trả lời cuối cùng.
+Cuối cùng, chatbot sẽ lưu lại dữ liệu mới vào luồng tương ứng và có thể xử lý dữ liệu về dạng văn bản hoàn chỉnh,
+rõ ràng rồi trả về cho ứng dụng dữ liệu cuối cùng.
 Hình trang tiếp theo mô tả quá trình này.
 \newpage
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=1\textwidth]{figures/chatbot.png}
-%   \caption{Biểu đồ tuần tự cho chatbot}
-% \end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{figures/sequence-chatbot.png}
+	\caption{Biểu đồ tuần tự cho chatbot}
+	\label{fig:sequence-chatbot}
+\end{figure}
 
 \subsection{Đăng ký}
 \begin{itemize}
