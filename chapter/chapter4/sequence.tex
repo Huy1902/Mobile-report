@@ -43,7 +43,7 @@ Hình trang tiếp theo mô tả quá trình này.
 \subsection{Đăng ký}
 \begin{itemize}
 	\item Người dùng nhấn "Sign up for free", giao diện hiển thị form đăng ký.
-	\item Gửi thông tin đăng ký tới Controller, kiểm tra định dạng và tính hợp lệ của dữ liệu.
+	\item Gửi thông tin đăng ký qua API Gateway tới Controller, kiểm tra định dạng và tính hợp lệ của dữ liệu.
 	\item Nếu thông tin hợp lệ, gửi thông tin cho Service kiểm tra email đã tồn tại chưa, nếu không hiển thị thông báo lỗi.
 	\item Nếu email chưa tồn tại, gửi thông tin qua Repo, lưu vào CSDl, nếu không hiển thị thông báo lỗi.
 	\item Chuyển đến giao diện đăng nhập.
@@ -52,13 +52,13 @@ Hình trang tiếp theo mô tả quá trình này.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/sequence-register.png}
-	\caption{Biểu đồ tuần tự cho chức năng đăng ký}
+	\caption{Biểu đồ tuần tự cho chức năng đăng ký}	
 \end{figure}
 
 \subsection{Đăng nhập}
 \begin{itemize}
 	\item Người dùng nhấn "Login" và nhập email và mật khẩu hoặc nhấn "Login with Google".
-	\item Gửi thông tin đăng nhập tới Controller, kiểm tra định dạng.
+	\item Gửi thông tin đăng nhập qua API Gateway tới Controller, kiểm tra định dạng.
 	\item Nếu thông tin hợp lệ, gửi cho Service kiểm tra email đã tồn tại trong CSDl chưa, nếu không thông báo lỗi.
 	\item Nếu email tồn tại, kiểm tra thông tin mật khẩu.
 	\item Nếu mật khẩu đúng, thông báo thành công, giao diện chuyển sang home, nếu không thông báo lỗi.

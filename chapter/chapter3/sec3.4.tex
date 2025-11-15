@@ -1,5 +1,17 @@
 \section{Biểu đồ hoạt động}
-\subsection{Đăng ký}
+Phần Activity Diagram (Biểu đồ hoặt động) được sử dụng nhằm mo tả chi tiết về luồng hoạt động trong
+hệ thống, từ khi người dùng bắt đầu một hoạt động cho đến cách hệ thống phản hồi kết quả cuối cùng. 
+
+Biểu đò này giúp nhóm phát triển hiểu rõ hơn các bước nghiệp vụ và tương tác giữa người dùng và hệ thống
+, đặc biệt trong các ca sử dụng (Use Case) quan trọng. Thông qua biểu đồ này, ta có thể quan sát được toàn bộ 
+tiến trình xử lý, bao gồm các hành động mà người dùng thực hiện, các xử lý nội bộ của hệ thống, điều kiện rẽ nhánh, 
+cũng như các kết thúc có thể xảy ra. Điều này không chỉ hỗ trợ việc phân tích yêu cầu mà còn giúp lập trình viên 
+nắm bắt logic nghiệp vụ để triển khai chính xác hơn.
+
+\textit{Chú thích: Decision trong Activity Diagram theo chuẩn thì được biểu diễn bằng một hình thoi, tuy nhiên do code bằng PlantUml, mặc định decision 
+là hình lục giác nên Decision trong tài liệu này được để là một hình lục giác. }
+
+\subsection{Đăng ký} 
 Activity Diagram "Đăng ký" mô tả quy trình mà người dùng thực hiện để tạo tài khoản 
 mới trên hệ thống. Biểu đồ này thể hiện các hoạt động chính như nhập thông tin đăng ký, kiểm tra
 tính hợp lệ của dữ liệu, xử lý các trường hợp lỗi và kết thúc bằng việc tạo tài khoản thành công. 
