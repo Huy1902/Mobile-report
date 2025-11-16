@@ -181,7 +181,7 @@ Kiểm thử hiệu năng luồng hoạt động cơ bản hệ thống &
 Number of users: 100, Ramp up: 5, Host: localhost:4010, Endpoints: POST /auth/register; POST /auth/login PUT /user/changePassword POST /auth/refresh GET /users PUT /users GET /tracks GET /tracks/search?keyword=Taylor GET /history/search GET /tracks/next/33333333-3333-3333-3333-333333333333 POST /favorites/add GET /favorites POST /favorites/delete POST /auth/logout &
 none \\
 \hline
-\hypertarget{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & Kiểm thử giao diện đăng kí người dùng thành công & Người dùng đăng kí email: ``23021558@vnu.edu.vn'', password: ``12345678h'', confirmPassword: ``12345678h'', firstname: ``Hoang'', lastname: ``Doan'' & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``register\_successfully'' \\
+\hypertarget{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & Kiểm thử giao diện đăng kí người dùng thành công & Người dùng đăng kí email: ``23021558@vnu.edu.vn'', password: ``12345678h'', confirmPassword: ``12345678h'', firstname: ``Hoang'', lastname: ``Doan'' & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``register-successfully'' \\
 \hline
 \hypertarget{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & Kiểm thử giao diện đăng nhập người dùng thành công & Người dùng đăng nhập email: ``23021558@vnu.edu.vn'', password: ``12345678h'' & Màn hình chuyển đến trang chủ, hiển thị Toast ``Login successfully!'' \\
 \hline
@@ -255,35 +255,35 @@ none \\
 \hline
 \hypertarget{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi người dùng không nói gì & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone nhưng không nói gì & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
-\hypertarget{tc:input_be_chatbott}{Nhập input thông qua POST request của chatbot} & Kiểm thử chức năng nhập input thông qua POST request của chatbot & POST /chat \{messages:``Chào bạn'', ``thread\_id'': ``tc01''\} & \{``type'':``reply'',``reply'':``Chào bạn! Tôi có thể giúp gì?''\} \\
+\hypertarget{tc:input_be_chatbott}{Nhập input thông qua POST request của chatbot} & Kiểm thử chức năng nhập input thông qua POST request của chatbot & POST /chat \messages:Chào bạn, thread-id: tc01 &  type: reply, reply: Chào bạn! Tôi có thể giúp gì? \\
 \hline
-\hypertarget{tc:input_lyrics_vietnamese_chatbot}{Nhập lời bài hát tiếng Việt} & Kiểm thử chức năng nhập lời bài hát tiếng Việt & POST ``Tìm lời bài hát Lâu không cười'' & \{``type'':``reply'',``reply'':``Lời bài hát Lâu không cười:\textbackslash n...''\}\\
+\hypertarget{tc:input_lyrics_vietnamese_chatbot}{Nhập lời bài hát tiếng Việt} & Kiểm thử chức năng nhập lời bài hát tiếng Việt & POST Tìm lời bài hát Lâu không cười &  type: reply, reply: Lời bài hát Lâu không cười:\textbackslash n...'' \\
 \hline
-\hypertarget{tc:input_lyrics_english_chatbot}{Nhập lời bài hát tiếng Anh} & Kiểm thử chức năng nhập lời bài hát tiếng Anh & POST ``Find lyrics Love Story'' & \{``type'':``reply'',``reply'':``Lyrics of Love Story:\textbackslash n...''\}\\
+\hypertarget{tc:input_lyrics_english_chatbot}{Nhập lời bài hát tiếng Anh} & Kiểm thử chức năng nhập lời bài hát tiếng Anh & POST Find lyrics Love Story &  type: reply, reply: Lyrics of Love Story:\textbackslash n... \\
 \hline
-\hypertarget{tc:playing_song_chatbot}{Phát bài hát thông qua chatbot} & Kiểm thử chức năng phát bài hát thông qua chatbot & \{``type'':``playMusic'',``song\_name'':``Ngày mai em đi''\} & \{``type'':``playMusic'',``song\_name'':``Ngày mai em đi''\}\\
+\hypertarget{tc:playing_song_chatbot}{Phát bài hát thông qua chatbot} & Kiểm thử chức năng phát bài hát thông qua chatbot &  type: playMusic, song-name: Ngày mai em đi  &  type: playMusic, song-name: Ngày mai em đi \\
 \hline
-\hypertarget{tc:suggest_song_chatbot}{Gợi ý bài hát thông qua chatbot} & Kiểm thử chức năng gợi ý bài hát thông qua chatbot & POST ``Gợi ý bài hát cho tôi'' & \{``type'':``reply'',``reply'':``1)... 2)... 3)...''\}\\
+\hypertarget{tc:suggest_song_chatbot}{Gợi ý bài hát thông qua chatbot} & Kiểm thử chức năng gợi ý bài hát thông qua chatbot & POST Gợi ý bài hát cho tôi &  type: reply, reply: 1... 2... 3... \\
 \hline
-\hypertarget{tc:infor_author_chatbot}{Thông tin tác giả thông qua chatbot} & Kiểm thử chức năng cung cấp thông tin tác giả thông qua chatbot & POST ``Ai là tác giả của bài hát Từng là?'' & \{``type'':``reply'',``reply'':``Tác giả của bài hát Từng là là...''\}\\
+\hypertarget{tc:infor_author_chatbot}{Thông tin tác giả thông qua chatbot} & Kiểm thử chức năng cung cấp thông tin tác giả thông qua chatbot & POST Ai là tác giả của bài hát Từng là? &  type: reply, reply: Tác giả của bài hát Từng là là... \\
 \hline
-\hypertarget{tc:remember_thread_id}{Ghi nhớ thread\_id trong chatbot} & Kiểm thử chức năng ghi nhớ thread\_id trong chatbot & POST /chat \{messages:``Chào bạn, tôi tên Hậu'', ``thread\_id'': ``tc01''\} tiếp theo POST /chat \{messages:``Tôi tên là gì?'', ``thread\_id'': ``tc01''\} & \{``type'':``reply'',``reply'':``Bạn tên là Hậu,..''\}\\
+\hypertarget{tc:remember_thread_id}{Ghi nhớ thread-id trong chatbot} & Kiểm thử chức năng ghi nhớ thread-id trong chatbot & POST /chat \messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc01 &  type: reply, reply: Bạn tên là Hậu,.. \\
 \hline
-\hypertarget{tc:seperate_thread_id}{Tách biệt thread\_id trong chatbot} & Kiểm thử chức năng tách biệt thread\_id trong chatbot & POST /chat \{messages:``Chào bạn, tôi tên Hậu'', ``thread\_id'': ``tc01''\} tiếp theo POST /chat \{messages:``Tôi tên là gì?'', ``thread\_id'': ``tc02''\} & \{``type'':``reply'',``reply'':``Tôi không biết bạn tên gì,...''\}\\
+\hypertarget{tc:seperate_thread_id}{Tách biệt thread-id trong chatbot} & Kiểm thử chức năng tách biệt thread-id trong chatbot & POST /chat \messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc02  &  type: reply, reply: Tôi không biết bạn tên gì,... \\
 \hline
-\hypertarget{tc:bug_duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & Kiểm thử chức năng tìm kiếm thông tin với DuckDuckGo thông qua chatbot & Mock ddgs ném exception & Log phải có ERROR Duckduckgo\_tool.\_run ... và Connection timed out\\
+\hypertarget{tc:bug_duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & Kiểm thử chức năng tìm kiếm thông tin với DuckDuckGo thông qua chatbot & Mock ddgs ném exception & Log phải có ERROR Duckduckgo-tool.-run ... và Connection timed out\\
 \hline
-\hypertarget{tc:bug_scrapewebsite}{Kiểm tra lỗi với ScrapeWebsite} & Kiểm thử chức năng lấy thông tin với ScrapeWebsite thông qua chatbot & Gọi URL 404 & Log có hiện ERROR scrape\_website ... 404 Client Error: Not Found for url:\\
+\hypertarget{tc:bug_scrapewebsite}{Kiểm tra lỗi với ScrapeWebsite} & Kiểm thử chức năng lấy thông tin với ScrapeWebsite thông qua chatbot & Gọi URL 404 & Log có hiện ERROR scrape-website ... 404 Client Error: Not Found for url:\\
 \hline
-\hypertarget{tc:required_parallelism}{Kiểm tra luồng song song trong chatbot} & Kiểm thử chức năng chạy song song trong chatbot & 10 POST /chat khác thread\_id & 10 response \{``type'':``reply'',``reply'':``Xin chào user\_i!''\}\\
+\hypertarget{tc:required_parallelism}{Kiểm tra luồng song song trong chatbot} & Kiểm thử chức năng chạy song song trong chatbot & 10 POST /chat khác thread-id & 10 response type: reply, reply: Xin chào user-i! \\
 \hline
-\hypertarget{tc:exception_handling}{Xử lý ngoài phạm vi của chatbot} & Kiểm thử chức năng xử lí nội dung ngoài phạm vi trong chatbot & POST /chat \{messages:``Hãy kể cho tôi một câu chuyện cười về lập trình viên'', ``thread\_id'': ``tc01''\} & \{``type'':``reply'',``reply'':``Xin lỗi, tôi không thể giúp với yêu cầu đó.''\}\\
+\hypertarget{tc:exception_handling}{Xử lý ngoài phạm vi của chatbot} & Kiểm thử chức năng xử lí nội dung ngoài phạm vi trong chatbot & POST /chat  messages: Hãy kể cho tôi một câu chuyện cười về lập trình viên, thread-id: tc01  &  type: reply, reply: Xin lỗi, tôi không thể giúp với yêu cầu đó. \\
 \hline
-\hypertarget{tc:check_voice}{Xử lý giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói với model Whisper & Gửi file âm thanh có giọng nói ``Xin chào'' với định dạng .m4a & \{``Xin chào''\}\\
+\hypertarget{tc:check_voice}{Xử lý giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói với model Whisper & Gửi file âm thanh có giọng nói ``Xin chào'' với định dạng .m4a & Xin chào \\
 \hline
-\hypertarget{tc:check_voice_no_speech}{Xử lý giọng nói không có giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói không có giọng nói với model Whisper & Gửi file âm thanh trống với định dạng .m4a & \{``''\}\\
+\hypertarget{tc:check_voice_no_speech}{Xử lý giọng nói không có giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói không có giọng nói với model Whisper & Gửi file âm thanh trống với định dạng .m4a &  ``'' \\
 \hline
-\hypertarget{tc:check_voice_unsupported_format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & Kiểm thử chức năng xử lí giọng nói với định dạng không hỗ trợ với model Whisper & Gửi file âm thanh định dạng .txt & \{``Error: Unsupported audio format.''\}\\
+\hypertarget{tc:check_voice_unsupported_format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & Kiểm thử chức năng xử lí giọng nói với định dạng không hỗ trợ với model Whisper & Gửi file âm thanh định dạng .txt &  Error: Unsupported audio format. \\
 \hline
 \end{longtable}
 
@@ -360,7 +360,7 @@ none \\
 \hline
 31 & \hyperlink{tc:perf-basic}{Hiệu năng - luồng cơ bản} & 12/11/2025 & Trần Quang Đỉnh  & Max $< 1.9$s, Fails: 0, RPM/s: 166 & Đạt \\
 \hline
-32 & \hyperlink{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``register\_successfully'' & Đạt \\
+32 & \hyperlink{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``register-successfully'' & Đạt \\
 \hline
 33 & \hyperlink{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển đến trang chủ, hiển thị Toast ``Login successfully!'' & Đạt \\
 \hline  
@@ -444,7 +444,7 @@ none \\
 \hline
 73 & \hyperlink{tc:playing-song-chatbot}{Phát bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: playMusic, song name: Ngày mai em đi & Đạt \\
 \hline
-74 & \hyperlink{tc:suggest-song-chatbot}{Gợi ý bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: "1... 2... 3...” & Đạt \\
+74 & \hyperlink{tc:suggest-song-chatbot}{Gợi ý bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: "1... 2... 3..." & Đạt \\
 \hline
 75 & \hyperlink{tc:infor-author-chatbot}{Thông tin tác giả thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Tác giả của bài hát Từng là là... & Đạt \\
 \hline
