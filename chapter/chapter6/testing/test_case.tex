@@ -1,3 +1,5 @@
+% \usepackage{seqsplit}
+
 \subsection{Thiết kế các ca kiểm thử}
 \begin{longtable}{|p{2.2cm}|p{3cm}|p{5.4cm}|p{4.6cm}|}
 \hline
@@ -221,9 +223,9 @@ none \\
 \hline  
 \hypertarget{tc:logout}{Đăng xuất người dùng} & Kiểm thử chức năng đăng xuất người dùng & Người dùng nhấn nút đăng xuất từ mục thông tin cá nhân & Người dùng được đăng xuất khỏi hệ thống, màn hình chuyển về màn hình bắt đầu \\
 \hline
-\hypertarget{tc:change_avatar_step1}{Đổi ảnh đại diện - Bước 1} & Kiểm thử chức năng đổi ảnh đại diện & Người dùng nhấn vào ảnh đại diện hiện tại & Màn hình hiện ra cho phép người dùng chọn ảnh từ thư viện hoặc chụp một ảnh mới từ camera \\
+\hypertarget{tc:change-avatar-step1}{Đổi ảnh đại diện - Bước 1} & Kiểm thử chức năng đổi ảnh đại diện & Người dùng nhấn vào ảnh đại diện hiện tại & Màn hình hiện ra cho phép người dùng chọn ảnh từ thư viện hoặc chụp một ảnh mới từ camera \\
 \hline
-\hypertarget{tc:change_avatar_step2}{Đổi ảnh đại diện - Bước 2} & Kiểm thử chức năng đổi ảnh đại diện & Người dùng chọn một ảnh từ thư viện hoặc chụp một ảnh mới từ camera & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp \\
+\hypertarget{tc:change-avatar-step2}{Đổi ảnh đại diện - Bước 2} & Kiểm thử chức năng đổi ảnh đại diện & Người dùng chọn một ảnh từ thư viện hoặc chụp một ảnh mới từ camera & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp \\
 \hline
 \hypertarget{tc:update_information}{Cập nhật thông tin cá nhân - thành công} & Kiểm thử chức năng cập nhật thông tin cá nhân & Người dùng nhập đầy đủ các thông tin bao gồm Họ:``Doan'', Tên: ``Hoang'', số điện thoại: ``012345678'', địa chỉ: ``Nam Dinh'' & Thông tin cá nhân của người dùng được cập nhật thành công \\
 \hline
@@ -235,23 +237,23 @@ none \\
 \hline
 \hypertarget{tc:change_language}{Đổi ngôn ngữ} & Kiểm thử chức năng đổi ngôn ngữ & Người dùng ấn vào nút đổi ngôn ngữ từ mục thông tin cá nhân, ấn vào ``Tiếng Việt'' & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt \\
 \hline
-\hypertarget{tc:load_initial_UI_chatbot}{Giao diện ban đầu của chatbot} & Kiểm thử giao diện ban đầu của chatbot & Người dùng mở giao diện chatbot & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn \\
+\hypertarget{tc:load-initial-UI-chatbot}{Giao diện ban đầu của chatbot} & Kiểm thử giao diện ban đầu của chatbot & Người dùng mở giao diện chatbot & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn \\
 \hline
 \hypertarget{tc:send_message_chatbot}{Gửi tin nhắn đến chatbot} & Kiểm thử chức năng gửi tin nhắn đến chatbot & Người dùng nhập tin nhắn ``Hello'' vào ô nhập tin nhắn và ấn nút gửi & Tin nhắn của người dùng được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot \\
 \hline
-\hypertarget{tc:prevent_empty_message_chatbot}{Ngăn chặn gửi tin nhắn trống} & Kiểm thử chức năng ngăn chặn gửi tin nhắn trống đến chatbot & Người dùng để trống ô nhập tin nhắn và ấn nút gửi & Hệ thống không gửi tin nhắn trống, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
+\hypertarget{tc:prevent-empty-message-chatbot}{Ngăn chặn gửi tin nhắn trống} & Kiểm thử chức năng ngăn chặn gửi tin nhắn trống đến chatbot & Người dùng để trống ô nhập tin nhắn và ấn nút gửi & Hệ thống không gửi tin nhắn trống, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
-\hypertarget{tc:bot_typing_indicator}{Chỉ báo chatbot đang trả lời} & Kiểm thử chức năng hiển thị chỉ báo chatbot đang trả lời & Người dùng gửi tin nhắn đến chatbot & Hiển thị chỉ báo chatbot đang trả lời trong khu vực hiển thị tin nhắn cho đến khi nhận được phản hồi từ chatbot \\
+\hypertarget{tc:bot-typing-indicator}{Chỉ báo chatbot đang trả lời} & Kiểm thử chức năng hiển thị chỉ báo chatbot đang trả lời & Người dùng gửi tin nhắn đến chatbot & Hiển thị chỉ báo chatbot đang trả lời trong khu vực hiển thị tin nhắn cho đến khi nhận được phản hồi từ chatbot \\
 \hline
-\hypertarget{tc:auto_scroll_chatbot}{Tự động cuộn khu vực hiển thị tin nhắn} & Kiểm thử chức năng tự động cuộn khu vực hiển thị tin nhắn khi có tin nhắn mới & Người dùng gửi nhiều tin nhắn liên tiếp đến chatbot & Khu vực hiển thị tin nhắn tự động cuộn xuống để hiển thị tin nhắn mới nhất \\
+\hypertarget{tc:auto-scroll-chatbot}{Tự động cuộn khu vực hiển thị tin nhắn} & Kiểm thử chức năng tự động cuộn khu vực hiển thị tin nhắn khi có tin nhắn mới & Người dùng gửi nhiều tin nhắn liên tiếp đến chatbot & Khu vực hiển thị tin nhắn tự động cuộn xuống để hiển thị tin nhắn mới nhất \\
 \hline
-\hypertarget{tc:voice_permission_flow}{Quy trình cấp quyền truy cập microphone} & Kiểm thử quy trình cấp quyền truy cập microphone cho chatbot & Người dùng mở giao diện chatbot và ấn vào biểu tượng microphone & Hệ thống yêu cầu người dùng cấp quyền truy cập microphone, người dùng có thể chấp nhận hoặc từ chối \\
+\hypertarget{tc:voice-permission-flow}{Quy trình cấp quyền truy cập microphone} & Kiểm thử quy trình cấp quyền truy cập microphone cho chatbot & Người dùng mở giao diện chatbot và ấn vào biểu tượng microphone & Hệ thống yêu cầu người dùng cấp quyền truy cập microphone, người dùng có thể chấp nhận hoặc từ chối \\
 \hline
 \hypertarget{tc:voice_input_chatbot}{Nhập tin nhắn bằng giọng nói} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói đến chatbot & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone và nói ``Hello'' & Tin nhắn ``Hello'' được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot \\
 \hline
 \hypertarget{tc:voice_input_no_permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone & Người dùng từ chối cấp quyền truy cập microphone, ấn vào biểu tượng microphone và nói ``Hello'' & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
-\hypertarget{tc:voice_input_no_speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi người dùng không nói gì & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone nhưng không nói gì & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
+\hypertarget{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi người dùng không nói gì & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone nhưng không nói gì & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
 \hypertarget{tc:input_be_chatbott}{Nhập input thông qua POST request của chatbot} & Kiểm thử chức năng nhập input thông qua POST request của chatbot & POST /chat \{messages:``Chào bạn'', ``thread\_id'': ``tc01''\} & \{``type'':``reply'',``reply'':``Chào bạn! Tôi có thể giúp gì?''\} \\
 \hline
@@ -400,64 +402,64 @@ none \\
 \hline
 52 & \hyperlink{tc:logout}{Đăng xuất người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Người dùng được đăng xuất khỏi hệ thống, màn hình chuyển về màn hình bắt đầu & Đạt \\
 \hline
-53 & \hyperlink{tc:change_avatar_step1}{Đổi ảnh đại diện - Bước 1} & 08/11/2025 & Đoàn Minh Hoàng & Màn hình hiện ra cho phép người dùng chọn ảnh từ thư viện hoặc chụp một ảnh mới từ camera & Đạt \\
+53 & \hyperlink{tc:change-avatar-step1}{Đổi ảnh đại diện - Bước 1} & 08/11/2025 & Đoàn Minh Hoàng & Màn hình hiện ra cho phép người dùng chọn ảnh từ thư viện hoặc chụp một ảnh mới từ camera & Đạt \\
 \hline  
-54 & \hyperlink{tc:change_avatar_step2}{Đổi ảnh đại diện - Bước 2} & 08/11/2025 & Đoàn Minh Hoàng & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp & Đạt \\
+54 & \hyperlink{tc:change-avatar-step2}{Đổi ảnh đại diện - Bước 2} & 08/11/2025 & Đoàn Minh Hoàng & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp & Đạt \\
 \hline  
-55 & \hyperlink{tc:update_information}{Cập nhật thông tin cá nhân - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Thông tin cá nhân của người dùng được cập nhật thành công & Đạt \\
+55 & \hyperlink{tc:update-information}{Cập nhật thông tin cá nhân - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Thông tin cá nhân của người dùng được cập nhật thành công & Đạt \\
 \hline
-56 & \hyperlink{tc:update_information_missing_field}{Cập nhật thông tin cá nhân - không thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin & Đạt \\
+56 & \hyperlink{tc:update-information-missing-field}{Cập nhật thông tin cá nhân - không thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin & Đạt \\
 \hline
-57 & \hyperlink{tc:change_password}{Đổi mật khẩu - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo đổi mật khẩu thành công & Đạt \\
+57 & \hyperlink{tc:change-password}{Đổi mật khẩu - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo đổi mật khẩu thành công & Đạt \\
 \hline
-58 & \hyperlink{tc:change_theme}{Đổi giao diện} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện của ứng dụng được chuyển đổi thành chế độ tối & Đạt \\
+58 & \hyperlink{tc:change-theme}{Đổi giao diện} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện của ứng dụng được chuyển đổi thành chế độ tối & Đạt \\
 \hline
-59 & \hyperlink{tc:change_language}{Đổi ngôn ngữ} & 08/11/2025 & Đoàn Minh Hoàng & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt & Đạt \\
+59 & \hyperlink{tc:change-language}{Đổi ngôn ngữ} & 08/11/2025 & Đoàn Minh Hoàng & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt & Đạt \\
 \hline
-60 & \hyperlink{tc:load_initial_UI_chatbot}{Giao diện ban đầu của chatbot} & 10/11/2025 & Trần Trung Hậu & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn & Đạt \\
+60 & \hyperlink{tc:load-initial-UI-chatbot}{Giao diện ban đầu của chatbot} & 10/11/2025 & Trần Trung Hậu & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn & Đạt \\
 \hline
-61 & \hyperlink{tc:send_message_chatbot}{Gửi tin nhắn đến chatbot} & 10/11/2025 & Trần Trung Hậu & Tin nhắn của người dùng được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot & Đạt \\
+61 & \hyperlink{tc:send-message-chatbot}{Gửi tin nhắn đến chatbot} & 10/11/2025 & Trần Trung Hậu & Tin nhắn của người dùng được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot & Đạt \\
 \hline
-62 & \hyperlink{tc:prevent_empty_message_chatbot}{Ngăn chặn gửi tin nhắn trống} & 10/11/2025 & Trần Trung Hậu & Hệ thống không gửi tin nhắn trống, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
+62 & \hyperlink{tc:prevent-empty-message-chatbot}{Ngăn chặn gửi tin nhắn trống} & 10/11/2025 & Trần Trung Hậu & Hệ thống không gửi tin nhắn trống, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
 \hline
-63 & \hyperlink{tc:bot_typing_indicator}{Chỉ báo chatbot đang trả lời} & 10/11/2025 & Trần Trung Hậu & Hiển thị chỉ báo chatbot đang trả lời trong khu vực hiển thị tin nhắn cho đến khi nhận được phản hồi từ chatbot & Đạt \\
+63 & \hyperlink{tc:bot-typing-indicator}{Chỉ báo chatbot đang trả lời} & 10/11/2025 & Trần Trung Hậu & Hiển thị chỉ báo chatbot đang trả lời trong khu vực hiển thị tin nhắn cho đến khi nhận được phản hồi từ chatbot & Đạt \\
 \hline
-64 & \hyperlink{tc:auto_scroll_chatbot}{Tự động cuộn khu vực hiển thị tin nhắn} & 10/11/2025 & Trần Trung Hậu & Khu vực hiển thị tin nhắn tự động cuộn xuống để hiển thị tin nhắn mới nhất & Đạt \\
+64 & \hyperlink{tc:auto-scroll-chatbot}{Tự động cuộn khu vực hiển thị tin nhắn} & 10/11/2025 & Trần Trung Hậu & Khu vực hiển thị tin nhắn tự động cuộn xuống để hiển thị tin nhắn mới nhất & Đạt \\
 \hline
-65 & \hyperlink{tc:voice_permission_flow}{Quy trình cấp quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống yêu cầu người dùng cấp quyền truy cập microphone, người dùng có thể chấp nhận hoặc từ chối & Đạt \\
+65 & \hyperlink{tc:voice-permission-flow}{Quy trình cấp quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống yêu cầu người dùng cấp quyền truy cập microphone, người dùng có thể chấp nhận hoặc từ chối & Đạt \\
 \hline
 66 & \hyperlink{tc:voice_input_chatbot}{Nhập tin nhắn bằng giọng nói} & 10/11/2025 & Trần Trung Hậu & Tin nhắn ``Hello'' được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot & Đạt \\
 \hline
-67 & \hyperlink{tc:voice_input_no_permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
+67 & \hyperlink{tc:voice-input-no-permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
 \hline
-68 & \hyperlink{tc:voice_input_no_speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
+68 & \hyperlink{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
 \hline
-69 & \hyperlink{tc:voice_input_unsupported_format}{Nhập tin nhắn bằng giọng nói với định dạng không hỗ trợ} & 10/11/2025 & Trần Trung Hậu & Hệ thống hiển thị thông báo lỗi định dạng âm thanh không được hỗ trợ & Đạt \\
+69 & \hyperlink{tc:voice-input-unsupported-format}{Nhập tin nhắn bằng giọng nói với định dạng không hỗ trợ} & 10/11/2025 & Trần Trung Hậu & Hệ thống hiển thị thông báo lỗi định dạng âm thanh không được hỗ trợ & Đạt \\
 \hline
-70 & \hyperlink{tc:input_be_chatbott}{Nhập input thông qua POST request của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``type'':``reply'',``reply'':``Chào bạn! Tôi có thể giúp gì?''\} & Đạt \\
+70 & \hyperlink{tc:input-be-chatbott}{Nhập input thông qua POST request của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Chào bạn! Tôi có thể giúp gì? & Đạt \\
 \hline
-71 & \hyperlink{tc:input_lyrics_vietnamese_chatbot}{Nhập lời bài hát tiếng Việt} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``type'':``reply'',``reply'':``Lời bài hát Lâu không cười:\textbackslash n...''\} & Đạt \\
+71 & \hyperlink{tc:input-lyrics-vietnamese-chatbot}{Nhập lời bài hát tiếng Việt} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Lời bài hát Lâu không cười:... & Đạt \\
 \hline
-72 & \hyperlink{tc:input_lyrics_english_chatbot}{Nhập lời bài hát tiếng Anh} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``type'':``reply'',``reply'':``Lyrics of Love Story:\textbackslash n...''\} & Đạt \\
+72 & \hyperlink{tc:input-lyrics-english-chatbot}{Nhập lời bài hát tiếng Anh} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Lyrics of Love Story:... & Đạt \\
 \hline
-73 & \hyperlink{tc:playing_song_chatbot}{Phát bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``type'':``playMusic'',``song\_name'':``Ngày mai em đi''\} & Đạt \\
+73 & \hyperlink{tc:playing-song-chatbot}{Phát bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: playMusic, song name: Ngày mai em đi & Đạt \\
 \hline
-74 & \hyperlink{tc:suggest_song_chatbot}{Gợi ý bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``type'':``reply'',``reply'':``1)... 2)... 3)...''\} & Đạt \\
+74 & \hyperlink{tc:suggest-song-chatbot}{Gợi ý bài hát thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: "1... 2... 3...” & Đạt \\
 \hline
-75 & \hyperlink{tc:infor_author_chatbot}{Thông tin tác giả thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``type'':``reply'',``reply'':``Tác giả của bài hát Từng là là...''\} & Đạt \\
+75 & \hyperlink{tc:infor-author-chatbot}{Thông tin tác giả thông qua chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Tác giả của bài hát Từng là là... & Đạt \\
 \hline
-76 & \hyperlink{tc:remember_thread_id}{Ghi nhớ thread\_id trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``type'':``reply'',``reply'':``Bạn tên là Hậu,..''\} & Đạt \\
+76 & \hyperlink{tc:remember-thread-id}{Ghi nhớ thread id trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Bạn tên là Hậu,.. & Đạt \\
 \hline
-77 & \hyperlink{tc:seperate_thread_id}{Tách biệt thread\_id trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``type'':``reply'',``reply'':``Tôi không biết bạn tên gì,...''\} & Đạt \\
+77 & \hyperlink{tc:seperate-thread-id}{Tách biệt thread id trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Tôi không biết bạn tên gì,... & Đạt \\
 \hline
-78 & \hyperlink{tc:required_parallelism}{Kiểm tra luồng song song trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được 10 response \{``type'':``reply'',``reply'':``Xin chào user\_i!''\} & Đạt \\
+78 & \hyperlink{tc:required-parallelism}{Kiểm tra luồng song song trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được 10 response type: reply, reply: Xin chào user i! & Đạt \\
 \hline
-79 & \hyperlink{tc:exception_handling}{Xử lý ngoài phạm vi của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``type'':``reply'',``reply'':``Xin lỗi, tôi không thể giúp với yêu cầu đó.''\} & Đạt \\
+79 & \hyperlink{tc:exception-handling}{Xử lý ngoài phạm vi của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Xin lỗi, tôi không thể giúp với yêu cầu đó. & Đạt \\
 \hline
-80 & \hyperlink{tc:check_voice}{Xử lý giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``Xin chào''\} & Đạt \\
+80 & \hyperlink{tc:check-voice}{Xử lý giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Xin chào & Đạt \\
 \hline
-81 & \hyperlink{tc:check_voice_no_speech}{Xử lý giọng nói không có giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``''\} & Đạt \\
+81 & \hyperlink{tc:check-voice-no-speech}{Xử lý giọng nói không có giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi rỗng & Đạt \\
 \hline
-82 & \hyperlink{tc:check_voice_unsupported_format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi \{``Error: Unsupported audio format.''\} & Đạt \\
+82 & \hyperlink{tc:check-voice-unsupported-format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Error: Unsupported audio format. & Đạt \\
 \hline
 \end{longtable}
