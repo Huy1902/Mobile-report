@@ -1,21 +1,95 @@
+
 \section{Cơ sở dữ liệu}
 \label{sec:database}
 
 Trong kiến trúc Microservice, việc thiết kế các dịch vụ có nghiệp vụ riêng quan trọng vì điều này ảnh hưởng trực tiếp tới việc thiết kế cơ sở dữ liệu cho từng
-dịch vụ. Mỗi dịch vụ trong kiến trúc microservice sở hữu một cơ sở dữ liệu riêng không dùng chung với các dịch vụ khác. Thống tin và dữ liệu cần truy cập bới
+dịch vụ. Mỗi dịch vụ trong kiến trúc microservice sở hữu một cơ sở dữ liệu riêng không dùng chung với các dịch vụ khác. Thông tin và dữ liệu cần truy cập bới
 nhiều dịch vụ vẫn thuộc một dịch vụ cố đinh và có phương thức giao tiếp truyền tin được thiết lập cho các dịch vụ có nhu cầu sử dụng. Với việc phân tách nghiệp
 vụ cho các dịch vụ, chúng tôi đã thiết kế cơ sở dữ liệu cho từng dịch vụ một cách riêng biệt. Trong phần này, chúng tôi sẽ phân tích cụ thể các thiết kế cơ 
 sở dữ liệu trong hệ thống \textbf{InsightTune}.
 
 \subsection{Auth database}
+\label{sec:auth-db}
+
+AuthService sử dụng cơ sở dữ liệu gồm các bảng chính: 
+
+
+\begin{itemize}
+    \item \textbf{users} dùng để lưu thông tin đăng ký/nhập người dùng.
+    \item \textbf{roles} lưu vai trò và quyền hạn.
+    \item \textbf{tokens} quản lý token xác thực.
+    \item \textbf{otp} lưu mã OTP dùng cho xác thực quên mật khẩu. 
+\end{itemize}
+Các bảng này có quan hệ với nhau để hỗ trợ phân quyền và quản lý xác thực an toàn.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/authdb.png}
+    \caption{Cơ sở dữ liệu của AuthService}
+    \label{fig:auth_database}
+\end{figure}
 
 \subsection{User database}
+\label{sec:user-db}
+
+UserService sử dụng cơ sở dữ liệu gồm bảng chính
+\textbf{users} dùng để lưu thông tin cá nhân của người dùng, bao gồm: email, firstname, lastname, address, phone, role và avatar. 
+Những thông tin này đóng vai trò quan trọng trong việc cá nhân hóa hệ thống nhằm nâng cao trải nghiệm người dùng. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/userdb.png}
+    \caption{Cơ sở dữ liệu của UserService}
+    \label{fig:user_database}
+\end{figure}
 
 \subsection{Catalog database}
+\label{sec:catalog-db}
+
+CatalogService sử dụng cơ sở dữ liệu gồm các bảng chính: 
+\begin{itemize}
+    \item \textbf{tracks}: lưu thông tin dữ liệu bài hát (title, storageKey, coverImageKey, durationMs) và tham chiếu tới bảng albums.
+    \item \textbf{tracks} lưu thông tin dữ liệu bài hát: title, storageKey, coverImageKey , durationMs lưu vị trí người dùng nghe và được tham chiếu tới bảng albums.
+    \item \textbf{albums} lưu thông tin các danh sách bài hát.
+    \item \textbf{track\_artist} bảng phụ lưu thông tin tham chiếu giữa artists và tracks.
+\end{itemize}
+
+Các bảng này đóng vai trò thiết yếu trong hệ thống, là nơi lưu trữ dữ liệu cần thiết nhất cho hệ thống nghe nhạc trực tuyến.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/catalogdb.png}
+    \caption{Cơ sở dữ liệu của CatalogService}
+    \label{fig:catalog_database}
+\end{figure}
 
 \subsection{History database}
+\label{sec:history-db}
+
+HistoryService sử dụng cơ sở dữ liệu gồm các bảng chính: 
+\textbf{histories} dùng để lưu lịch sử và thời gian về các bài hát mà người dùng đã phát, 
+\textbf{search\_histories} lưu lịch sử tìm kiếm của người dùng.
+Những thông tin này đóng vai trò bổ trợ cho hệ thống, giúp nâng cao trải nghiệm người dùng.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/historydb.png}
+    \caption{Cơ sở dữ liệu của HistoryService}
+    \label{fig:history_database}
+\end{figure}
 
 \subsection{Favorite database}
+\label{sec:favorite-db}
+
+FavoriteService sử dụng cơ sở dữ liệu gồm bảng chính
+\textbf{favorite} dùng để lưu các bài hát yêu thích của người dùng, bao gồm songId và email nhằm xác định ai đã thêm bài hát nào vào yêu thích.
+Những thông tin này đóng vai trò bổ trợ cho hệ thống, giúp nâng cao trải nghiệm người dùng.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/favoritedb.png}
+    \caption{Cơ sở dữ liệu của FavoriteService}
+    \label{fig:favorite_database}
+\end{figure}
 
 \subsection{RecSys database}
 

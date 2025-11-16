@@ -69,6 +69,20 @@ Hình~\ref{fig:sequence-chatbot} mô tả quá trình này.
 	\caption{Biểu đồ tuần tự cho chức năng đăng nhập}
 	\end{figure}
 
+\subsection{Đăng xuất}
+\begin{itemize}
+	\item Người dùng nhấn "Logout".
+	\item Client gửi gửi thông tin token người dùng qua API Gateway tới Controller.
+	\item Nếu thông tin hợp lệ, gửi cho Service gửi truy vấn xóa token tới CSDL.
+	\item Trả về kết quả thành công, Client chuyển đến giao diện đăng nhập.
+\end{itemize}
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/sequence-logout.png}
+	\caption{Biểu đồ tuần tự cho chức năng đăng xuất}
+	\end{figure}
+
 \subsection{Phát nhạc}
 \begin{itemize}
 	\item Người dùng nhấn vào hình bản nhạc, client gửi qua API Gateway tới cho Service.
@@ -125,4 +139,21 @@ Hình~\ref{fig:sequence-chatbot} mô tả quá trình này.
 	\centering
 	\includegraphics[width=1\textwidth]{figures/sequence-updateprofile.png}
 	\caption{Biểu đồ tuần tự cho chức năng sửa thông tin cá nhân}
+	\end{figure}
+
+	
+\subsection{Quên mật khẩu}
+\begin{itemize}
+	\item Người dùng nhập email vào form, Client gửi qua API Gateway tới Service.
+	\item Service tạo otp gửi tới email người dùng và gửi truy vấn tới CSDL để lưu otp.
+	\item Nếu lưu vào CSDL thành công, Service trả về thành công, Client chuyển sang giao diện xác thực otp.
+	\item Người dùng xác thực otp, Client chuyển otp cho Service.
+	\item Nếu otp hợp lệ, Service trả về thành công, Client chuyển đến giao diện cài đặt mật khẩu mới. 
+	\item Người dùng nhập mật khẩu mới vào form, Client gửi cho Service lưu vào CSDL và trả về thành công.
+\end{itemize}
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/sequence-forgotpassword.png}
+	\caption{Biểu đồ tuần tự cho chức năng quên mật khẩu}
 	\end{figure}

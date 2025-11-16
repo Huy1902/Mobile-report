@@ -457,3 +457,60 @@ Ca sử dụng sửa thông tin cá nhân cho phép người dùng có thể s�
 \end{longtable}
 
 
+
+\subsection{Quên mật khẩu}
+Ca sử dụng quên mật khẩu cho phép người dùng có thể thay đổi mật khẩu khi đã quên mật khẩu cũ.
+\begin{longtable}{|p{4.5cm}|p{10cm}|}
+	\hline
+	\textbf{Mã Use case} & UC-ForgotPassword \\
+	\hline
+	\textbf{Tên Use case} & Forgot Password \\
+	\hline
+	\textbf{Tác nhân} & Người dùng \\
+	\hline
+	\textbf{Mô tả} & Người dùng có thể sửa mật khẩu ngay cả khi quên mật khẩu cũ. \\
+	\hline
+	\textbf{Sự kiện kích hoạt} & Người dùng nhấn "Forgot Password" \\
+	\hline
+	\textbf{Pre-condition} &
+	\begin{itemize}
+		\item Người dùng chưa đăng nhập.
+		\item Kết nối internet ổn định.
+	\end{itemize}
+	\\
+	\hline
+	\textbf{Basic flow} &
+	\begin{tabular}{|p{1cm}|p{7.5cm}|}
+		\hline
+		\textbf{STT} & \textbf{Sự kiện} \\
+		\hline
+		1 & Người dùng nhấn vào "Forgot Password" ở trong giao diện đăng nhập  \\
+		\hline
+		2 & Người dùng nhập email đã dùng để đăng ký, chuyển đến giao diện xác thực otp \\
+		\hline
+		3 & Server tiếp nhận email, gửi một mã otp xác nhận tới email và lưu otp vào CSDL \\
+		\hline
+		4 & Người dùng nhận mã otp qua mail và nhập vào ô xác thực, chuyển đến giao diện đặt lại mật khẩu \\
+		\hline
+		5 & Người dùng nhập thông tin vào form cài đặt mật khẩu mới, server tiếp nhận thông tin và thay đổi mật khẩu \\
+		\hline
+		7 & Trả về thông báo thành công, chuyển đến giao diện đăng nhập \\
+		\hline
+	\end{tabular}
+	\\
+	\hline
+	\textbf{Alternate flow:} Người dùng thay đổi mật khẩu &
+	\begin{tabular}{|p{1cm}|p{7.5cm}|}
+		\hline
+		\textbf{STT} & \textbf{Sự kiện} \\
+		\hline
+		4.1 & Nếu otp không khớp, hiển thị thông báo lỗi  \\
+	\end{tabular}
+	\\
+	\hline
+	\textbf{Post-condition} & Mật khẩu người dùng được cập nhật \\
+	\hline
+	\textbf{Other} & Chuyển đến giao diện đăng nhập \\
+	\hline
+	\caption{Use Case: Forgot Password} \label{tab:usecase-forgotpassword} \\
+\end{longtable}

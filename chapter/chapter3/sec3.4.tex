@@ -10,6 +10,18 @@ nắm bắt logic nghiệp vụ để triển khai chính xác hơn.
 
 \textit{Chú thích: Decision trong Activity Diagram theo chuẩn thì được biểu diễn bằng một hình thoi, tuy nhiên do code bằng PlantUml, mặc định decision 
 là hình lục giác nên decision trong tài liệu này được để là một hình lục giác. }
+\subsection{Phát bài hát}
+Activity Diagram "Phát bài hát" mô tả quy trình mà người dùng thực hiện để phát một bài hát 
+trên hệ thống. Biểu đồ này thể hiện các hoạt động chính như người dùng chọn bài nhạc để phát, hệ thống xử lý yêu cầu phát nhạc, xử lý các trường hợp lỗi 
+và kết thúc bằng việc bài nhạc được phát thành công. 
+
+Biểu đồ giúp minh họa rõ các hoạt động giữa người dùng và hệ thống, cho phép nhìn tổng thể các bước,
+các quyết định quan trọng cũng như tương tác giữa các đối tượng. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/playingsong-activity.png}
+	\caption{Biểu đồ hoạt động chức năng "Phát bài hát"}
+\end{figure}
 
 \subsection{Đăng ký} 
 Activity Diagram "Đăng ký" mô tả quy trình mà người dùng thực hiện để tạo tài khoản 
@@ -100,4 +112,17 @@ các quyết định quan trọng cũng như tương tác giữa các đối tư
 	\centering
 	\includegraphics[width=1\textwidth]{figures/updateprofile-activity.png}
 	\caption{Biểu đồ hoạt động chức năng "Sửa thông tin cá nhân"}
+\end{figure}
+
+\subsection{Quên mật khẩu}
+Activity Diagram "Quên mật khẩu" mô tả quy trình mà người dùng thực hiện để thay đổi mật khẩu khi không nhớ mật khẩu cũ
+. Biểu đồ này thể hiện các hoạt động chính như cách người dùng thao tác với giao diện, hệ thống xử lý dữ liệu 
+và kết thúc bằng việc mật khẩu người dùng được cập nhật thành công. 
+
+Biểu đồ giúp minh họa rõ các hoạt động giữa người dùng và hệ thống, cho phép nhìn tổng thể các bước,
+các quyết định quan trọng cũng như tương tác giữa các đối tượng. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/forgotpassword-activity.png}
+	\caption{Biểu đồ hoạt động chức năng "Quên mật khẩu"}
 \end{figure}
