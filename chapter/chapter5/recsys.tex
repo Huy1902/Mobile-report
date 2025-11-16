@@ -1,2 +1,89 @@
 \section{Xây dựng mô hình gợi ý}
 \label{sec:recommend_model}
+
+\subsection{Giới thiệu về HAC-NSW}
+Hyper Actor Critic Framework with Nash Social Welfare (\textbf{HAC-NSW}) là một mô hình học tăng cường phục vụ cho hệ thống gợi ý nền tảng chuỗi sự kiện, hệ thống nhận đầu vào
+một chuỗi thông tin (ví dụ lịch sử âm nhạc của người dùng), sau đó sẽ trả về một tập các gợi ý (ví dụ năm bài hát được gợi ý). Luồng xử lý của mô hình này được
+biểu diễn trong biểu đồ \ref{fig:fair_hac} dưới đây.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/fair-hac.png}
+  \caption{Luồng của mô hình HAC-NSW}
+  \label{fig:fair_hac}
+\end{figure}
+
+\textbf{HAC-NSW} chính là mở rộng của \textbf{Hyper Actor Critic} Framework, một framework
+mạnh mẽ cho gợi ý với không gian gợi ý lớn (large item space). Nó hoạt động dựa trên cơ chế nén không gian dữ liệu lớn lại thành \textbf{miền ẩn} (latent space) thông qua
+một phép chiếu từ không gian bậc cao với số chiều lớn xuống một không gian bậc thấp có số chiều nhỏ hơn. Mô hình tìm kiếm những gợi ý trên miền này sau đó phục dựng
+những gợi ý trong không gian gợi ý ban đầu qua một phép chiếu ngược của phép chiếu ban đầu. Bản chất của mô hình HAC nằm ở việc học hai phép chiếu này một cách hiệu
+quả. Vấn đề chính nảy sinh từ việc chính sách tối ưu sau quá trình học tăng cường lựa chọn quyết sách tối ưu trên không gian ẩn chứ không phải không gian ban đầu.
+Vậy làm sao để tìm kiếm hiệu quả trên miền ẩn và đảm bảo sự đúng đắn của phép chiếu (nếu phép chiếu sai thì chính sách cũng sai theo)?
+
+Câu lời của HAC là thêm một hàm mất mát thể hiện sự \textbf{thống nhất} giữa hai phép chiếu ngược và xuôi kèm theo nhiễu Gaussian làm tăng hiệu quả việc \textbf{tìm kiếm} trên miền ẩn.
+HAC ban đầu sinh ra như có thể thấy, chính là HAC Module trong hình \ref{fig:fair_hac}. Nhưng một vấn đề khác nảy sinh trong quá trình quan sát cách hoạt động của 
+mô hình này, việc tối ưu hóa trên miền ẩn gây nên sự mất cân bằng lớn giữa nhiều người dùng (có người sẽ nhận kết quả gợi ý rất tốt trong khi số khác lại không).
+Đó là vì HAC thiếu đi một module có khả năng đem thông tin của sự cân bằng giữa những người dùng vào để tối ưu hóa chính sách.
+
+Điều này dẫn tới động lực khai sinh ra HAC-NSW. NSW chính là một hàm thuộc họ Social Welfare, hàm này có khả năng tích hợp tốt và linh hoạt, quan trọng nhất là
+nó bao hàm trực tiếp thông tin về sự \textbf{cân bằng} trong hàm. Từ đó tích hợp NSW vào HAC làm tăng tính cân bằng giữa các người dùng của hệ thống.
+
+\subsection{HAC-NSW và InsightTune}
+Nhận thấy sự cân bằng này là rất quan trọng trong một trình duyệt âm nhạc nhiều người dùng, và phù hợp với mục đích tích hợp AI một cách hiệu quả, chúng tôi đã lựa
+chọn mô hình HAC-NSW làm mô hình chính cho hệ thống \textbf{InsightTune} 
+
+Để xây dựng hiệu quả mô hình gợi ý, chúng tôi đã thu thập dữ liệu từ nhiều nguồn khác nhau trên mạng. Vì mục đích chính của \textbf{InsightTune} là làm một ví dụ,
+khuôn mẫu tích hợp AI một cách quả nên cần thiết phải có một hệ thống gợi ý hoàn chỉnh tương thích cao. Dữ liệu hiện tại của hệ thống \textbf{InsightTune} chưa
+đủ khả năng cho thấy toàn bộ tiềm năng của mô hình. Do đó, trong báo cáo này, chúng sẽ tập trung phân tích quá trình xây dựng và kết quả kiểm thử trên tập dữ liệu
+lớn để tăng sức thuyết phục so với sử dụng chỉ một vài người dùng sẵn có trong hệ thống.
+
+
+\subsection{Xây dựng huấn luyên mô hình}
+
+Trong mục này, chúng tôi sẽ tập trung trình bày quá trình xây dựng huấn luyện mô hình HAC-NSW thích hợp với hệ thống. Điều này yêu cầu phải có một bộ dữ liệu âm 
+nhạc đầy đủ, có các đặc điểm rõ ràng và một quá trình huấn luyện kiểm thử kỹ càng.
+
+\subsubsection{Dữ liệu}
+Dữ liệu là điều rất quan trọng với một mô hình học tăng cường. Chúng tôi thu thập dữ liệu bằng cách kết hợp hai bộ dữ liệu lớn. Đó là Spotify Million Playlist Dataset (MPD)
+và Spotify 1.2M+ Songs. Cụ thể quá trình này đã được ghi lại trên \hyperlink{https://www.kaggle.com/datasets/huynguyen1902/music-interaction}{Kaggle}. Trong
+báo cáo này chúng tôi chỉ trình bày ngắn gọn lại như sau:
+\begin{itemize}
+  \item Lấy dữ liệu từ hai bộ dữ liệu về
+  \item Loại bỏ các mẫu không trùng nhau giữa hai bộ dữ liệu
+  \item Biến đổi lấy mẫu để tạo thành các lịch sử tương tác
+  \item Sử dụng dữ liệu này để cho quá trình huấn luyện
+\end{itemize}
+
+
+\subsubsection{Huấn luyện}
+Đầu tiên, chúng tôi tạo ra một mô hình giả lập lại môi trường thực tế. Mô hình này được xây dựng trên mô hình Transformer cơ bản, có độ nhiễu nhất định.
+Sau đó mô hình HAC-NSW sẽ tương tác với mô hình này để học được chính sách tối ưu như tương tác với môi trường thực tế.
+
+Quá trình huấn luyện của chúng được thể hiện qua các bảng biểu sau đây.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/average.png}
+  \caption{Bảng biểu thể hiện tương tác trung bình khi hàm mất mát của actor cải thiện}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/image.png}
+  \caption{Bảng biểu thể hiện kết quả thấp nhất trong người dùng và độ chênh ổn định thấp khi hàm mất mát actor cải thiện}
+\end{figure}
+
+Mô hình cũng thể hiện sự tương tác tốt trên tập kiểm thử với kết quả như sau.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/test_average.png}
+  \caption{Bảng biểu thể hiện kết quả trung bình tốt trên tập kiểm thử}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/test_variance.png}
+  \caption{Bảng biểu thể hiện độ lệch vẫn ổn định thấp trên tập kiểm thử}
+\end{figure}
+
+Điều này chứng minh chúng đã huấn luyện được mô hình đủ ổn định để triển khai trên một hệ thống lớn.
