@@ -82,9 +82,9 @@ Ca sử dụng đăng ký cho phép người dùng tạo tài khoản để sử
 	\hline
 	\textbf{Tác nhân} & Người dùng\\
 	\hline
-	\textbf{Mô tả} & Người dùng tạo đăng ký để tạo tài khoản\\
+	\textbf{Mô tả} & Người dùng đăng ký để tạo tài khoản\\
 	\hline
-	\textbf{Điều kiện kích hoạt} & Người dùng bấm vào nút "Sign up free"\\
+	\textbf{Sự kiện kích hoạt} & Người dùng bấm vào nút "Create An Account"\\
 	\hline
 	\textbf{Pre-condition} &
 	\begin{itemize}
@@ -128,7 +128,7 @@ Ca sử dụng đăng ký cho phép người dùng tạo tài khoản để sử
 	\textbf{Other} &
     \begin{minipage}[t]{\linewidth}
 	\begin{itemize}
-		\item Email đăng ký được đảm bảo đúng dịnh dạng và chưa từng được đăng ký trước đây.
+		\item Email đăng ký được đảm bảo đúng định dạng và chưa từng được đăng ký trước đây.
 		\item Thông tin yêu cầu được điền đầy đủ.
 	\end{itemize}
     \end{minipage}
@@ -392,6 +392,68 @@ Ca sử dụng lưu bài hát yêu thích cho phép người dùng có thể lư
 	\textbf{Other} & None \\
 	\hline
 	\caption{Use Case: Favorite Songs} \label{tab:usecase-favoritesong} \\
+\end{longtable}
+
+\subsection{Sửa thông tin cá nhân}
+Ca sử dụng sửa thông tin cá nhân cho phép người dùng có thể sửa các thông tin firstname, lastname, phone, address và mật khẩu.
+\begin{longtable}{|p{4.5cm}|p{10cm}|}
+	\hline
+	\textbf{Mã Use case} & UC-UpdateProfile \\
+	\hline
+	\textbf{Tên Use case} & Update Profile \\
+	\hline
+	\textbf{Tác nhân} & Người dùng \\
+	\hline
+	\textbf{Mô tả} & Người dùng có thể sửa các thông tin firstname, lastname, address, phone và mật khẩu tài khoản. \\
+	\hline
+	\textbf{Sự kiện kích hoạt} & Người dùng vào trang cài đặt, ấn nút "Save" hoặc "Change Password" nếu đổi mật khẩu \\
+	\hline
+	\textbf{Pre-condition} &
+	\begin{itemize}
+		\item Người dùng đã đăng nhập thành công.
+		\item Kết nối internet ổn định.
+	\end{itemize}
+	\\
+	\hline
+	\textbf{Basic flow} &
+	\begin{tabular}{|p{1cm}|p{7.5cm}|}
+		\hline
+		\textbf{STT} & \textbf{Sự kiện} \\
+		\hline
+		1 & Người dùng nhấn vào avatar ở góc trên cùng bên phải màn hình \\
+		\hline
+		2 & Người dùng chọn "Edit Profiles" \\
+		\hline
+		3 & Người dùng nhập thông tin vào form đổi thông tin \\
+		\hline
+		4 & Server lưu kết quả \\
+		\hline
+		5 & Giao diện hiển thị thông tin đã cập nhật \\
+		\hline
+	\end{tabular}
+	\\
+	\hline
+	\textbf{Alternate flow:} Người dùng thay đổi mật khẩu &
+	\begin{tabular}{|p{1cm}|p{7.5cm}|}
+		\hline
+		\textbf{STT} & \textbf{Sự kiện} \\
+		\hline
+		2.1.1 & Người dùng chọn "Change Password" \\
+		\hline
+		3.1.2 & Người dùng nhập thông tin vào form đổi mật khẩu \\
+		\hline
+		2.2.1 & Người dùng nhấn vào avatar \\
+		\hline
+		3.2.2 & Người dùng chọn avatar mới \\
+		\hline
+	\end{tabular}
+	\\
+	\hline
+	\textbf{Post-condition} & Thông tin người dùng được cập nhật \\
+	\hline
+	\textbf{Other} & Giao diện hiện thông tin đã cập nhật \\
+	\hline
+	\caption{Use Case: Update Personal Information} \label{tab:usecase-updateprofile} \\
 \end{longtable}
 
 

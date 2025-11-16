@@ -1,18 +1,37 @@
 \subsection{Client}
 \label{subsection:client}
-Client là một thành phần chính trong kiến trúc hệ thống. Client nằm thiết bị của người dùng. Nhiệm vụ của Client cung cấp giao diện để người dùng tương tác với hệ thống, ghi nhận dữ liệu đầu và hiển thị dữ liệu của người dùng khi được yêu cầu.
+Client là một thành phần chính trong kiến trúc hệ thống, nằm ở thiết bị di động của người dùng. Nhiệm vụ của Client là cung cấp giao diện để người dùng tương tác với hệ thống của ứng dụng, ghi nhận dữ liệu đầu và hiển thị dữ liệu của người dùng khi được yêu cầu. Không chỉ vậy, Client còn chịu trách nhiệm quản lí các trạng thái giao diện, xử lí logic và dữ liệu, giao tiếp hiệu quả với Server để đem lại trải nghiệm tốt nhất cho người dùng.
 
-Client trong hệ thống được xây dựng theo kiến trúc \textbf{MVVM (Model - View - ViewModel)} với \textbf{Repository Pattern} nhằm tách biệt các thành phần trong hệ thống, giúp việc phát triển, bảo trì và mở rộng hệ thống trở nên dễ dàng hơn.
+Trong các mô hình phát triển ứng dụng truyền thống, Client thường được xây dựng theo kiến trúc \textbf{MVC (Model - View - Controller)} hoặc không có kiến trúc rõ ràng. Tuy nhiên, các hệ thống này thường bị pha trộn các thành phần với nhau, ví dụ như hiển thị giao diện và xử lí logic, xử lí dữ liệu trong cùng một lớp. Điều này dẫn đến các lớp View thường trở nên quá lớn, phức tạp, phải thực hiện quá nhiều nhiệm vụ khác nhau như hiển thị giao diện, xử lí logic, gọi API, xử lí dữ liệu,..., dẫn đến các vấn đề:
+\begin{itemize}
+    \item Khó khăn trong việc bảo trì và nâng cấp hệ thống 
+    \item Khó khăn trong việc mở rộng hệ thống khi cần thêm các tính năng mới.
+    \item Khó khăn trong việc kiểm thử do các lớp quá lớn và phức tạp.    
+    \item Khó khăn trong việc tái sử dụng mã nguồn do các thành phần không được tách biệt rõ ràng.
+\end{itemize}
+
+Để giải quyết các vấn đề nêu trên, chúng tôi lựa chọn xây dựng kiến trúc Client sử dụng mô hình \textbf{MVVM (Model - View - ViewModel)} kết hợp với \textbf{Repository Pattern} nhằm tách biệt các thành phần trong hệ thống, giúp việc phát triển, bảo trì và mở rộng hệ thống trở nên dễ dàng hơn.
 
 Trong kiến trúc này, vai trò của các thành phần được mô tả như sau:
 \begin{itemize}
     \item \textbf{Model}: Chứa các lớp đối tượng biểu diễn dữ liệu trong hệ thống. 
-    \item \textbf{View}: Hiển thị giao diện và nhận các tương tác từ người dùng. View chỉ tập trung vào hiển thị giao diện và không chứa logic xử lí dữ liệu.
+    \item \textbf{View}: Hiển thị giao diện và nhận các tương tác từ người dùng. View chỉ tập trung vào hiển thị giao diện và không chứa logic xử lí dữ liệu. Trong kiến trúc này, View được xây dựng bằng Jetpack Compose, một thư viện UI hiện đại của Android giúp xây dựng giao diện người dùng một cách nhanh chóng và hiệu quả.
     \item \textbf{ViewModel}: ViewModel nhận yêu cầu, tương tác của người dùng từ View và gửi yêu cầu, nhận dữ liệu từ Repository. ViewModel chịu trách nhiệm xử lí logic, xử lí dữ liệu, quản lý trạng thái và cung cấp dữ liệu cho View. 
     \item \textbf{Repository}: Là lớp trung gian giữa ViewModel và API Server. Repository chịu trách nhiệm thực hiện các thao tác gọi API, đồng thời có thể nhận dữ liệu từ Server dưới dạng JSON và xử lý dữ liệu trước khi trả về cho ViewModel.
 \end{itemize}
 
-Khi người dùng tương tác với giao diện-\textbf{View} (ví dụ ấn nút đăng nhập) thì \textbf{View} sẽ gửi yêu cầu đến \textbf{ViewModel}. \textbf{ViewModel} sẽ xử lý yêu cầu này, gọi đến các phương thức trong \textbf{Repository}. \textbf{Repository} sẽ thực hiện lời gọi API đến Server để lấy hoặc nhận dữ liệu. API sẽ trả về dữ liệu cho \textbf{Repository} dưới dạng JSON. \textbf{Repository} nhận, có thể xử lí dữ liệu thành các đối tượng \textbf{Model} và trả về cho \textbf{ViewModel}. \textbf{ViewModel} tiếp tục xử lí dữ liệu nếu cần và cập nhật lại \textbf{View} để hiển thị dữ liệu cho người dùng.
+Khi người dùng tương tác với giao diện-\textbf{View} (ví dụ ấn nút đăng nhập) thì \textbf{View} sẽ gửi yêu cầu đến \textbf{ViewModel}. \textbf{ViewModel} sẽ xử lý yêu cầu này, gọi đến các phương thức trong \textbf{Repository}. \textbf{Repository} gọi API đến Server để lấy hoặc nhận dữ liệu. API sẽ trả về dữ liệu cho \textbf{Repository} dưới dạng JSON. \textbf{Repository} nhận, có thể xử lí dữ liệu thành các đối tượng \textbf{Model} và trả về cho \textbf{ViewModel}. \textbf{ViewModel} tiếp tục xử lí dữ liệu nếu cần và cập nhật lại trạng thái của giao diện mà \textbf{View} đang quan sát, sau đó \textbf{View} sẽ tự động cập nhật giao diện dựa trên trạng thái mới từ \textbf{ViewModel}.
+
+Lợi ích của việc sử dụng kiến trúc \textbf{MVVM} kết hợp với \textbf{Repository Pattern} bao gồm:
+\begin{itemize}
+    \item Tách biệt rõ ràng các thành phần trong hệ thống, phân chia trách nhiệm rõ ràng giữa các lớp, giúp loại bỏ sự phụ thuộc chồng chéo giữa các thành phần.
+    \item Mã nguồn trở nên linh hoạt và dễ dàng thay đổi.
+    \item Tăng khả năng tái sử dụng mã nguồn, vì các thành phần được tách biệt rõ ràng và có thể sử dụng lại trong các phần khác của hệ thống.
+    \item Giúp kiểm thử dễ dàng hơn vì các thành phần nhỏ hơn và có trách nhiệm rõ ràng hơn.
+    \item Dễ dàng quản lý trạng thái và dữ liệu trong ứng dụng.
+\end{itemize}
+
+Việc áp dụng kiến trúc \textbf{MVVM} kết hợp với \textbf{Repository Pattern} giúp giải quyết các vấn đề trong phát triển ứng dụng truyền thống, đồng thời nâng cao chất lượng và hiệu quả của quá trình phát triển phần mềm, xây dựng nền tảng Client vững chắc, linh hoạt để dễ dàng bảo trì và tiếp tục mở rộng trong tương lai.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/MVVM.png}

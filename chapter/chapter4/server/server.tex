@@ -1,12 +1,46 @@
 \subsection{Server}
 \label{subsection:server}
 
+Phần trước chúng tôi đã diễn giải và phân tích Client, ở phần này chúng tôi xin nói về thành phần quan trọng còn lại trong 
+kiến trúc Client - Server, Server.
+
+Trong kiến trúc Client - Server, Server có vai trò cốt lõi như sau:
+\begin{itemize}
+  \item Là cửa ngõ tiếp nhận và phản hồi yêu cầu
+  \item Thực thi nghiệp vụ (Business Logic)
+  \item Truy cập cơ sở dữ liệu và bảo toàn nhất quán dữ liệu
+  \item Quản lý phiên và bảo mật xác thực danh tính
+  \item Kiểm soát lưu lượng
+  \item Ghi lại (logging) hoạt động, trạng thái của hệ thống
+\end{itemize}
+
+So với Client yêu cầu dung lượng nhẹ, khả năng dễ triển khai tương thích với nhiều loại sản phẩm. Server cần có khả năng mở rộng
+cao khi hệ thống sẽ ngày càng phức tạp trong tương lai. Với các mô hình monolithic truyền thống, việc triển khai và xây dựng sẽ
+nhanh chóng dễ dàng giai đoạn đầu. Tuy nhiên, càng về sau, khi hệ thống trở nên đồ sộ và bắt đầu cần mở rộng, monolithic lại 
+cho thấy những hạn chế của mình trong khả năng mở rộng và tái sử dụng code.
+
+Do đó, để đáp ứng yêu cầu \ref{req:scale} đưa ra về khả năng mở rộng, chúng tôi đã lựa chọn kiến trúc microservice. Một kiến trúc
+chia hệ thống thành nhiều dịch vụ nhỏ, độc lập triển khai. Kiến trúc chung của microservice có thể minh họa qua hình \ref{fig:microservice}
+sau đây.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/microservice.png}
 	\caption{Kiến trúc microservice chung}
 	\label{fig:microservice}
 \end{figure}
+
+Ở trong kiến trúc microservice điểm đặc biệt nằm ở các dịch vụ nhỏ của nó. Mỗi dịch vụ (service) phải thỏa mãn các yêu cầu cố 
+định, tạo nên sự linh hoạt và khả năng mở rộng cao đặc trưng của kiến trúc này. Các yêu cầu này có thể tóm gọn lại như sau:
+\begin{itemize}
+  \item Có miền nghiệp vụ rõ ràng (bounded context).
+  \item Tự quản lý dữ liệu riêng (database-per-service).
+  \item Giao tiếp qua API (REST, gRPC,...) hoặc broker (kafka, rabbitMQ).
+  \item Có vòng đời phát triển và triển khai tách biệt với các dịch vụ khác.
+\end{itemize}
+
+Sau khi cân nhắc các ca sử dụng như trong chương \ref{chapter:requirements} và những công cụ hiện có. Chúng tôi đã ứng dụng
+kiến trúc microservice này vào hệ thống \textbf{InsightTune} mà vẫn giữ nguyên tắc thủ các yêu cầu khi triển khai từng service.
+Chúng tôi xin trình bày kiến trúc bậc cao của server như sơ đồ \ref{fig:server_architecture} dưới đây.
 
 \begin{figure}[H]
   \centering
@@ -15,9 +49,42 @@
   \label{fig:server_architecture}
 \end{figure}
 
+Sơ đồ này biểu thị các dịch vụ có trong hệ thống và phương thức giao tiếp của chúng. Mỗi dịch vụ đều có chức năng riêng cũng như
+dữ liệu riêng của mình tách biệt cùng các dịch vụ khác trong server. Chúng được cố định phương thức giao tiếp truyền tin đồng bộ
+qua REST và bất đồng bộ thông qua Kafka. Những dịch vụ trong server của hệ thống \textbf{InsightTune} gồm có:
+\begin{itemize}
+  \item AuthService: phụ trách xác thực, quản lý phiên, đảm nhiệm cơ chế bảo mật chính của server
+  \item UserService: lưu thông tin riêng của người dùng
+  \item CatalogService: quản lý thông tin bài hát, ca sĩ, album ca nhạc
+  \item FavoriteService: quản lý bài hát yêu thích của người dùng
+  \item RecSys: hệ thống gợi ý, nhận lịch sử người dùng và trả về danh sách bài hát đề xuất, quản lý đặc trưng của bài hát
+  \item RecommendService: tổng hợp lịch sử, danh sách ứng cử viên gửi cho RecSys để nhận đề xuất
+  \item HistoryService: quản lý lịch sử phát nhạc của người dùng
+  \item PlayingService: tương tác với kho lưu trữ nhạc để lấy ảnh và file phát nhạc được streaming trực tiếp
+  \item UploadService: dịch vụ riêng không tương tác với bên ngoài để tải bài hát lên kho lưu trữ
+  \item API Gateway: dịch vụ quản lý các tuyến đường truy cập từ ngoài mạng vào nội bộ mạng của server, có khả năng cân bằng tải khi nhiều người dùng gọi tới
+\end{itemize}
+
+Mỗi dịch vụ này khi thiết kế luôn tuân theo các yêu cầu đặt ra cho một dịch vụ trong kiến trúc mircroservice. Với việc sử dụng SpringBoot Framework cho 
+mã nguồn server, chúng tôi đã vận dụng luồng xử lý, kiến trúc bậc cao của Spring cho mỗi dịch vụ. Kiến trúc 3 lớp \textbf{controller - service - repository}
+của Spring có thể được biểu diễn như trong hình \ref{fig:spring_architecture}.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{figures/spring.png}
   \caption{Kiến trúc 3 lớp của Spring khi xây dựng Microservice}
   \label{fig:spring_architecture}
 \end{figure}
+
+Trong kiến trúc 3 lớp này, mỗi lớp có vai trò và nhiệm vụ riêng biệt. Cụ thể:
+\begin{itemize}
+  \item Controller: Nhận yêu cầu HTTP và trả lời lại frontend
+  \item Service: phục trách nghiệp vụ, bao gồm chuyển đổi và xử lý giữa data transfers object (đối tượng chuyển dữ liệu, tương tác tại controller) và domain model (mô hình
+  miền, phục vụ giao tiếp với database)
+  \item Repository: Quản lý tương tác với cơ sở dữ liệu, thực hiện các truyphần
+\end{itemize}
+
+Tuân thủ theo thiết kế này, chúng tôi đã tạo ra được một thiết kế bậc cao microservice hoàn chỉnh với các dịch vụ con được mô hình hóa tốt, riêng biệt, nghiệp vụ riêng rõ ràng,
+có bộ code tách biệt không trùng lặp nhau và có khả năng tái sử dụng cao cho Server của hệ thống \textbf{InsightTune}. Tuy nhiên để triển khai trên được một nền tảng
+đám mây như Amazon Web Service, chúng tôi thấy rằng cần phải có một sơ đồ rõ ràng và kế hoạch cũng như các công cụ được liệt kê cẩn thận để các dịch vụ nói riêng cũng
+như toàn bộ hệ thống \textbf{InsightTune} nói chung hoạt động hiệu quả. Điều này sẽ được chúng tôi trình bày kỹ hơn tại phần \ref{sec:deployment}.

@@ -42,7 +42,7 @@ Hình~\ref{fig:sequence-chatbot} mô tả quá trình này.
 \subsection{Đăng ký}
 \begin{itemize}
 	\item Người dùng nhấn "Sign up for free", giao diện hiển thị form đăng ký.
-	\item Gửi thông tin đăng ký tới Controller, kiểm tra định dạng và tính hợp lệ của dữ liệu.
+	\item Gửi thông tin đăng ký qua API Gateway tới Controller, kiểm tra định dạng và tính hợp lệ của dữ liệu.
 	\item Nếu thông tin hợp lệ, gửi thông tin cho Service kiểm tra email đã tồn tại chưa, nếu không hiển thị thông báo lỗi.
 	\item Nếu email chưa tồn tại, gửi thông tin qua Repo, lưu vào CSDl, nếu không hiển thị thông báo lỗi.
 	\item Chuyển đến giao diện đăng nhập.
@@ -51,13 +51,13 @@ Hình~\ref{fig:sequence-chatbot} mô tả quá trình này.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/sequence-register.png}
-	\caption{Biểu đồ tuần tự cho chức năng đăng ký}
+	\caption{Biểu đồ tuần tự cho chức năng đăng ký}	
 \end{figure}
 
 \subsection{Đăng nhập}
 \begin{itemize}
 	\item Người dùng nhấn "Login" và nhập email và mật khẩu hoặc nhấn "Login with Google".
-	\item Gửi thông tin đăng nhập tới Controller, kiểm tra định dạng.
+	\item Gửi thông tin đăng nhập qua API Gateway tới Controller, kiểm tra định dạng.
 	\item Nếu thông tin hợp lệ, gửi cho Service kiểm tra email đã tồn tại trong CSDl chưa, nếu không thông báo lỗi.
 	\item Nếu email tồn tại, kiểm tra thông tin mật khẩu.
 	\item Nếu mật khẩu đúng, thông báo thành công, giao diện chuyển sang home, nếu không thông báo lỗi.
@@ -69,15 +69,60 @@ Hình~\ref{fig:sequence-chatbot} mô tả quá trình này.
 	\caption{Biểu đồ tuần tự cho chức năng đăng nhập}
 	\end{figure}
 
-\subsection{Thêm giao dịch mới}
+\subsection{Phát nhạc}
 \begin{itemize}
-	\item Người dùng thêm giao dịch: nhấn nút ``Thêm giao dịch'' trên web, Điền thông tin (số tiền, danh mục, ghi chú...).
-	\item Hệ thống xử lý: Kiểm tra dữ liệu, nếu dữ liệu hợp lệ lưu vào database.
-	\item Hệ thống hiển thị kết quả.
+	\item Người dùng nhấn vào hình bản nhạc, client gửi qua API Gateway tới cho Service.
+	\item Service tìm Storage Key của bản nhạc và gửi lại cho Client qua API Gateway.
+	\item Client gửi Storage Key cho Service, Service trả về link bài nhạc.
+	\item Client load giao diện phát nhạc và hiển thị cho người dùng. 
+	\item Người dùng thoát giao diện phát nhạc thì hiển thị giao diện home, khi vào lại hiển thị thanh điều nhạc ở bên dưới.
 \end{itemize}
 \newpage
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{figures/add-transac-sq.png}
-	\caption{Biểu đồ tuần tự cho chức năng thêm giao dịch mới}
-\end{figure}
+	\includegraphics[width=1\textwidth]{figures/sequence-playingsong.png}
+	\caption{Biểu đồ tuần tự cho chức năng phát nhạc}
+	\end{figure}
+
+\subsection{Xem bài hát gần đây}
+\begin{itemize}
+	\item Người dùng vào giao diện home, Client gửi yêu cầu lấy lịch sử nghe nhạc qua API Gateway tới Service.
+	\item Service truy vấn và nhận lịch sử nghe nhạc từ CSDL.
+	\item Nếu người dùng đã từng nghe nhạc, Service trả về danh sách lịch sử nghe nhạc qua API Gateway cho Client. 
+	\item Client load các bài hát trong lịch sử nghe nhạc lên giao diện home.
+	\item Nếu người dùng chưa nghe nhạc, Service trả về danh sách rỗng, Client hiển thị thông báo "Chưa có lịch sử nghe nhạc"
+\end{itemize}
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/sequence-historysongs.png}
+	\caption{Biểu đồ tuần tự cho chức năng xem bài hát gần đây}
+	\end{figure}
+
+\subsection{Lưu bài hát yêu thích}
+\begin{itemize}
+	\item Người dùng nhấn nút "Favorite", Client gửi yêu cầu qua API Gateway cho Service.
+	\item Service gửi truy vấn tới CSDL để lưu thông tin.
+	\item Nếu lưu vào CSDL thành công, Service trả về thành công, Client cập nhật UI.
+	\item Nếu lưu vào CSLD không thành công, Service trả về lỗi, CLient hiển thị thông báo lỗi.
+\end{itemize}
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/sequence-addfavorite.png}
+	\caption{Biểu đồ tuần tự cho chức năng lưu bài hát yêu thích}
+	\end{figure}
+
+\subsection{Sửa thông tin cá nhân}
+\begin{itemize}
+	\item Người dùng nhập thông tin vào form thông tin cá nhân/mật khẩu/avatar, Client gửi thông tin qua API Gateway tới Service.
+	\item Service gửi truy vấn tới CSDL để lưu thông tin.
+	\item Nếu lưu vào CSDL thành công, Service trả về thành công, Client cập nhật UI.
+	\item Nếu lưu vào CSLD không thành công, Service trả về lỗi, CLient hiển thị thông báo lỗi.
+\end{itemize}
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/sequence-updateprofile.png}
+	\caption{Biểu đồ tuần tự cho chức năng sửa thông tin cá nhân}
+	\end{figure}

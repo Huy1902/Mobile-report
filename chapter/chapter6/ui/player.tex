@@ -1,14 +1,27 @@
 \subsection{Trình phát nhạc}
-
+\subsubsection{Mô tả chức năng}
+Đây là màn hình phát nhạc chính của ứng dụng, nơi người dùng có thể điều khiển việc phát nhạc và xem thông tin chi tiết về bài hát đang được phát. Người dùng có thể xem được tên bài hát, tên nghệ sĩ thể hiện cũng như ảnh bìa của bài hát. Ngoài ra, người dùng có thể sử dụng các chức năng điều khiển phát nhạc như phát/tạm dừng, chuyển bài tiếp, phát lại bài trước, tua thời gian bài hát, thêm vào mục yêu thích, chức năng phát ngẫu nhiên hoặc phát lặp lại.
+\subsubsection{Thành phần chính}
+\begin{itemize}
+	\item \textbf{Ảnh bìa bài hát}: Hiển thị ảnh bìa của bài hát đang được phát.
+	\item \textbf{Tên bài hát và nghệ sĩ}: Hiển thị tên bài hát và tên nghệ sĩ thể hiện ngay dưới ảnh bìa.
+	\item \textbf{Thanh tiến trình bài hát}: Hiển thị tiến trình phát của bài hát, cho phép người dùng tua nhanh hoặc tua lại bằng cách nhấn một vị trí thời gian mong muốn trên thanh này.
+	\item \textbf{Nút chơi nhạc}: Nút này cho phép người dùng phát hoặc tạm dừng bài hát hiện tại.
+	\item \textbf{Nút chuyển bài tiếp}: Bao gồm nút chuyển sang bài hát tiếp theo.
+	\item \textbf{Nút chuyển bài trước}: Bao gồm nút quay lại bài hát trước đó.
+	\item \textbf{Nút phát ngẫu nhiên}: Cho phép người dùng bật qua lại giữa chế độ phát ngẫu nhiên và phát lặp lại, với nút sáng màu tức đang phát nhạc ngẫu nhiên.
+	\item \textbf{Nút thêm vào yêu thích}: Cho phép người dùng thêm bài hát hiện tại vào danh sách các bài hát yêu thích của họ.
+	\item \textbf{Nút thu nhỏ}: Cho phép người dùng thu nhỏ trình phát nhạc về thanh nhạc đang phát ở dưới để truy cập vào các chức năng khác của ứng dụng.
+\end{itemize}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figures/ui/music_player.png}
 	\caption{Giao diện trình phát nhạc}
-    \caption*{\hspace{1cm} Giao diện trình phát nhạc với các chức năng điều khiển phát nhạc cơ bản như phát/tạm dừng, chuyển bài tiếp, phát lại bài trước, tua thời gian bài hát, thêm vào mục yêu thích, chức năng phát ngẫu nhiên hoặc phát lặp lại và hiển thị thông tin bài hát đang phát.}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figures/ui/music_notification.png}
 	\caption{Giao diện phát nhạc trên thanh thông báo}
+	\caption*{\hspace{1cm}Người dùng có thể tiếp tục nghe nhạc khi ứng dụng đang chạy nền cũng như tạm dừng hoặc phát nhạc.}
 \end{figure}
