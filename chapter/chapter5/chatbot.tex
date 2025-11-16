@@ -1,14 +1,34 @@
 \section{Xây dựng trợ lý ảo}
-\label{build_chatbot}
 
-Chúng tôi xây dựng một hệ thống chatbot agent kết hợp với các tool tìm kiếm và 
+\subsection{Bài toán đặt ra}
+Nhận thấy việc phát triển của trí tuệ nhân tạo (AI) và các mô hình 
+ngôn ngữ lớn (LLM) đang ngày càng phát triển và mang lại rất nhiều
+tiện ích cho người dùng. Và đồng thời khi dùng các ứng dụng âm nhạc hiện
+nay thì chúng tôi nhận ra được một vấn đề rằng người dùng thường sẽ 
+hay thắc mắc hoặc tò mò về các thông tin liên quan đến bài hát, ca sĩ
+ hoặc muốn biết xu hướng âm nhạc hiện nay ra sao. Và việc đang nghe nhạc
+ mà lại phải thoát ra để sử dụng một ứng dụng khác để tìm kiếm thông tin 
+ khá là bất tiện và làm gián đoạn trải nghiệm người dùng. \\
+ Và hiện nay cũng có
+ một vài ứng dụng đã nhận thấy được vấn đề này và dần tích hợp chatbot 
+ vào ứng dụng phát nhạc nhưng chatbot của họ thường chỉ trả lời dựa trên 
+ kiến thức được lưu trữ trong cơ sở dữ liệu có sẵn và không tự cập nhận những
+ thông tin mới nhất từ trên mạng. Đây cũng chính là một bất tiện lớn 
+ trong việc tối ưu hóa trải nghiệm người dùng bởi người dùng không được 
+ cập nhật thông tin một cách chính xác và mới nhất. Do đó chính tôi 
+ đã phát triển ra một hệ thống chatbot agent có khả năng tìm kiếm thông 
+ tin trên mạng để có thể trả lời người dùng một cách chính xác và 
+ bắt kịp thời đại nhanh nhất, không bị giới hạn bởi lượng kiến thức tĩnh.
+\subsection{Giải pháp đề xuất}
+ Chúng tôi xây dựng một hệ thống chatbot agent kết hợp với các tool tìm kiếm và 
 lấy thông tin từ trên mạng để cung cấp dữ liệu cho agent với model chính mà chúng tôi sử dụng là gemini-2.5-pro. 
 Điểm mạnh của chatbot của chúng tôi chính là khả năng tìm kiếm thông tin từ trên mạng, có thể tự động cập nhật
 những tri thức mới nhất để trả lời cho người dùng mà không bị thiếu kiến thức hay bị sai lệch thông tin
 so với các hệ thống chatbot truyền thống dùng các model tĩnh kết hợp RAG (retrieval-augmented generation) để cung
 cấp ngữ cảnh cho LLM.
 Ngoài ra chúng tôi cũng tự làm thêm tính năng phát nhạc khi người dùng yêu cầu hoặc có mong muốn 
-nghe nhạc trong app của mình và có thể yêu cầu bằng giọng nói hoặc nhập yêu cầu bằng văn bản.
+nghe nhạc trong app của mình và có thể yêu cầu bằng giọng nói hoặc nhập yêu cầu bằng văn bản mà không cần phải thao tác thủ công.
+\subsection{Công nghệ và luồng hoạt động của chatbot agent}
 
 Chatbot agent được xây dựng chủ yếu bằng framework mạnh mẽ cho agent là Langgraph và một 
 số các thư viện cần thiết khác để phục vụ cho việc triển khai hệ thống dễ dàng hơn.
@@ -17,9 +37,8 @@ Langgraph giúp chúng tôi xây dựng chatbot agent theo dạng đồ thị (g
 có thể dễ dàng mở rộng hơn vì nó tối ưu và dễ dàng phát triển để mở rộng thành hệ thống 
 multi-agent trong tương lai. 
 
-Các phần sau đây sẽ mô tả thêm về cách luồng hoạt động chính của chatbot agent, 
-cách xây dựng bộ nhớ, các tool duckduckgo, scrape website.
 \input{chapter/chapter5/chatbot/main_workflow.tex}
 \input{chapter/chapter5/chatbot/memory.tex}
 \input{chapter/chapter5/chatbot/search.tex}
 \input{chapter/chapter5/chatbot/scrape.tex}
+\input{chapter/chapter5/chatbot/play_music.tex}

@@ -5,12 +5,11 @@
 \subsection{Chatbot}
 \label{sec:sequence_chatbot}
 Quá trình hoạt động của chatbot được mô tả như sau. Khi người dùng gửi câu hỏi thì 
-sẽ có 2 loại dữ liệu nhận vào là văn bản và âm thanh.
+sẽ có 2 loại dữ liệu nhận vào là văn bản và âm thanh.\\
 Đối với dữ liệu là âm thanh, hệ thống sẽ chuyển đổi âm thanh thành văn bản và trả ngược về cho ứng dụng.
 Sau đó, ứng dụng sẽ trả về cho ứng dụng là văn bản đã được chuyển đổi từ giọng nói. Sau đó,
 ứng dụng sẽ gọi API của chatbot với đầu vào là dạng văn bản.
-Ở đây chúng tôi sử dụng model Whisper để chuyển đổi giọng nói thành văn bản. 
-Dưới đây là hình ảnh mô tả quá trình này:
+Hình~\ref{fig:voice_to_text} mô tả quá trình này
 \begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{figures/voice_to_text.png}
@@ -31,8 +30,8 @@ Lúc này LLM sẽ phân tích và xử lý yêu cầu. Nếu cần phải dùng
 Sau khi có được đầy đủ các thông tin cần thiết để LLM sẽ tổng hợp và tạo ra câu trả lời cuối cùng.
 Cuối cùng, chatbot sẽ lưu lại dữ liệu mới vào luồng tương ứng và có thể xử lý dữ liệu về dạng văn bản hoàn chỉnh,
 rõ ràng rồi trả về cho ứng dụng dữ liệu cuối cùng.
-Hình trang tiếp theo mô tả quá trình này.
-\newpage
+Hình~\ref{fig:sequence-chatbot} mô tả quá trình này.
+
 \begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{figures/sequence-chatbot.png}

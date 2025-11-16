@@ -1,0 +1,13 @@
+\subsubsection{Tính năng phát nhạc}
+Để thêm phần trải nghiệm người dùng, chúng tôi đã xây dựng 
+thêm tính năng phát nhạc trong ứng dụng chatbot của mình.
+Người dùng có thể yêu cầu phát nhạc bằng cách nhập yêu cầu với chatbot
+hoặc sử dụng giọng nói để ra lệnh phát nhạc.
+Đối với phát nhạc bằng giọng nói, chúng tôi dùng model Whisper của OpenAI để
+chuyển đổi giọng nói thành văn bản rồi gửi văn bản này đến Chatbot
+để chatbot phân tích và xử lý yêu cầu phát nhạc. Cuối cùng 
+trả về cho ứng dụng biết rằng đây là yêu cầu phát nhạc và ứng dụng sẽ 
+xử lý phần logic phát nhạc.Chúng tôi phải sử dụng kỹ thuật prompt để
+hướng dẫn chatbot cho đầu ra theo đúng định dạng mà ứng dụng 
+có thể nhận biết được và phát nhạc đúng yêu cầu của người dùng.
+
