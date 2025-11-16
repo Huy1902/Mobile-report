@@ -12,69 +12,69 @@
 \endhead
 \hypertarget{tc:dk-thanhcong}{Đăng ký} &
 Kiểm thử chức năng đăng ký thành công &
-firstname: "tran", lastname: "dinh",
-email: "23020043@vnu.edu.vn",
-password: "123456", confirmPassword: "123456" &
+firstname: ``tran'', lastname: ``dinh'',
+email: ``23020043@vnu.edu.vn'',
+password: ``123456'', confirmPassword: ``123456'' &
 Tài khoản mới thêm vào CSDL, chuyển hướng đến trang đăng nhập \\
 \hline
 \hypertarget{tc:dk-trungemail}{Đăng ký-trùng email} &
 Kiểm thử đăng ký khi tài khoản đã tồn tại &
-firstname: "tran", lastname: "dinh",
-email: "23020043@vnu.edu.vn",
-password: "123456", confirmPassword: "123456" &
-Thông báo lỗi: "Email already exists" \\
+firstname: ``tran'', lastname: ``dinh'',
+email: ``23020043@vnu.edu.vn'',
+password: ``123456'', confirmPassword: ``123456'' &
+Thông báo lỗi: ``Email already exists'' \\
 \hline
 \hypertarget{tc:dk-xnmk-sai}{Đăng ký-xác nhận mật khẩu sai} &
 Kiểm thử password khác confirmPassword &
-firstname: "tran", lastname: "dinh",
-email: "23020044@vnu.edu.vn",
-password: "123456", confirmPassword: "12345677" &
-Thông báo lỗi: "Passwords do not match" \\
+firstname: ``tran'', lastname: ``dinh'',
+email: ``23020044@vnu.edu.vn'',
+password: ``123456'', confirmPassword: ``12345677'' &
+Thông báo lỗi: ``Passwords do not match'' \\
 \hline
 \hypertarget{tc:dk-thieu-firstname}{Đăng ký-thiếu firstname} &
 Kiểm thử đăng ký thiếu firstname &
-firstname: "", lastname: "dinh",
-email: "23020044@vnu.edu.vn",
-password: "1234567", confirmPassword: "1234567" &
-Thông báo lỗi: "Field must not be blank" \\
+firstname: ``'', lastname: ``dinh'',
+email: ``23020044@vnu.edu.vn'',
+password: ``1234567'', confirmPassword: ``1234567'' &
+Thông báo lỗi: ``Field must not be blank'' \\
 \hline
 \hypertarget{tc:dk-thieu-lastname}{Đăng ký-thiếu lastname} &
 Kiểm thử đăng ký thiếu lastname &
-firstname: "tran", lastname: "",
-email: "23020044@vnu.edu.vn",
-password: "1234567", confirmPassword: "1234567" &
-Thông báo lỗi: "Field must not be blank" \\
+firstname: ``tran'', lastname: ``'',
+email: ``23020044@vnu.edu.vn'',
+password: ``1234567'', confirmPassword: ``1234567'' &
+Thông báo lỗi: ``Field must not be blank'' \\
 \hline
 \hypertarget{tc:dk-thieu-email}{Đăng ký-thiếu email} &
 Kiểm thử đăng ký thiếu email &
-firstname: "tran", lastname: "dinh",
-email: "", password: "1234567",
-confirmPassword: "1234567" &
-Thông báo lỗi: "Field must not be blank" \\
+firstname: ``tran'', lastname: ``dinh'',
+email: ``'', password: ``1234567'',
+confirmPassword: ``1234567'' &
+Thông báo lỗi: ``Field must not be blank'' \\
 \hline
 \hypertarget{tc:dk-thieu-password}{Đăng ký-thiếu password} &
 Kiểm thử đăng ký thiếu password &
-firstname: "tran", lastname: "dinh",
-email: "23020044@vnu.edu.vn",
-password: "", confirmPassword: "1234567" &
-Thông báo lỗi: "Field must not be blank" \\
+firstname: ``tran'', lastname: ``dinh'',
+email: ``23020044@vnu.edu.vn'',
+password: ``'', confirmPassword: ``1234567'' &
+Thông báo lỗi: ``Field must not be blank'' \\
 \hline
 \hypertarget{tc:dk-thieu-confirmpw}{Đăng ký-thiếu confirmPassword} &
 Kiểm thử đăng ký thiếu confirmPassword &
-firstname: "tran", lastname: "dinh",
-email: "23020044@vnu.edu.vn",
-password: "1234567", confirmPassword: "" &
-Thông báo lỗi: "Field must not be blank" \\
+firstname: ``tran'', lastname: ``dinh'',
+email: ``23020044@vnu.edu.vn'',
+password: ``1234567'', confirmPassword: ``'' &
+Thông báo lỗi: ``Field must not be blank'' \\
 \hline
 \hypertarget{tc:dn-sai-mk}{Đăng nhập-sai mật khẩu} &
 Kiểm thử sai mật khẩu &
-email: "23020043@vnu.edu.vn", password: "12345677" &
-Thông báo lỗi: "Incorrect password" \\
+email: ``23020043@vnu.edu.vn'', password: ``12345677'' &
+Thông báo lỗi: ``Incorrect password'' \\
 \hline
 \hypertarget{tc:dn-khongthay-email}{Đăng nhập-không tìm thấy email} &
 Kiểm thử email chưa được đăng ký &
-email: "23020044@gmail.com", password: "123456" &
-Thông báo lỗi: "Email not found" \\
+email: ``23020044@gmail.com'', password: ``123456'' &
+Thông báo lỗi: ``Email not found'' \\
 \hline
 \hypertarget{tc:dn-google}{Đăng nhập-Google} &
 Kiểm thử đăng nhập bằng Google thành công &
@@ -83,7 +83,7 @@ Tài khoản email của người dùng &
 \hline
 \hypertarget{tc:dn-thanhcong}{Đăng nhập} &
 Kiểm thử đăng nhập thành công &
-email: "23020043@vnu.edu.vn", password: "123456" &
+email: ``23020043@vnu.edu.vn'', password: ``123456'' &
 Đăng nhập thành công, chuyển hướng đến trang home \\
 \hline
 \hypertarget{tc:dx-thanhcong}{Đăng xuất} &
@@ -93,38 +93,38 @@ Kiểm thử chức năng đăng xuất thành công &
 \hline
 \hypertarget{tc:qpw-gui-otp}{Quên mật khẩu-gửi otp} &
 Kiểm thử chức năng gửi otp khi quên mật khẩu thành công &
-email: "23020043@vnu.edu.vn" &
-Hệ thống gửi OTP: "7184920" đến email người dùng, chuyển đến giao diện xác nhận OTP \\
+email: ``23020043@vnu.edu.vn'' &
+Hệ thống gửi OTP: ``7184920'' đến email người dùng, chuyển đến giao diện xác nhận OTP \\
 \hline
 \hypertarget{tc:qpw-otp-sai}{Quên mật khẩu-xác nhận otp sai} &
 Kiểm thử chức năng xác nhận otp quên mật khẩu không đúng &
-OTP: "7184921" &
-Thông báo lỗi: "Invalid OTP" \\
+OTP: ``7184921'' &
+Thông báo lỗi: ``Invalid OTP'' \\
 \hline
 \hypertarget{tc:qpw-otp-dung}{Quên mật khẩu-xác nhận otp} &
 Kiểm thử chức năng xác nhận otp quên mật khẩu thành công &
-OTP: "7184920" &
+OTP: ``7184920'' &
 Hệ thống xác nhận OTP thành công, chuyển đến giao diện tạo mật khẩu mới \\
 \hline
 \hypertarget{tc:qpw-tao-mk-moi}{Quên mật khẩu-tạo mật khẩu mới} &
 Kiểm thử chức năng xác nhận otp quên mật khẩu thành công &
-newPassword: "5zz2n8ce", confirmPassword: "5zz2n8ce" &
+newPassword: ``5zz2n8ce'', confirmPassword: ``5zz2n8ce'' &
 Tạo mật khẩu mới thành công, chuyển đến giao diện đăng nhập \\
 \hline
 \hypertarget{tc:search-track}{Tìm kiếm bài hát} &
 Kiểm thử tìm kiếm theo keyword &
-keyword: "Taylor" &
+keyword: ``Taylor'' &
 Hiển thị danh sách bài hát liên quan đến keyword \\
 \hline
 \hypertarget{tc:doi-mk}{Sửa thông tin cá nhân-mật khẩu} &
 Kiểm thử đổi mật khẩu thành công &
-oldPassword: "123456", newPassword: "123456789" &
+oldPassword: ``123456'', newPassword: ``123456789'' &
 Đổi mật khẩu thành công \\
 \hline
 \hypertarget{tc:doi-mk-sai}{Sửa thông tin cá nhân-sai mật khẩu} &
 Kiểm thử đổi mật khẩu khi điền sai mật khẩu cũ &
-oldPassword: "12345689", newPassword: "12345678" &
-Thông báo lỗi "Incorrect password" \\
+oldPassword: ``12345689'', newPassword: ``12345678'' &
+Thông báo lỗi ``Incorrect password'' \\
 \hline
 \hypertarget{tc:doi-avatar}{Sửa thông tin cá nhân-avatar} &
 Kiểm thử đổi avatar thành công &
@@ -133,28 +133,28 @@ Avatar cập nhật thành công \\
 \hline
 \hypertarget{tc:doi-profile}{Sửa thông tin cá nhân} &
 Kiếm thử đổi thông tin cá nhân của người dùng thành công &
-firstname: "tran", lastname: "dinh", address: "Hanoi", phone: "0398880776" &
+firstname: ``tran'', lastname: ``dinh'', address: ``Hanoi'', phone: ``0398880776'' &
 Đổi thông tin thành công, giao diện hiện thông tin vừa cập nhật \\
 \hline
 \hypertarget{tc:doi-profile-missing-first}{Sửa thông tin cá nhân-thiếu firstname} &
 Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu firstname &
-firstname: "", lastname: "dinh", address: "Hanoi", phone: "0398880776" &
-Thông báo lỗi: "Field must not be blank" \\
+firstname: ``'', lastname: ``dinh'', address: ``Hanoi'', phone: ``0398880776'' &
+Thông báo lỗi: ``Field must not be blank'' \\
 \hline
 \hypertarget{tc:doi-profile-missing-last}{Sửa thông tin cá nhân-thiếu lastname} &
 Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu lastname &
-firstname: "tran", lastname: "", address: "Hanoi", phone: "0398880776" &
-Thông báo lỗi: "Field must not be blank" \\
+firstname: ``tran'', lastname: ``'', address: ``Hanoi'', phone: ``0398880776'' &
+Thông báo lỗi: ``Field must not be blank'' \\
 \hline
 \hypertarget{tc:doi-profile-missing-addr}{Sửa thông tin cá nhân-thiếu address} &
 Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu address &
-firstname: "tran", lastname: "dinh", address: "", phone: "0398880776" &
-Thông báo lỗi: "Field must not be blank" \\
+firstname: ``tran'', lastname: ``dinh'', address: ``'', phone: ``0398880776'' &
+Thông báo lỗi: ``Field must not be blank'' \\
 \hline
 \hypertarget{tc:doi-profile-missing-phone}{Sửa thông tin cá nhân-thiếu phone} &
 Kiếm thử đổi thông tin cá nhân của người dùng khi thiếu phone &
-firstname: "tran", lastname: "dinh", address: "hanoi", phone: "" &
-Thông báo lỗi: "Field must not be blank" \\
+firstname: ``tran'', lastname: ``dinh'', address: ``hanoi'', phone: ``'' &
+Thông báo lỗi: ``Field must not be blank'' \\
 \hline
 \hypertarget{tc:play-track}{Phát bài hát} &
 Kiếm thử phát bài hát thành công &
@@ -178,65 +178,46 @@ Danh sách bài hát đã nghe gần đây hiện trên giao diện home \\
 \hline
 \hypertarget{tc:perf-basic}{Hiệu năng} &
 Kiểm thử hiệu năng luồng hoạt động cơ bản hệ thống &
-Number of
-users: 100,
-Ramp up: 5,
-Host:
-localhost:4010,
-Endpoints:
-POST /auth/register;
-POST /auth/login
-PUT /user/changePassword
-POST /auth/refresh
-GET /users
-PUT /users
-GET /tracks
-GET /tracks/search?keyword=Taylor
-GET /history/search
-GET /tracks/next/33333333-3333-3333-3333-333333333333
-POST /favorites/add
-GET /favorites
-POST /favorites/delete
-POST /auth/logout  &
+Number of users: 100, Ramp up: 5, Host: localhost:4010, Endpoints: POST /auth/register; POST /auth/login PUT /user/changePassword POST /auth/refresh GET /users PUT /users GET /tracks GET /tracks/search?keyword=Taylor GET /history/search GET /tracks/next/33333333-3333-3333-3333-333333333333 POST /favorites/add GET /favorites POST /favorites/delete POST /auth/logout &
 none \\
 \hline
-\hypertarget{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & Kiểm thử giao diện đăng kí người dùng thành công & Người dùng đăng kí email: "23021558@vnu.edu.vn", password: "12345678h", confirmPassword: "12345678h", firstname: "Hoang", lastname: "Doan" & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo "register-successfully" \\
+\hypertarget{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & Kiểm thử giao diện đăng kí người dùng thành công & Người dùng đăng kí email: ``23021558@vnu.edu.vn'', password: ``12345678h'', confirmPassword: ``12345678h'', firstname: ``Hoang'', lastname: ``Doan'' & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``register\_successfully'' \\
 \hline
-\hypertarget{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & Kiểm thử giao diện đăng nhập người dùng thành công & Người dùng đăng nhập email: "23021558@vnu.edu.vn", password: "12345678h" & Màn hình chuyển đến trang chủ, hiển thị Toast "Login successfully!" \\
+\hypertarget{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & Kiểm thử giao diện đăng nhập người dùng thành công & Người dùng đăng nhập email: ``23021558@vnu.edu.vn'', password: ``12345678h'' & Màn hình chuyển đến trang chủ, hiển thị Toast ``Login successfully!'' \\
 \hline
-\hypertarget{tc:ui-sign-in-unsuccessfully}{Giao diện đăng nhập người dùng - sai mật khẩu} & Kiểm thử giao diện đăng nhập người dùng với mật khẩu sai & Người dùng đăng nhập email: "23021558@vnu.edu.vn", password: "1234567" & Hiển thị thông báo lỗi "Incorrect email or password" \\
+\hypertarget{tc:ui-sign-in-unsuccessfully}{Giao diện đăng nhập người dùng - sai mật khẩu} & Kiểm thử giao diện đăng nhập người dùng với mật khẩu sai & Người dùng đăng nhập email: ``23021558@vnu.edu.vn'', password: ``1234567'' & Hiển thị thông báo lỗi ``Incorrect email or password'' \\
 \hline
-\hypertarget{tc:ui-sign-up-navigation}{Điều hướng giao diện đăng kí người dùng} & Kiểm thử điều hướng giữa các giao diện đăng kí & Người dùng nhấn vào nút "Next" trên giao diện đăng kí email hoặc mật khẩu để chuyển sang giao diện tiếp theo và ấn biểu tượng "Back" để quay lại giao diện trước đó & Giao diện chuyển sang giao diện tiếp theo hoặc quay lại giao diện trước đó tương ứng \\
+\hypertarget{tc:ui-sign-up-navigation}{Điều hướng giao diện đăng kí người dùng} & Kiểm thử điều hướng giữa các giao diện đăng kí & Người dùng nhấn vào nút ``Next'' trên giao diện đăng kí email hoặc mật khẩu để chuyển sang giao diện tiếp theo và ấn biểu tượng ``Back'' để quay lại giao diện trước đó & Giao diện chuyển sang giao diện tiếp theo hoặc quay lại giao diện trước đó tương ứng \\
 \hline
-\hypertarget{tc:ui-forget-password-enter-email}{Giao diện quên mật khẩu - nhập email} & Kiểm thử giao diện quên mật khẩu khi nhập email & Người dùng nhập email: "23021558@vnu.edu.vn" và ấn nút "Gửi mã OTP" & Màn hình chuyển sang giao diện nhập mã OTP, hiển thị thông báo gửi mã OTP thành công \\
+\hypertarget{tc:ui-forget-password-enter-email}{Giao diện quên mật khẩu - nhập email} & Kiểm thử giao diện quên mật khẩu khi nhập email & Người dùng nhập email: ``23021558@vnu.edu.vn'' và ấn nút ``Gửi mã OTP'' & Màn hình chuyển sang giao diện nhập mã OTP, hiển thị thông báo gửi mã OTP thành công \\
 \hline
-\hypertarget{tc:ui-forget-password-enter-otp}{Giao diện quên mật khẩu - nhập OTP} & Kiểm thử giao diện quên mật khẩu khi nhập mã OTP & Người dùng nhập mã OTP đúng: "123456" và ấn nút xác nhận & Màn hình chuyển sang giao diện tạo mật khẩu mới\\
+\hypertarget{tc:ui-forget-password-enter-otp}{Giao diện quên mật khẩu - nhập OTP} & Kiểm thử giao diện quên mật khẩu khi nhập mã OTP & Người dùng nhập mã OTP đúng: ``123456'' và ấn nút xác nhận & Màn hình chuyển sang giao diện tạo mật khẩu mới\\
 \hline
-\hypertarget{tc:ui-forget-password-changePassword}{Giao diện quên mật khẩu - tạo mật khẩu mới} & Kiểm thử giao diện quên mật khẩu khi tạo mật khẩu mới & Người dùng nhập mật khẩu mới: "12345678h", confirmPassword: "12345678h" và ấn nút "Xác nhận" & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast "Change password successfully" \\
+\hypertarget{tc:ui-forget-password-changePassword}{Giao diện quên mật khẩu - tạo mật khẩu mới} & Kiểm thử giao diện quên mật khẩu khi tạo mật khẩu mới & Người dùng nhập mật khẩu mới: ``12345678h'', confirmPassword: ``12345678h'' và ấn nút ``Xác nhận'' & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast ``Change password successfully'' \\
 \hline
 \hypertarget{tc:ui-home}{Giao diện màn hình chính} & Kiểm thử giao diện màn hình chính hiển thị đúng các bài hát được đề xuất & Người dùng đăng nhập thành công & Giao diện hiển thị đúng các bài hát được đề xuất \\
 \hline
-\hypertarget{tc:ui-search-track}{Giao diện tìm kiếm bài hát} & Kiểm thử giao diện tìm kiếm bài hát & Người dùng nhập từ khóa "Taylor" vào thanh tìm kiếm & Giao diện hiển thị danh sách các bài hát liên quan đến từ khóa "Taylor", cụ thể là các bài hát "Love Story", "The Fate of Ophelia" \\
+\hypertarget{tc:ui-search-track}{Giao diện tìm kiếm bài hát} & Kiểm thử giao diện tìm kiếm bài hát & Người dùng nhập từ khóa ``Taylor'' vào thanh tìm kiếm & Giao diện hiển thị danh sách các bài hát liên quan đến từ khóa ``Taylor'', cụ thể là các bài hát ``Love Story'', ``The Fate of Ophelia'' \\
 \hline
-\hypertarget{tc:ui-search-no-track}{Giao diện tìm kiếm bài hát - không có kết quả} & Kiểm thử giao diện tìm kiếm bài hát khi không có kết quả & Người dùng nhập từ khóa "abcdefghijklmnop" vào thanh tìm kiếm & Giao diện hiển thị thông báo "Không tìm thấy kết quả" \\
+\hypertarget{tc:ui-search-no-track}{Giao diện tìm kiếm bài hát - không có kết quả} & Kiểm thử giao diện tìm kiếm bài hát khi không có kết quả & Người dùng nhập từ khóa ``abcdefghijklmnop'' vào thanh tìm kiếm & Giao diện hiển thị thông báo ``Không tìm thấy kết quả'' \\
 \hline
-\hypertarget{tc:ui-play-track}{Giao diện phát nhạc } & Kiểm thử giao diện phát bài hát & Người dùng chọn bài hát "Love Story" & Giao diện chuyển sang giao diện phát bài hát, hiển thị đúng thông tin bài hát "Love Story", bài hát bắt đầu phát \\
+\hypertarget{tc:ui-play-track}{Giao diện phát nhạc} & Kiểm thử giao diện phát bài hát & Người dùng chọn bài hát ``Love Story'' & Giao diện chuyển sang giao diện phát bài hát, hiển thị đúng thông tin bài hát ``Love Story'', bài hát bắt đầu phát \\
 \hline
-\hypertarget{tc:ui-play-and-pause}{Nút tạm dừng} & Kiểm thử nút tạm dừng & Người dùng nhấn nút "Pause" trên giao diện  đang phát bài "Love Story" & Bài hát được tạm dừng, nút ấn cũng được thay đổi trạng thái tương ứng thành nút "Play" \\
+\hypertarget{tc:ui-play-and-pause}{Nút tạm dừng} & Kiểm thử nút tạm dừng & Người dùng nhấn nút ``Pause'' trên giao diện đang phát bài ``Love Story'' & Bài hát được tạm dừng, nút ấn cũng được thay đổi trạng thái tương ứng thành nút ``Play'' \\
 \hline
-\hypertarget{tc:ui-next-track}{Nút chuyển bài tiếp} & Kiểm thử nút bài hát tiếp theo & Người dùng nhấn nút bài hát tiếp theo trên giao diện phát bài "Love Story" & Giao diện chuyển sang bài hát tiếp theo "The Fate of Ophelia", bài hát bắt đầu phát \\
+\hypertarget{tc:ui-next-track}{Nút chuyển bài tiếp} & Kiểm thử nút bài hát tiếp theo & Người dùng nhấn nút bài hát tiếp theo trên giao diện phát bài ``Love Story'' & Giao diện chuyển sang bài hát tiếp theo ``The Fate of Ophelia'', bài hát bắt đầu phát \\
 \hline
-\hypertarget{tc:ui-previous-track}{Nút chuyển bài trước} & Kiểm thử nút chuyển bài trước & Người dùng nhấn nút bài hát trước trên giao diện phát bài "The Fate of Ophelia" & Giao diện chuyển sang bài hát trước "Love Story", bài hát bắt đầu phát \\
+\hypertarget{tc:ui-previous-track}{Nút chuyển bài trước} & Kiểm thử nút chuyển bài trước & Người dùng nhấn nút bài hát trước trên giao diện phát bài ``The Fate of Ophelia'' & Giao diện chuyển sang bài hát trước ``Love Story'', bài hát bắt đầu phát \\
 \hline
-\hypertarget{tc:ui-favorite-button}{Nút thêm vào mục yêu thích} & Kiểm thử nút thêm bài hát vào mục yêu thích & Người dùng nhấn nút yêu thích trên giao diện phát bài "Love Story" & Bài hát "Love Story" được thêm vào mục yêu thích, nút yêu thích chuyển sang có màu \\
+\hypertarget{tc:ui-favorite-button}{Nút thêm vào mục yêu thích} & Kiểm thử nút thêm bài hát vào mục yêu thích & Người dùng nhấn nút yêu thích trên giao diện phát bài ``Love Story'' & Bài hát ``Love Story'' được thêm vào mục yêu thích, nút yêu thích chuyển sang có màu \\
 \hline
-\hypertarget{tc:ui-shuffle-button}{Nút phát ngẫu nhiên/lặp lại} & Kiểm thử nút phát ngẫu nhiên/lặp lại & Người dùng nhấn nút phát ngẫu nhiên/lặp lại trên giao diện phát bài "Love Story" & Chế độ phát lặp lại được kích hoạt do mặc định là ngẫu nhiên, nút ấn cũng được thay đổi thành không màu \\
+\hypertarget{tc:ui-shuffle-button}{Nút phát ngẫu nhiên/lặp lại} & Kiểm thử nút phát ngẫu nhiên/lặp lại & Người dùng nhấn nút phát ngẫu nhiên/lặp lại trên giao diện phát bài ``Love Story'' & Chế độ phát lặp lại được kích hoạt do mặc định là ngẫu nhiên, nút ấn cũng được thay đổi thành không màu \\
 \hline
 \hypertarget{tc:ui-favorites}{Giao diện các bài hát yêu thích} & Kiểm thử giao diện danh sách bài hát yêu thích hiển thị đúng & Người dùng truy cập vào mục yêu thích từ thanh điều hướng & Giao diện hiển thị đúng danh sách các bài hát yêu thích của người dùng \\
 \hline
-\hypertarget{tc:delete-favorites}{Xóa bài hát khỏi danh sách yêu thích} & Kiểm thử chức năng xóa bài hát khỏi danh sách yêu thích & Người dùng truy cập giao diện yêu thích, ấn biểu tượng trái tim bên cạnh bài "Love Story" & Bài hát "Love Story" được xóa khỏi danh sách yêu thích, giao diện cập nhật lại danh sách yêu thích với bài "Love Story" đã được xóa \\
+\hypertarget{tc:delete-favorites}{Xóa bài hát khỏi danh sách yêu thích} & Kiểm thử chức năng xóa bài hát khỏi danh sách yêu thích & Người dùng truy cập giao diện yêu thích, ấn biểu tượng trái tim bên cạnh bài ``Love Story'' & Bài hát ``Love Story'' được xóa khỏi danh sách yêu thích, giao diện cập nhật lại danh sách yêu thích với bài ``Love Story'' đã được xóa \\
 \hline
-\hypertarget{tc:history}{Bài hát đã nghe gần đây} & Kiểm thử giao diện bài hát đã nghe gần đây & Người dùng nghe các bài hát theo thứ tự "Love Story", "The Fate of Ophelia" và "Từng là" & Trên màn hình chính xuất hiện dòng "Recently played" với 3 bài hát vừa nghe \\
+\hypertarget{tc:history}{Bài hát đã nghe gần đây} & Kiểm thử giao diện bài hát đã nghe gần đây & Người dùng nghe các bài hát theo thứ tự ``Love Story'', ``The Fate of Ophelia'' và ``Từng là'' & Trên màn hình chính xuất hiện dòng ``Recently played'' với 3 bài hát vừa nghe \\
 \hline
 \hypertarget{tc:profile}{Giao diện thông tin cá nhân của người dùng} & Kiểm thử giao diện thông tin cá nhân hiển thị đúng & Người dùng truy cập vào mục thông tin cá nhân từ màn hình chính & Giao diện hiển thị đúng thông tin cá nhân của người dùng, bao gồm tên, ảnh đại diện và email cũng như các nút chức năng đổi thông tin, đổi mật khẩu, đổi giao diện, đổi ngôn ngữ và đăng xuất \\
 \hline  
@@ -246,19 +227,19 @@ none \\
 \hline
 \hypertarget{tc:change-avatar-step2}{Đổi ảnh đại diện - Bước 2} & Kiểm thử chức năng đổi ảnh đại diện & Người dùng chọn một ảnh từ thư viện hoặc chụp một ảnh mới từ camera & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp \\
 \hline
-\hypertarget{tc:update-information}{Cập nhật thông tin cá nhân - thành công} & Kiểm thử chức năng cập nhật thông tin cá nhân & Người dùng nhập đầy đủ các thông tin bao gồm Họ: "Doan", Tên: "Hoang", số điện thoại: "012345678", địa chỉ: "Nam Dinh" & Thông tin cá nhân của người dùng được cập nhật thành công \\
+\hypertarget{tc:update_information}{Cập nhật thông tin cá nhân - thành công} & Kiểm thử chức năng cập nhật thông tin cá nhân & Người dùng nhập đầy đủ các thông tin bao gồm Họ:``Doan'', Tên: ``Hoang'', số điện thoại: ``012345678'', địa chỉ: ``Nam Dinh'' & Thông tin cá nhân của người dùng được cập nhật thành công \\
 \hline
-\hypertarget{tc:update-information-missing-field}{Cập nhật thông tin cá nhân - không thành công} & Kiểm thử chức năng cập nhật thông tin cá nhân khi người dùng nhập thiếu thông tin & Người dùng chỉ nhập Họ: "Doan", Tên: "Hoang", để trống số điện thoại và địa chỉ & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin \\
+\hypertarget{tc:update_information_missing_field}{Cập nhật thông tin cá nhân - không thành công} & Kiểm thử chức năng cập nhật thông tin cá nhân khi người dùng nhập thiếu thông tin & Người dùng chỉ nhập Họ: ``Doan'', Tên: ``Hoang'', để trống số điện thoại và địa chỉ & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin \\
 \hline
-\hypertarget{tc:change-password}{Đổi mật khẩu - thành công} & Kiểm thử chức năng đổi mật khẩu & Người dùng ấn vào nút đổi mật khẩu, nhập mật khẩu cũ "12345678h", mật khẩu mới "1234567890h" & Hiển thị thông báo đổi mật khẩu thành công\\
+\hypertarget{tc:change_password}{Đổi mật khẩu - thành công} & Kiểm thử chức năng đổi mật khẩu & Người dùng ấn vào nút đổi mật khẩu, nhập mật khẩu cũ ``12345678h'', mật khẩu mới ``1234567890h'' & Hiển thị thông báo đổi mật khẩu thành công\\
 \hline
-\hypertarget{tc:change-theme}{Đổi giao diện} & Kiểm thử chức năng đổi giao diện & Người dùng ấn vào nút đổi giao diện từ mục thông tin cá nhân, ấn vào "Dark" & Giao diện của ứng dụng được chuyển đổi thành chế độ tối \\
+\hypertarget{tc:change_theme}{Đổi giao diện} & Kiểm thử chức năng đổi giao diện & Người dùng ấn vào nút đổi giao diện từ mục thông tin cá nhân, ấn vào ``Dark'' & Giao diện của ứng dụng được chuyển đổi thành chế độ tối \\
 \hline
-\hypertarget{tc:change-language}{Đổi ngôn ngữ} & Kiểm thử chức năng đổi ngôn ngữ & Người dùng ấn vào nút đổi ngôn ngữ từ mục thông tin cá nhân, ấn vào "Tiếng Việt" & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt \\
+\hypertarget{tc:change_language}{Đổi ngôn ngữ} & Kiểm thử chức năng đổi ngôn ngữ & Người dùng ấn vào nút đổi ngôn ngữ từ mục thông tin cá nhân, ấn vào ``Tiếng Việt'' & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt \\
 \hline
 \hypertarget{tc:load-initial-UI-chatbot}{Giao diện ban đầu của chatbot} & Kiểm thử giao diện ban đầu của chatbot & Người dùng mở giao diện chatbot & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn \\
 \hline
-\hypertarget{tc:send-message-chatbot}{Gửi tin nhắn đến chatbot} & Kiểm thử chức năng gửi tin nhắn đến chatbot & Người dùng nhập tin nhắn "Hello" vào ô nhập tin nhắn và ấn nút gửi & Tin nhắn của người dùng được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot \\
+\hypertarget{tc:send_message_chatbot}{Gửi tin nhắn đến chatbot} & Kiểm thử chức năng gửi tin nhắn đến chatbot & Người dùng nhập tin nhắn ``Hello'' vào ô nhập tin nhắn và ấn nút gửi & Tin nhắn của người dùng được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot \\
 \hline
 \hypertarget{tc:prevent-empty-message-chatbot}{Ngăn chặn gửi tin nhắn trống} & Kiểm thử chức năng ngăn chặn gửi tin nhắn trống đến chatbot & Người dùng để trống ô nhập tin nhắn và ấn nút gửi & Hệ thống không gửi tin nhắn trống, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
@@ -268,41 +249,41 @@ none \\
 \hline
 \hypertarget{tc:voice-permission-flow}{Quy trình cấp quyền truy cập microphone} & Kiểm thử quy trình cấp quyền truy cập microphone cho chatbot & Người dùng mở giao diện chatbot và ấn vào biểu tượng microphone & Hệ thống yêu cầu người dùng cấp quyền truy cập microphone, người dùng có thể chấp nhận hoặc từ chối \\
 \hline
-\hypertarget{tc:voice-input-chatbot}{Nhập tin nhắn bằng giọng nói} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói đến chatbot & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone và nói "Hello" & Tin nhắn "Hello" được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot \\
+\hypertarget{tc:voice_input_chatbot}{Nhập tin nhắn bằng giọng nói} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói đến chatbot & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone và nói ``Hello'' & Tin nhắn ``Hello'' được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot \\
 \hline
-\hypertarget{tc:voice-input-no-permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone & Người dùng từ chối cấp quyền truy cập microphone, ấn vào biểu tượng microphone và nói "Hello" & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
+\hypertarget{tc:voice_input_no_permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone & Người dùng từ chối cấp quyền truy cập microphone, ấn vào biểu tượng microphone và nói ``Hello'' & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
 \hypertarget{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi người dùng không nói gì & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone nhưng không nói gì & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
-\hypertarget{tc:input-be-chatbott}{Nhập input thông qua POST request của chatbot} & Kiểm thử chức năng nhập input thông qua POST request của chatbot & POST /chat messages: Chào bạn, thread-id: tc01 & type: reply, reply: "Chào bạn! Tôi có thể giúp gì?" \\
+\hypertarget{tc:input_be_chatbott}{Nhập input thông qua POST request của chatbot} & Kiểm thử chức năng nhập input thông qua POST request của chatbot & POST /chat \{messages:``Chào bạn'', ``thread\_id'': ``tc01''\} & \{``type'':``reply'',``reply'':``Chào bạn! Tôi có thể giúp gì?''\} \\
 \hline
-\hypertarget{tc:input-lyrics-vietnamese-chatbot}{Nhập lời bài hát tiếng Việt} & Kiểm thử chức năng nhập lời bài hát tiếng Việt & POST “Tìm lời bài hát Lâu không cười” & type: reply, reply: Lời bài hát Lâu không cười:..."\\
+\hypertarget{tc:input_lyrics_vietnamese_chatbot}{Nhập lời bài hát tiếng Việt} & Kiểm thử chức năng nhập lời bài hát tiếng Việt & POST ``Tìm lời bài hát Lâu không cười'' & \{``type'':``reply'',``reply'':``Lời bài hát Lâu không cười:\textbackslash n...''\}\\
 \hline
-\hypertarget{tc:input-lyrics-english-chatbot}{Nhập lời bài hát tiếng Anh} & Kiểm thử chức năng nhập lời bài hát tiếng Anh & POST Find lyrics Love Story & type: reply, reply: Lyrics of Love Story:...\\
+\hypertarget{tc:input_lyrics_english_chatbot}{Nhập lời bài hát tiếng Anh} & Kiểm thử chức năng nhập lời bài hát tiếng Anh & POST ``Find lyrics Love Story'' & \{``type'':``reply'',``reply'':``Lyrics of Love Story:\textbackslash n...''\}\\
 \hline
-\hypertarget{tc:playing-song-chatbot}{Phát bài hát thông qua chatbot} & Kiểm thử chức năng phát bài hát thông qua chatbot & type: playMusic, song-name: Ngày mai em đi & type: playMusic, song-name: Ngày mai em đi\\
+\hypertarget{tc:playing_song_chatbot}{Phát bài hát thông qua chatbot} & Kiểm thử chức năng phát bài hát thông qua chatbot & \{``type'':``playMusic'',``song\_name'':``Ngày mai em đi''\} & \{``type'':``playMusic'',``song\_name'':``Ngày mai em đi''\}\\
 \hline
-\hypertarget{tc:suggest-song-chatbot}{Gợi ý bài hát thông qua chatbot} & Kiểm thử chức năng gợi ý bài hát thông qua chatbot & POST “Gợi ý bài hát cho tôi” & type: reply, reply: "1... 2... 3..."\\
+\hypertarget{tc:suggest_song_chatbot}{Gợi ý bài hát thông qua chatbot} & Kiểm thử chức năng gợi ý bài hát thông qua chatbot & POST ``Gợi ý bài hát cho tôi'' & \{``type'':``reply'',``reply'':``1)... 2)... 3)...''\}\\
 \hline
-\hypertarget{tc:infor-author-chatbot}{Thông tin tác giả thông qua chatbot} & Kiểm thử chức năng cung cấp thông tin tác giả thông qua chatbot & POST “Ai là tác giả của bài hát Từng là?” & type: reply, reply: "Tác giả của bài hát Từng là là..."\\
+\hypertarget{tc:infor_author_chatbot}{Thông tin tác giả thông qua chatbot} & Kiểm thử chức năng cung cấp thông tin tác giả thông qua chatbot & POST ``Ai là tác giả của bài hát Từng là?'' & \{``type'':``reply'',``reply'':``Tác giả của bài hát Từng là là...''\}\\
 \hline
-\hypertarget{tc:remember-thread-id}{Ghi nhớ thread id trong chatbot} & Kiểm thử chức năng ghi nhớ thread-id trong chatbot & POST /chat messages: Chào bạn, tôi tên Hậu, thread-id: tc01 tiếp theo POST /chat messages: Tôi tên là gì?, thread-id: tc01 & type: reply, reply: Bạn tên là Hậu,..\\
+\hypertarget{tc:remember_thread_id}{Ghi nhớ thread\_id trong chatbot} & Kiểm thử chức năng ghi nhớ thread\_id trong chatbot & POST /chat \{messages:``Chào bạn, tôi tên Hậu'', ``thread\_id'': ``tc01''\} tiếp theo POST /chat \{messages:``Tôi tên là gì?'', ``thread\_id'': ``tc01''\} & \{``type'':``reply'',``reply'':``Bạn tên là Hậu,..''\}\\
 \hline
-\hypertarget{tc:seperate-thread-id}{Tách biệt thread id trong chatbot} & Kiểm thử chức năng tách biệt thread-id trong chatbot & POST /chat messages: Chào bạn, tôi tên Hậu, thread-id: tc01 tiếp theo POST /chat messages: Tôi tên là gì?, thread-id: tc02 & type: reply, reply: Tôi không biết bạn tên gì,...\\
+\hypertarget{tc:seperate_thread_id}{Tách biệt thread\_id trong chatbot} & Kiểm thử chức năng tách biệt thread\_id trong chatbot & POST /chat \{messages:``Chào bạn, tôi tên Hậu'', ``thread\_id'': ``tc01''\} tiếp theo POST /chat \{messages:``Tôi tên là gì?'', ``thread\_id'': ``tc02''\} & \{``type'':``reply'',``reply'':``Tôi không biết bạn tên gì,...''\}\\
 \hline
-\hypertarget{tc:bug-duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & Kiểm thử chức năng tìm kiếm thông tin với DuckDuckGo thông qua chatbot & Mock ddgs ném exception & Log phải có ERROR Duckduckgo-tool.-run ... và Connection timed out\\
+\hypertarget{tc:bug_duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & Kiểm thử chức năng tìm kiếm thông tin với DuckDuckGo thông qua chatbot & Mock ddgs ném exception & Log phải có ERROR Duckduckgo\_tool.\_run ... và Connection timed out\\
 \hline
-\hypertarget{tc:bug-scrapewebsite}{Kiểm tra lỗi với ScrapeWebsite} & Kiểm thử chức năng lấy thông tin với ScrapeWebsite thông qua chatbot & Gọi URL 404 & Log có hiện ERROR scrape-website ... 404 Client Error: Not Found for url:\\
+\hypertarget{tc:bug_scrapewebsite}{Kiểm tra lỗi với ScrapeWebsite} & Kiểm thử chức năng lấy thông tin với ScrapeWebsite thông qua chatbot & Gọi URL 404 & Log có hiện ERROR scrape\_website ... 404 Client Error: Not Found for url:\\
 \hline
-\hypertarget{tc:required-parallelism}{Kiểm tra luồng song song trong chatbot} & Kiểm thử chức năng chạy song song trong chatbot & 10 POST /chat khác thread-id & 10 response type: reply, reply: "Xin chào user-i!\\
+\hypertarget{tc:required_parallelism}{Kiểm tra luồng song song trong chatbot} & Kiểm thử chức năng chạy song song trong chatbot & 10 POST /chat khác thread\_id & 10 response \{``type'':``reply'',``reply'':``Xin chào user\_i!''\}\\
 \hline
-\hypertarget{tc:exception-handling}{Xử lý ngoài phạm vi của chatbot} & Kiểm thử chức năng xử lí nội dung ngoài phạm vi trong chatbot & POST /chat messages: Hãy kể cho tôi một câu chuyện cười về lập trình viên, thread-id: tc01 & type: reply, reply: Xin lỗi, tôi không thể giúp với yêu cầu đó.\\
+\hypertarget{tc:exception_handling}{Xử lý ngoài phạm vi của chatbot} & Kiểm thử chức năng xử lí nội dung ngoài phạm vi trong chatbot & POST /chat \{messages:``Hãy kể cho tôi một câu chuyện cười về lập trình viên'', ``thread\_id'': ``tc01''\} & \{``type'':``reply'',``reply'':``Xin lỗi, tôi không thể giúp với yêu cầu đó.''\}\\
 \hline
-\hypertarget{tc:check-voice}{Xử lý giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói với model Whisper & Gửi file âm thanh có giọng nói Xin chào với định dạng .m4a & Xin chào\\
+\hypertarget{tc:check_voice}{Xử lý giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói với model Whisper & Gửi file âm thanh có giọng nói ``Xin chào'' với định dạng .m4a & \{``Xin chào''\}\\
 \hline
-\hypertarget{tc:check-voice-no-speech}{Xử lý giọng nói không có giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói không có giọng nói với model Whisper & Gửi file âm thanh trống với định dạng .m4a & Không trả về gì\\
+\hypertarget{tc:check_voice_no_speech}{Xử lý giọng nói không có giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói không có giọng nói với model Whisper & Gửi file âm thanh trống với định dạng .m4a & \{``''\}\\
 \hline
-\hypertarget{tc:check-voice-unsupported-format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & Kiểm thử chức năng xử lí giọng nói với định dạng không hỗ trợ với model Whisper & Gửi file âm thanh định dạng .txt & Error: Unsupported audio format.\\
+\hypertarget{tc:check_voice_unsupported_format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & Kiểm thử chức năng xử lí giọng nói với định dạng không hỗ trợ với model Whisper & Gửi file âm thanh định dạng .txt & \{``Error: Unsupported audio format.''\}\\
 \hline
 \end{longtable}
 
@@ -379,11 +360,11 @@ none \\
 \hline
 31 & \hyperlink{tc:perf-basic}{Hiệu năng - luồng cơ bản} & 12/11/2025 & Trần Quang Đỉnh  & Max $< 1.9$s, Fails: 0, RPM/s: 166 & Đạt \\
 \hline
-32 & \hyperlink{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo "register-successfully" & Đạt \\
+32 & \hyperlink{tc:ui-sign-up-successfully}{Giao diện đăng kí người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``register\_successfully'' & Đạt \\
 \hline
-33 & \hyperlink{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển đến trang chủ, hiển thị Toast "Login successfully!" & Đạt \\
+33 & \hyperlink{tc:ui-sign-in-successfully}{Giao diện đăng nhập người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển đến trang chủ, hiển thị Toast ``Login successfully!'' & Đạt \\
 \hline  
-34 & \hyperlink{tc:ui-sign-in-unsuccessfully}{Giao diện đăng nhập người dùng - sai mật khẩu} & 03/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi "Incorrect email or password" & Đạt \\
+34 & \hyperlink{tc:ui-sign-in-unsuccessfully}{Giao diện đăng nhập người dùng - sai mật khẩu} & 03/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi ``Incorrect email or password'' & Đạt \\
 \hline  
 35 & \hyperlink{tc:ui-sign-up-navigation}{Điều hướng giao diện đăng kí người dùng} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện chuyển sang giao diện tiếp theo hoặc quay lại giao diện trước đó tương ứng & Đạt \\
 \hline  
@@ -391,31 +372,31 @@ none \\
 \hline  
 37 & \hyperlink{tc:ui-forget-password-enter-otp}{Giao diện quên mật khẩu - nhập OTP} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển sang giao diện tạo mật khẩu mới & Đạt \\
 \hline
-38 & \hyperlink{tc:ui-forget-password-changePassword}{Giao diện quên mật khẩu - tạo mật khẩu mới} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo "Change password successfully!" & Đạt \\
+38 & \hyperlink{tc:ui-forget-password-changePassword}{Giao diện quên mật khẩu - tạo mật khẩu mới} & 03/11/2025 & Đoàn Minh Hoàng & Màn hình chuyển về màn hình bắt đầu, hiển thị Toast thông báo ``Change password successfully!'' & Đạt \\
 \hline
 39 & \hyperlink{tc:ui-home}{Giao diện màn hình chính} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị đúng các bài hát được đề xuất & Đạt \\
 \hline
-40 & \hyperlink{tc:ui-search-track}{Giao diện tìm kiếm bài hát} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị danh sách các bài hát liên quan đến từ khóa "Taylor", cụ thể là các bài hát "Love Story", "The Fate of Ophelia" & Đạt \\
+40 & \hyperlink{tc:ui-search-track}{Giao diện tìm kiếm bài hát} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị danh sách các bài hát liên quan đến từ khóa ``Taylor'', cụ thể là các bài hát ``Love Story'', ``The Fate of Ophelia'' & Đạt \\
 \hline
-41 & \hyperlink{tc:ui-search-no-track}{Giao diện tìm kiếm bài hát - không có kết quả} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị thông báo "Không tìm thấy kết quả" & Đạt \\
+41 & \hyperlink{tc:ui-search-no-track}{Giao diện tìm kiếm bài hát - không có kết quả} & 03/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị thông báo ``Không tìm thấy kết quả'' & Đạt \\
 \hline
-42 & \hyperlink{tc:ui-play-track}{Giao diện phát nhạc } & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang giao diện phát bài hát, hiển thị đúng thông tin bài hát "Love Story", bài hát bắt đầu phát & Đạt \\
+42 & \hyperlink{tc:ui-play-track}{Giao diện phát nhạc} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang giao diện phát bài hát, hiển thị đúng thông tin bài hát ``Love Story'', bài hát bắt đầu phát & Đạt \\
 \hline
-43 & \hyperlink{tc:ui-play-and-pause}{Nút tạm dừng} & 05/11/2025 & Trần Trung Hậu & Bài hát được tạm dừng, nút ấn cũng được thay đổi trạng thái tương ứng thành nút "Play" & Đạt \\
+43 & \hyperlink{tc:ui-play-and-pause}{Nút tạm dừng} & 05/11/2025 & Trần Trung Hậu & Bài hát được tạm dừng, nút ấn cũng được thay đổi trạng thái tương ứng thành nút ``Play'' & Đạt \\
 \hline
-44 & \hyperlink{tc:ui-next-track}{Nút chuyển bài tiếp} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang bài hát tiếp theo The Fate of Opheli", bài hát bắt đầu phát & Đạt \\
+44 & \hyperlink{tc:ui-next-track}{Nút chuyển bài tiếp} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang bài hát tiếp theo ``The Fate of Ophelia'', bài hát bắt đầu phát & Đạt \\
 \hline
-45 & \hyperlink{tc:ui-previous-track}{Nút chuyển bài trước} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang bài hát trước Love Story, bài hát bắt đầu phát & Đạt \\
+45 & \hyperlink{tc:ui-previous-track}{Nút chuyển bài trước} & 05/11/2025 & Trần Trung Hậu & Giao diện chuyển sang bài hát trước ``Love Story'', bài hát bắt đầu phát & Đạt \\
 \hline
-46 & \hyperlink{tc:ui-favorite-button}{Nút thêm vào mục yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Bài hát Love Story được thêm vào mục yêu thích, nút yêu thích chuyển sang có màu & Đạt \\
+46 & \hyperlink{tc:ui-favorite-button}{Nút thêm vào mục yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Bài hát ``Love Story'' được thêm vào mục yêu thích, nút yêu thích chuyển sang có màu & Đạt \\
 \hline
 47 & \hyperlink{tc:ui-shuffle-button}{Nút phát ngẫu nhiên/lặp lại} & 04/11/2025 & Đoàn Minh Hoàng & Chế độ phát lặp lại được kích hoạt do mặc định là ngẫu nhiên, nút ấn cũng được thay đổi thành không màu & Đạt \\
 \hline
 48 & \hyperlink{tc:ui-favorites}{Giao diện các bài hát yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị đúng danh sách các bài hát yêu thích của người dùng & Đạt \\
 \hline
-49 & \hyperlink{tc:delete-favorites}{Xóa bài hát khỏi danh sách yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Bài hát Love Story được xóa khỏi danh sách yêu thích, giao diện cập nhật lại danh sách yêu thích với bài "Love Story" đã được xóa & Đạt \\
+49 & \hyperlink{tc:delete-favorites}{Xóa bài hát khỏi danh sách yêu thích} & 04/11/2025 & Đoàn Minh Hoàng & Bài hát ``Love Story'' được xóa khỏi danh sách yêu thích, giao diện cập nhật lại danh sách yêu thích với bài ``Love Story'' đã được xóa & Đạt \\
 \hline
-50 & \hyperlink{tc:history}{Bài hát đã nghe gần đây} & 05/11/2025 & Đoàn Minh Hoàng & Trên màn hình chính xuất hiện dòng "Recently played" với 3 bài hát Love Story, The Fate of Ophelia, Từng là & Đạt \\
+50 & \hyperlink{tc:history}{Bài hát đã nghe gần đây} & 05/11/2025 & Đoàn Minh Hoàng & Trên màn hình chính xuất hiện dòng ``Recently played'' với 3 bài hát ``Love Story'', ``The Fate of Ophelia'', ``Từng là'' & Đạt \\
 \hline
 51 & \hyperlink{tc:profile}{Giao diện thông tin cá nhân của người dùng} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện hiển thị đúng thông tin cá nhân của người dùng, bao gồm tên, ảnh đại diện và email cũng như các nút chức năng đổi thông tin, đổi mật khẩu, đổi giao diện, đổi ngôn ngữ và đăng xuất & Đạt \\
 \hline
@@ -447,7 +428,7 @@ none \\
 \hline
 65 & \hyperlink{tc:voice-permission-flow}{Quy trình cấp quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống yêu cầu người dùng cấp quyền truy cập microphone, người dùng có thể chấp nhận hoặc từ chối & Đạt \\
 \hline
-66 & \hyperlink{tc:voice-input-chatbot}{Nhập tin nhắn bằng giọng nói} & 10/11/2025 & Trần Trung Hậu & Tin nhắn "Hello" được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot & Đạt \\
+66 & \hyperlink{tc:voice_input_chatbot}{Nhập tin nhắn bằng giọng nói} & 10/11/2025 & Trần Trung Hậu & Tin nhắn ``Hello'' được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot & Đạt \\
 \hline
 67 & \hyperlink{tc:voice-input-no-permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
 \hline
@@ -482,4 +463,3 @@ none \\
 82 & \hyperlink{tc:check-voice-unsupported-format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Error: Unsupported audio format. & Đạt \\
 \hline
 \end{longtable}
-
