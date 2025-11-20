@@ -44,8 +44,8 @@ Trong mục này, chúng tôi sẽ tập trung trình bày quá trình xây dự
 nhạc đầy đủ, có các đặc điểm rõ ràng và một quá trình huấn luyện kiểm thử kỹ càng.
 
 \subsubsection{Dữ liệu}
-Dữ liệu là điều rất quan trọng với một mô hình học tăng cường. Chúng tôi thu thập dữ liệu bằng cách kết hợp hai bộ dữ liệu lớn. Đó là Spotify Million Playlist Dataset (MPD)
-và Spotify 1.2M+ Songs. Cụ thể quá trình này đã được ghi lại trên \href{https://www.kaggle.com/datasets/huynguyen1902/music-interaction}{Kaggle}. Trong
+Dữ liệu là điều rất quan trọng với một mô hình học tăng cường. Chúng tôi thu thập dữ liệu bằng cách kết hợp hai bộ dữ liệu lớn. Đó là \textbf{Spotify Million Playlist Dataset (MPD)}
+và \textbf{Spotify 1.2M+ Songs (SS)}. Cụ thể quá trình này đã được ghi lại trên \href{https://www.kaggle.com/datasets/huynguyen1902/music-interaction}{Kaggle}. Trong
 báo cáo này chúng tôi chỉ trình bày ngắn gọn lại như sau:
 \begin{itemize}
   \item Lấy dữ liệu từ hai bộ dữ liệu về
@@ -54,36 +54,119 @@ báo cáo này chúng tôi chỉ trình bày ngắn gọn lại như sau:
   \item Sử dụng dữ liệu này để cho quá trình huấn luyện
 \end{itemize}
 
+Bộ dữ liệu MDP gồm thông tin của các playlist của nhiều người dùng khác nhau. Thông tin này sẽ được xác minh lại với những id có trong bộ dữ liệu SS để ra. Sau đó, thực hiện
+lấy mẫu âm (negative sampling) để tạo những mẫu âm làm tăng độ chính xác về sau cho quá trình huấn luyện. 
+
+Bộ dữ liệu SS bao gồm hơn 1.2 triệu bài hát được thu thập thông qua Spotify API. Mỗi bài hát bao gồm 24 trường thông tin về bài hát đó. Những trường thông tin này sau
+đó được chúng tôi biểu diễn lại thành dạng dãy numpy để làm đầu vào cho mô hình huấn luyện sau này.
+
+Kết quả của quá trình kết hợp hai bộ dữ liệu này là một bộ dữ liệu tương tác lớn với \textbf{887060 người dùng} và \textbf{1146965 bài hát}. Bộ dữ liệu này có cấu trúc như sau:
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+  \hline
+  \textbf{user\_id} & \textbf{item\_id} & \textbf{exists} & \textbf{timestamp} \\
+  \hline
+  Id của người sử dụng. Các id có thể trùng nhau mỗi hàng thể hiện cho một chuỗi tương tác của người dùng đó với hệ thống. &
+  Id của bài hát. Id này trùng với Id bên bảng đặc tính của bài hát. &
+  Người dùng này like (1) hoặc dislike bài hát này (0). &
+  Mốc thời gian của chuỗi tương tác. \\
+  \hline
+\end{tabular}
+\caption{Dữ liệu tương tác của người dùng}
+\end{table}
+
+Dữ liệu này được định dạng lại thành chuỗi tương tác của người dùng với hệ thống. Mỗi chuỗi tương tác gồm 10 bài hát. Sau đó, tập dữ liệu này được chia thành hai tập
+với tỉ lệ 80\% cho huấn luyện và 20\% cho kiểm thử. Đây là bộ dữ liệu cuối cùng được sử dụng để huấn luyện mô hình gợi ý HAC-NSW. Bộ dữ liệu này có định dạng như định
+dạng như sau:
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|p{1.5cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+    \hline
+    \textbf{user\_id} & \textbf{slate\_of\_items} & \textbf{user\_mid} & \textbf{user\_mid\_history} & \textbf{sequence\_id} \\
+    \hline
+    id của người dùng &
+    10 bài hát hiện lên cho người dùng tương tác&
+    like(1) hoặc dislike(0) cho từng bài hát trong slate of items hiện tại &
+    những bài hát được người dùng like trong lịch sử tương tác trước đó &
+    id của chuỗi tương tác \\
+    \hline
+  \end{tabular}
+  \caption{Định dạng chuỗi tương tác của người dùng}
+\end{table}
 
 \subsubsection{Huấn luyện}
 Đầu tiên, chúng tôi tạo ra một mô hình giả lập lại môi trường thực tế. Mô hình này được xây dựng trên mô hình Transformer cơ bản, có độ nhiễu nhất định.
 Sau đó mô hình HAC-NSW sẽ tương tác với mô hình này để học được chính sách tối ưu như tương tác với môi trường thực tế.
 
-Quá trình huấn luyện của chúng được thể hiện qua các bảng biểu sau đây.
+Quá trình huấn luyện của chúng được thể hiện qua hình \ref{fig:average}. Hàm mất mát của actor giảm dần và hội tụ theo thời gian huấn luyện tăng lên. Theo đó,
+phần thưởng trung bình average\_total\_reward của người dùng và độ dài một lần tương tác average\_n\_step cũng tăng theo. Điều đó chứng tỏ mô hình này đã
+học được chính sách tối ưu một cách hiệu quả.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{figures/average.png}
   \caption{Bảng biểu thể hiện tương tác trung bình khi hàm mất mát của actor cải thiện}
+  \label{fig:average}
 \end{figure}
+
+Điểm mạnh của mô hình gợi ý HAC-NSW chính là sự cân bằng giữa các người dùng. Điều này được thể hiện rõ ràng qua biểu đồ \ref{fig:minimum} dưới đây. Phần thưởng thấp nhất min\_total\_reward
+của người dùng và độ dài tương tác min\_n\_step đều tăng lên khi hàm mất mát của actor cải thiện và \textbf{không khác biệt lớn} so với phần thưởng/độ dài tương tác
+trung bình và cao nhất. Phương sai được tính toán trong biểu đồ cũng được duy trì ở mức thấp ổn định. Nó khẳng định mô hình học được chính sách công bằng cho tất
+cả người dùng mà vẫn duy trì được hiệu quả cao.
+
 
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{figures/image.png}
   \caption{Bảng biểu thể hiện kết quả thấp nhất trong người dùng và độ chênh ổn định thấp khi hàm mất mát actor cải thiện}
+  \label{fig:minimum}
 \end{figure}
+Quá trình huấn luyện mô hình được thực hiện mô phỏng lại như huấn luyện trực tuyến trong môi trường thực tế. Chúng tôi thực hiện điều này bằng cách huấn luyện một
+mô hình giả lập môi trường và sử dụng mô hình này để huấn luyện mô hình gợi ý HAC-NSW. Sau đó sử dụng mô hình giả lập này cùng bộ dữ liệu kiểm thử để đánh giá
+hiệu quả mô hình gợi ý. Kết quả thu được như trong sơ đồ \ref{fig:test} và \ref{fig:test_variance} dưới đây.
 
 Mô hình cũng thể hiện sự tương tác tốt trên tập kiểm thử với kết quả như sau.
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{figures/test_average.png}
   \caption{Bảng biểu thể hiện kết quả trung bình tốt trên tập kiểm thử}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{figures/test_variance.png}
-  \caption{Bảng biểu thể hiện độ lệch vẫn ổn định thấp trên tập kiểm thử}
+  \label{fig:test}
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/test_variance.png}
+  \caption{Bảng biểu thể hiện phương sai vẫn ổn định thấp trên tập kiểm thử}
+  \label{fig:test_variance}
+\end{figure}
+
+Cả hai bảng biểu đều thể hiện sự suy giảm không đáng kể so với khi mô hình được chạy trên tập huấn luyện.
 Điều này chứng minh chúng đã huấn luyện được mô hình đủ ổn định để triển khai trên một hệ thống lớn.
+
+\subsubsection{Triển khai mô hình}
+
+Mô hình được lưu lại và tải lại trong RecSys được nhắc tới tại chương \ref{chapter:architecture}, được triển khai đơn gian bằng FastAPI, một framework nhẹ và
+mạnh mẽ để xây dựng dịch vụ web bằng Python. RecSys sẽ nhận yêu cầu cùng các thông tin người dùng, lịch sử được Recommend Service tổng hợp gửi tới, sau đó
+gửi trả lại các bài hát được gợi ý cho hệ thống để Recommend Service tái định dạng và chuyển tiếp tới cho người dùng.
+
+Trong đó, dữ liệu đặc trưng của bài hát hiện đang được lưu trữ bởi RecSys, nhưng trong tương lai nó sẽ được chuyển sang Catalog Service để tăng tính nhất quán. 
+History Service chịu trách nhiệm lưu trữ lịch sử tương tác của người dùng với hệ thống, từ đó cung cấp thông tin lịch sử này cho Recommend Service 
+gửi tới RecSys khi có yêu cầu gợi ý. Những dữ liệu này sau đó được sử dụng để huấn luyện tiếp mô hình gợi ý trong tương lai.
+
+Khi triển khai, mô hình được đóng băng và không cập nhật các tham số thêm nữa. Quá trình huấn luyện lại mô hình sẽ được thực hiện định kỳ bên ngoài hệ thống, sau đó
+mô hình mới sẽ được tải lên RecSys để phục vụ cho các yêu cầu gợi ý tiếp theo. 
+
+Toàn bộ tiến trình này được tổng hợp lại như sơ đồ \ref{fig:pipeline_deploy} dưới đây.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/pipeline_deploy.png}
+  \caption{Sơ đồ tổng quan quá trình triển khai mô hình gợi ý HAC-NSW vào hệ thống InsightTune}
+  \label{fig:pipeline_deploy}
+\end{figure}
+
+Hiện tại, mô hình gợi ý HAC-NSW đã được tích hợp hoàn chỉnh vào hệ thống \textbf{InsightTune}. Tuy nhiên, chúng tôi chỉ để tần suất cập nhật tham số là 
+\textbf{mỗi tháng một lần} để đảm bảo tính ổn định của hệ thống. Trong tương lai, chúng tôi sẽ xây dựng thêm các công cụ để theo dõi hiệu suất mô hình tự động 
+trong tương lai.
