@@ -1,4 +1,4 @@
-% \usepackage{seqsplit}
+% \usepackage{seqsplit} % Nhớ bỏ comment dòng này trong file main nếu muốn tự động xuống dòng chuỗi dài
 
 \subsection{Thiết kế các ca kiểm thử}
 \begin{longtable}{|p{2.2cm}|p{3cm}|p{5.4cm}|p{4.6cm}|}
@@ -255,7 +255,7 @@ none \\
 \hline
 \hypertarget{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi người dùng không nói gì & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone nhưng không nói gì & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
-\hypertarget{tc:input-be-chatbot}{Nhập input thông qua POST request của chatbot} & Kiểm thử chức năng nhập input thông qua POST request của chatbot & POST /chat \messages:Chào bạn, thread-id: tc01 &  type: reply, reply: Chào bạn! Tôi có thể giúp gì? \\
+\hypertarget{tc:input-be-chatbot}{Nhập input thông qua POST request của chatbot} & Kiểm thử chức năng nhập input thông qua POST request của chatbot & POST /chat messages:Chào bạn, thread-id: tc01 &  type: reply, reply: Chào bạn! Tôi có thể giúp gì? \\
 \hline
 \hypertarget{tc:input-lyrics-vietnamese-chatbot}{Nhập lời bài hát tiếng Việt} & Kiểm thử chức năng nhập lời bài hát tiếng Việt & POST Tìm lời bài hát Lâu không cười &  type: reply, reply: Lời bài hát Lâu không cười:\textbackslash n...'' \\
 \hline
@@ -267,9 +267,9 @@ none \\
 \hline
 \hypertarget{tc:infor-author-chatbot}{Thông tin tác giả thông qua chatbot} & Kiểm thử chức năng cung cấp thông tin tác giả thông qua chatbot & POST Ai là tác giả của bài hát Từng là? &  type: reply, reply: Tác giả của bài hát Từng là là... \\
 \hline
-\hypertarget{tc:remember-thread-id}{Ghi nhớ thread-id trong chatbot} & Kiểm thử chức năng ghi nhớ thread-id trong chatbot & POST /chat \messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc01 &  type: reply, reply: Bạn tên là Hậu,.. \\
+\hypertarget{tc:remember-thread-id}{Ghi nhớ thread-id trong chatbot} & Kiểm thử chức năng ghi nhớ thread-id trong chatbot & POST /chat messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc01 &  type: reply, reply: Bạn tên là Hậu,.. \\
 \hline
-\hypertarget{tc:seperate-thread-id}{Tách biệt thread-id trong chatbot} & Kiểm thử chức năng tách biệt thread-id trong chatbot & POST /chat \messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc02  &  type: reply, reply: Tôi không biết bạn tên gì,... \\
+\hypertarget{tc:seperate-thread-id}{Tách biệt thread-id trong chatbot} & Kiểm thử chức năng tách biệt thread-id trong chatbot & POST /chat messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc02  &  type: reply, reply: Tôi không biết bạn tên gì,... \\
 \hline
 \hypertarget{tc:bug-duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & Kiểm thử chức năng tìm kiếm thông tin với DuckDuckGo thông qua chatbot & Mock ddgs ném exception & Log phải có ERROR Duckduckgo-tool.-run ... và Connection timed out\\
 \hline
@@ -406,15 +406,15 @@ none \\
 \hline  
 54 & \hyperlink{tc:change-avatar-step2}{Đổi ảnh đại diện - Bước 2} & 08/11/2025 & Đoàn Minh Hoàng & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp & Đạt \\
 \hline  
-55 & \hyperlink{tc:update-information}{Cập nhật thông tin cá nhân - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Thông tin cá nhân của người dùng được cập nhật thành công & Đạt \\
+55 & \hyperlink{tc:update_information}{Cập nhật thông tin cá nhân - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Thông tin cá nhân của người dùng được cập nhật thành công & Đạt \\
 \hline
-56 & \hyperlink{tc:update-information-missing-field}{Cập nhật thông tin cá nhân - không thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin & Đạt \\
+56 & \hyperlink{tc:update_information_missing_field}{Cập nhật thông tin cá nhân - không thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin & Đạt \\
 \hline
-57 & \hyperlink{tc:change-password}{Đổi mật khẩu - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo đổi mật khẩu thành công & Đạt \\
+57 & \hyperlink{tc:change_password}{Đổi mật khẩu - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo đổi mật khẩu thành công & Đạt \\
 \hline
-58 & \hyperlink{tc:change-theme}{Đổi giao diện} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện của ứng dụng được chuyển đổi thành chế độ tối & Đạt \\
+58 & \hyperlink{tc:change_theme}{Đổi giao diện} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện của ứng dụng được chuyển đổi thành chế độ tối & Đạt \\
 \hline
-59 & \hyperlink{tc:change-language}{Đổi ngôn ngữ} & 08/11/2025 & Đoàn Minh Hoàng & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt & Đạt \\
+59 & \hyperlink{tc:change_language}{Đổi ngôn ngữ} & 08/11/2025 & Đoàn Minh Hoàng & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt & Đạt \\
 \hline
 60 & \hyperlink{tc:load-initial-UI-chatbot}{Giao diện ban đầu của chatbot} & 10/11/2025 & Trần Trung Hậu & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn & Đạt \\
 \hline
@@ -434,9 +434,9 @@ none \\
 \hline
 68 & \hyperlink{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
 \hline
-69 & \hyperlink{tc:voice-input-unsupported-format}{Nhập tin nhắn bằng giọng nói với định dạng không hỗ trợ} & 10/11/2025 & Trần Trung Hậu & Hệ thống hiển thị thông báo lỗi định dạng âm thanh không được hỗ trợ & Đạt \\
+69 & \hyperlink{tc:check-voice-unsupported-format}{Nhập tin nhắn bằng giọng nói với định dạng không hỗ trợ} & 10/11/2025 & Trần Trung Hậu & Hệ thống hiển thị thông báo lỗi định dạng âm thanh không được hỗ trợ & Đạt \\
 \hline
-70 & \hyperlink{tc:input-be-chatbott}{Nhập input thông qua POST request của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Chào bạn! Tôi có thể giúp gì? & Đạt \\
+70 & \hyperlink{tc:input-be-chatbot}{Nhập input thông qua POST request của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Chào bạn! Tôi có thể giúp gì? & Đạt \\
 \hline
 71 & \hyperlink{tc:input-lyrics-vietnamese-chatbot}{Nhập lời bài hát tiếng Việt} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Lời bài hát Lâu không cười:... & Đạt \\
 \hline
