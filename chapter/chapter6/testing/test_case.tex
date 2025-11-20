@@ -1,4 +1,4 @@
-% \usepackage{seqsplit}
+% \usepackage{seqsplit} % Nhớ bỏ comment dòng này trong file main nếu muốn tự động xuống dòng chuỗi dài
 
 \subsection{Thiết kế các ca kiểm thử}
 \begin{longtable}{|p{2.2cm}|p{3cm}|p{5.4cm}|p{4.6cm}|}
@@ -239,7 +239,7 @@ none \\
 \hline
 \hypertarget{tc:load-initial-UI-chatbot}{Giao diện ban đầu của chatbot} & Kiểm thử giao diện ban đầu của chatbot & Người dùng mở giao diện chatbot & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn \\
 \hline
-\hypertarget{tc:send_message_chatbot}{Gửi tin nhắn đến chatbot} & Kiểm thử chức năng gửi tin nhắn đến chatbot & Người dùng nhập tin nhắn ``Hello'' vào ô nhập tin nhắn và ấn nút gửi & Tin nhắn của người dùng được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot \\
+\hypertarget{tc:send-message-chatbot}{Gửi tin nhắn đến chatbot} & Kiểm thử chức năng gửi tin nhắn đến chatbot & Người dùng nhập tin nhắn ``Hello'' vào ô nhập tin nhắn và ấn nút gửi & Tin nhắn của người dùng được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot \\
 \hline
 \hypertarget{tc:prevent-empty-message-chatbot}{Ngăn chặn gửi tin nhắn trống} & Kiểm thử chức năng ngăn chặn gửi tin nhắn trống đến chatbot & Người dùng để trống ô nhập tin nhắn và ấn nút gửi & Hệ thống không gửi tin nhắn trống, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
@@ -251,39 +251,39 @@ none \\
 \hline
 \hypertarget{tc:voice_input_chatbot}{Nhập tin nhắn bằng giọng nói} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói đến chatbot & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone và nói ``Hello'' & Tin nhắn ``Hello'' được hiển thị trong khu vực hiển thị tin nhắn, đồng thời nhận được phản hồi từ chatbot \\
 \hline
-\hypertarget{tc:voice_input_no_permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone & Người dùng từ chối cấp quyền truy cập microphone, ấn vào biểu tượng microphone và nói ``Hello'' & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
+\hypertarget{tc:voice-input-no-permission}{Nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi không có quyền truy cập microphone & Người dùng từ chối cấp quyền truy cập microphone, ấn vào biểu tượng microphone và nói ``Hello'' & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
 \hypertarget{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & Kiểm thử chức năng nhập tin nhắn bằng giọng nói khi người dùng không nói gì & Người dùng cấp quyền truy cập microphone, ấn vào biểu tượng microphone nhưng không nói gì & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn \\
 \hline
-\hypertarget{tc:input_be_chatbott}{Nhập input thông qua POST request của chatbot} & Kiểm thử chức năng nhập input thông qua POST request của chatbot & POST /chat \messages:Chào bạn, thread-id: tc01 &  type: reply, reply: Chào bạn! Tôi có thể giúp gì? \\
+\hypertarget{tc:input-be-chatbot}{Nhập input thông qua POST request của chatbot} & Kiểm thử chức năng nhập input thông qua POST request của chatbot & POST /chat messages:Chào bạn, thread-id: tc01 &  type: reply, reply: Chào bạn! Tôi có thể giúp gì? \\
 \hline
-\hypertarget{tc:input_lyrics_vietnamese_chatbot}{Nhập lời bài hát tiếng Việt} & Kiểm thử chức năng nhập lời bài hát tiếng Việt & POST Tìm lời bài hát Lâu không cười &  type: reply, reply: Lời bài hát Lâu không cười:\textbackslash n...'' \\
+\hypertarget{tc:input-lyrics-vietnamese-chatbot}{Nhập lời bài hát tiếng Việt} & Kiểm thử chức năng nhập lời bài hát tiếng Việt & POST Tìm lời bài hát Lâu không cười &  type: reply, reply: Lời bài hát Lâu không cười:\textbackslash n...'' \\
 \hline
-\hypertarget{tc:input_lyrics_english_chatbot}{Nhập lời bài hát tiếng Anh} & Kiểm thử chức năng nhập lời bài hát tiếng Anh & POST Find lyrics Love Story &  type: reply, reply: Lyrics of Love Story:\textbackslash n... \\
+\hypertarget{tc:input-lyrics-english-chatbot}{Nhập lời bài hát tiếng Anh} & Kiểm thử chức năng nhập lời bài hát tiếng Anh & POST Find lyrics Love Story &  type: reply, reply: Lyrics of Love Story:\textbackslash n... \\
 \hline
-\hypertarget{tc:playing_song_chatbot}{Phát bài hát thông qua chatbot} & Kiểm thử chức năng phát bài hát thông qua chatbot &  type: playMusic, song-name: Ngày mai em đi  &  type: playMusic, song-name: Ngày mai em đi \\
+\hypertarget{tc:playing-song-chatbot}{Phát bài hát thông qua chatbot} & Kiểm thử chức năng phát bài hát thông qua chatbot &  type: playMusic, song-name: Ngày mai em đi  &  type: playMusic, song-name: Ngày mai em đi \\
 \hline
-\hypertarget{tc:suggest_song_chatbot}{Gợi ý bài hát thông qua chatbot} & Kiểm thử chức năng gợi ý bài hát thông qua chatbot & POST Gợi ý bài hát cho tôi &  type: reply, reply: 1... 2... 3... \\
+\hypertarget{tc:suggest-song-chatbot}{Gợi ý bài hát thông qua chatbot} & Kiểm thử chức năng gợi ý bài hát thông qua chatbot & POST Gợi ý bài hát cho tôi &  type: reply, reply: 1... 2... 3... \\
 \hline
-\hypertarget{tc:infor_author_chatbot}{Thông tin tác giả thông qua chatbot} & Kiểm thử chức năng cung cấp thông tin tác giả thông qua chatbot & POST Ai là tác giả của bài hát Từng là? &  type: reply, reply: Tác giả của bài hát Từng là là... \\
+\hypertarget{tc:infor-author-chatbot}{Thông tin tác giả thông qua chatbot} & Kiểm thử chức năng cung cấp thông tin tác giả thông qua chatbot & POST Ai là tác giả của bài hát Từng là? &  type: reply, reply: Tác giả của bài hát Từng là là... \\
 \hline
-\hypertarget{tc:remember_thread_id}{Ghi nhớ thread-id trong chatbot} & Kiểm thử chức năng ghi nhớ thread-id trong chatbot & POST /chat \messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc01 &  type: reply, reply: Bạn tên là Hậu,.. \\
+\hypertarget{tc:remember-thread-id}{Ghi nhớ thread-id trong chatbot} & Kiểm thử chức năng ghi nhớ thread-id trong chatbot & POST /chat messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc01 &  type: reply, reply: Bạn tên là Hậu,.. \\
 \hline
-\hypertarget{tc:seperate_thread_id}{Tách biệt thread-id trong chatbot} & Kiểm thử chức năng tách biệt thread-id trong chatbot & POST /chat \messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc02  &  type: reply, reply: Tôi không biết bạn tên gì,... \\
+\hypertarget{tc:seperate-thread-id}{Tách biệt thread-id trong chatbot} & Kiểm thử chức năng tách biệt thread-id trong chatbot & POST /chat messages:Chào bạn, tôi tên Hậu, thread-id: tc01  tiếp theo POST /chat  messages: Tôi tên là gì?, thread-id: tc02  &  type: reply, reply: Tôi không biết bạn tên gì,... \\
 \hline
-\hypertarget{tc:bug_duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & Kiểm thử chức năng tìm kiếm thông tin với DuckDuckGo thông qua chatbot & Mock ddgs ném exception & Log phải có ERROR Duckduckgo-tool.-run ... và Connection timed out\\
+\hypertarget{tc:bug-duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & Kiểm thử chức năng tìm kiếm thông tin với DuckDuckGo thông qua chatbot & Mock ddgs ném exception & Log phải có ERROR Duckduckgo-tool.-run ... và Connection timed out\\
 \hline
-\hypertarget{tc:bug_scrapewebsite}{Kiểm tra lỗi với ScrapeWebsite} & Kiểm thử chức năng lấy thông tin với ScrapeWebsite thông qua chatbot & Gọi URL 404 & Log có hiện ERROR scrape-website ... 404 Client Error: Not Found for url:\\
+\hypertarget{tc:bug-scrapewebsite}{Kiểm tra lỗi với ScrapeWebsite} & Kiểm thử chức năng lấy thông tin với ScrapeWebsite thông qua chatbot & Gọi URL 404 & Log có hiện ERROR scrape-website ... 404 Client Error: Not Found for url:\\
 \hline
-\hypertarget{tc:required_parallelism}{Kiểm tra luồng song song trong chatbot} & Kiểm thử chức năng chạy song song trong chatbot & 10 POST /chat khác thread-id & 10 response type: reply, reply: Xin chào user-i! \\
+\hypertarget{tc:required-parallelism}{Kiểm tra luồng song song trong chatbot} & Kiểm thử chức năng chạy song song trong chatbot & 10 POST /chat khác thread-id & 10 response type: reply, reply: Xin chào user-i! \\
 \hline
-\hypertarget{tc:exception_handling}{Xử lý ngoài phạm vi của chatbot} & Kiểm thử chức năng xử lí nội dung ngoài phạm vi trong chatbot & POST /chat  messages: Hãy kể cho tôi một câu chuyện cười về lập trình viên, thread-id: tc01  &  type: reply, reply: Xin lỗi, tôi không thể giúp với yêu cầu đó. \\
+\hypertarget{tc:exception-handling}{Xử lý ngoài phạm vi của chatbot} & Kiểm thử chức năng xử lí nội dung ngoài phạm vi trong chatbot & POST /chat  messages: Hãy kể cho tôi một câu chuyện cười về lập trình viên, thread-id: tc01  &  type: reply, reply: Xin lỗi, tôi không thể giúp với yêu cầu đó. \\
 \hline
-\hypertarget{tc:check_voice}{Xử lý giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói với model Whisper & Gửi file âm thanh có giọng nói ``Xin chào'' với định dạng .m4a & Xin chào \\
+\hypertarget{tc:check-voice}{Xử lý giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói với model Whisper & Gửi file âm thanh có giọng nói ``Xin chào'' với định dạng .m4a & Xin chào \\
 \hline
-\hypertarget{tc:check_voice_no_speech}{Xử lý giọng nói không có giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói không có giọng nói với model Whisper & Gửi file âm thanh trống với định dạng .m4a &  ``'' \\
+\hypertarget{tc:check-voice-no-speech}{Xử lý giọng nói không có giọng nói với model Whisper} & Kiểm thử chức năng xử lí giọng nói không có giọng nói với model Whisper & Gửi file âm thanh trống với định dạng .m4a &  ``'' \\
 \hline
-\hypertarget{tc:check_voice_unsupported_format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & Kiểm thử chức năng xử lí giọng nói với định dạng không hỗ trợ với model Whisper & Gửi file âm thanh định dạng .txt &  Error: Unsupported audio format. \\
+\hypertarget{tc:check-voice-unsupported-format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & Kiểm thử chức năng xử lí giọng nói với định dạng không hỗ trợ với model Whisper & Gửi file âm thanh định dạng .txt &  Error: Unsupported audio format. \\
 \hline
 \end{longtable}
 
@@ -406,15 +406,15 @@ none \\
 \hline  
 54 & \hyperlink{tc:change-avatar-step2}{Đổi ảnh đại diện - Bước 2} & 08/11/2025 & Đoàn Minh Hoàng & Ảnh đại diện của người dùng được cập nhật thành công với ảnh vừa chọn/chụp & Đạt \\
 \hline  
-55 & \hyperlink{tc:update-information}{Cập nhật thông tin cá nhân - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Thông tin cá nhân của người dùng được cập nhật thành công & Đạt \\
+55 & \hyperlink{tc:update_information}{Cập nhật thông tin cá nhân - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Thông tin cá nhân của người dùng được cập nhật thành công & Đạt \\
 \hline
-56 & \hyperlink{tc:update-information-missing-field}{Cập nhật thông tin cá nhân - không thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin & Đạt \\
+56 & \hyperlink{tc:update_information_missing_field}{Cập nhật thông tin cá nhân - không thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo lỗi yêu cầu người dùng nhập đầy đủ thông tin & Đạt \\
 \hline
-57 & \hyperlink{tc:change-password}{Đổi mật khẩu - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo đổi mật khẩu thành công & Đạt \\
+57 & \hyperlink{tc:change_password}{Đổi mật khẩu - thành công} & 08/11/2025 & Đoàn Minh Hoàng & Hiển thị thông báo đổi mật khẩu thành công & Đạt \\
 \hline
-58 & \hyperlink{tc:change-theme}{Đổi giao diện} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện của ứng dụng được chuyển đổi thành chế độ tối & Đạt \\
+58 & \hyperlink{tc:change_theme}{Đổi giao diện} & 08/11/2025 & Đoàn Minh Hoàng & Giao diện của ứng dụng được chuyển đổi thành chế độ tối & Đạt \\
 \hline
-59 & \hyperlink{tc:change-language}{Đổi ngôn ngữ} & 08/11/2025 & Đoàn Minh Hoàng & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt & Đạt \\
+59 & \hyperlink{tc:change_language}{Đổi ngôn ngữ} & 08/11/2025 & Đoàn Minh Hoàng & Ngôn ngữ của ứng dụng được chuyển đổi thành tiếng Việt & Đạt \\
 \hline
 60 & \hyperlink{tc:load-initial-UI-chatbot}{Giao diện ban đầu của chatbot} & 10/11/2025 & Trần Trung Hậu & Giao diện hiển thị đúng các thành phần: tiêu đề, nút đóng, khu vực hiển thị tin nhắn, ô nhập tin nhắn và nút gửi tin nhắn & Đạt \\
 \hline
@@ -434,9 +434,9 @@ none \\
 \hline
 68 & \hyperlink{tc:voice-input-no-speech}{Nhập tin nhắn bằng giọng nói nhưng không nói gì} & 10/11/2025 & Trần Trung Hậu & Hệ thống không ghi nhận tin nhắn giọng nói, không có tin nhắn mới được hiển thị trong khu vực hiển thị tin nhắn & Đạt \\
 \hline
-69 & \hyperlink{tc:voice-input-unsupported-format}{Nhập tin nhắn bằng giọng nói với định dạng không hỗ trợ} & 10/11/2025 & Trần Trung Hậu & Hệ thống hiển thị thông báo lỗi định dạng âm thanh không được hỗ trợ & Đạt \\
+69 & \hyperlink{tc:check-voice-unsupported-format}{Nhập tin nhắn bằng giọng nói với định dạng không hỗ trợ} & 10/11/2025 & Trần Trung Hậu & Hệ thống hiển thị thông báo lỗi định dạng âm thanh không được hỗ trợ & Đạt \\
 \hline
-70 & \hyperlink{tc:input-be-chatbott}{Nhập input thông qua POST request của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Chào bạn! Tôi có thể giúp gì? & Đạt \\
+70 & \hyperlink{tc:input-be-chatbot}{Nhập input thông qua POST request của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Chào bạn! Tôi có thể giúp gì? & Đạt \\
 \hline
 71 & \hyperlink{tc:input-lyrics-vietnamese-chatbot}{Nhập lời bài hát tiếng Việt} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Lời bài hát Lâu không cười:... & Đạt \\
 \hline
@@ -452,14 +452,18 @@ none \\
 \hline
 77 & \hyperlink{tc:seperate-thread-id}{Tách biệt thread id trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Tôi không biết bạn tên gì,... & Đạt \\
 \hline
-78 & \hyperlink{tc:required-parallelism}{Kiểm tra luồng song song trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được 10 response type: reply, reply: Xin chào user i! & Đạt \\
+78 & \hyperlink{tc:bug-duckduckgo}{Kiểm tra lỗi với DuckDuckGo} & 12/11/2025 & Trần Trung Hậu & Log có hiện ERROR Duckduckgo-tool.-run ... và Connection timed out & Đạt \\
 \hline
-79 & \hyperlink{tc:exception-handling}{Xử lý ngoài phạm vi của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Xin lỗi, tôi không thể giúp với yêu cầu đó. & Đạt \\
+79 & \hyperlink{tc:bug-scrapewebsite}{Kiểm tra lỗi với ScrapeWebsite} & 12/11/2025 & Trần Trung Hậu & Log có hiện ERROR scrape-website ... 404 Client Error: Not Found for url: & Đạt \\
 \hline
-80 & \hyperlink{tc:check-voice}{Xử lý giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Xin chào & Đạt \\
+80 & \hyperlink{tc:required-parallelism}{Kiểm tra luồng song song trong chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được 10 response type: reply, reply: Xin chào user i! & Đạt \\
 \hline
-81 & \hyperlink{tc:check-voice-no-speech}{Xử lý giọng nói không có giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi rỗng & Đạt \\
+81 & \hyperlink{tc:exception-handling}{Xử lý ngoài phạm vi của chatbot} & 12/11/2025 & Trần Trung Hậu & Nhận được phản hồi type: reply, reply: Xin lỗi, tôi không thể giúp với yêu cầu đó. & Đạt \\
 \hline
-82 & \hyperlink{tc:check-voice-unsupported-format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Error: Unsupported audio format. & Đạt \\
+82 & \hyperlink{tc:check-voice}{Xử lý giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Xin chào & Đạt \\
+\hline
+83 & \hyperlink{tc:check-voice-no-speech}{Xử lý giọng nói không có giọng nói với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi rỗng & Đạt \\
+\hline
+84 & \hyperlink{tc:check-voice-unsupported-format}{Xử lý giọng nói với định dạng không hỗ trợ với model Whisper} & 13/11/2025 & Trần Trung Hậu & Nhận được phản hồi Error: Unsupported audio format. & Đạt \\
 \hline
 \end{longtable}
