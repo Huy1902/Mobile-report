@@ -1,10 +1,23 @@
-\clearpage
-\phantomsection
-
 \setcounter{chapter}{4}
 \chapter[{XÂY DỰNG HỆ THỐNG AI}]{XÂY DỰNG HỆ THỐNG AI}
 \label{chapter:ai}
 
+Hệ thống {InsightTune} được tích hợp hai thành phần AI chính: chatbot hỗ trợ người dùng và hệ thống gợi ý nhạc cá nhân hóa. 
+Chatbot được xây dựng dựa trên mô hình ngôn ngữ lớn (LLM) để cung cấp trải nghiệm tương tác tự nhiên và hỗ trợ người dùng trong việc khám phá và sử dụng nền tảng.
+Việc xây dựng tác tử này được trình bày chi tiết trong \ref{sec:chatbot}. Hệ thống gợi ý nhạc cá nhân hóa sử dụng mô hình học tăng cường để phân tích sở thích 
+người dùng và đề xuất các bài hát phù hợp. Quá trình phát triển và tích hợp hệ thống này được mô tả trong \ref{sec:recommend_model}. Cả chương này sẽ tập 
+trung vào việc trình bày các kỹ thuật AI được áp dụng, kiến trúc hệ thống và các thách thức gặp phải trong quá trình xây dựng hai thành phần này.
+
 \clearpage
 \input{chapter/chapter5/chatbot.tex}
 \input{chapter/chapter5/recsys.tex}
+
+
+\phantomsection
+\chapter*{Kết chương}
+Chương \ref{chapter:ai} đã trình bày chi tiết về việc xây dựng hai thành phần AI chính trong hệ thống \textbf{InsightTune}: chatbot hỗ trợ người dùng và hệ thống 
+gợi ý nhạc cá nhân hóa. Chúng tôi phân tích hai thành phần này từ các khía cạnh kỹ thuật, phân tích các kiến thức AI được áp dụng, thang đo. quá trình huấn luyện và
+phương pháp tích hợp vào hệ thống. Những thành phần AI này đóng vai trò quan trọng trong việc nâng cao trải nghiệm người dùng và cá nhân hóa dịch vụ của nền tảng.
+Đồng thời, đây cũng là một trong những đóng góp chính của chúng tôi với dự án phát triển hệ thống \textbf{InsightTune}. Tiếp theo, chương \ref{chapter:testing} 
+sẽ tập trung vào việc trình bày hình ảnh hệ thống khi triển khai cài đặt cùng với kiểm thử toàn bộ hệ thống, đảm bảo tính ổn định và hiệu suất của nền tảng trước 
+khi triển khai thực tế.
