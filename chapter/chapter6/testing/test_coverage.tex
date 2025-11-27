@@ -1,0 +1,55 @@
+\section{Đánh giá độ phủ}
+Để đánh giá mức độ bao phủ của các ca kiểm thử đối với mã nguồn hệ thống, 
+nhóm sử dụng công cụ \textbf{Jacoco} (Java Code Coverage) – một thư viện phổ biến 
+dùng cho việc phân tích các chỉ số coverage trong các dự án Java. 
+JaCoCo được tích hợp vào quá trình build và chạy test để tự động thu thập dữ liệu về các phần mã đã được thực thi.
+
+Mục tiêu của đánh giá độ phủ nhằm đo lường độ phủ kiểm thử của các service có vai trò quan trọng với hệ thống, nhằm xác định 
+mức độ hiệu quả của bộ kiểm thử.
+
+\subsection{Các loại chỉ số được thống kê}
+\begin{itemize}
+    \item Missed Instructions: Số lượng instruction (bytecode) không được chạy khi test..
+    \item Cov. (Instructions Coverage): Tỷ lệ phần trăm instruction được chạy.
+    \item Missed Branches: Số nhánh điều kiện chưa được test (if/else, switch).
+    \item Cov. (Branches Coverage): Tỷ lệ nhánh logic đã được kiểm thử.
+\end{itemize}
+
+\subsection{Chi tiết độ phủ các service}
+
+\begin{itemize}
+    \item \textbf{auth-service}: độ phủ các lớp service xử lý authentication.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/authservice-coverage.png}
+    \caption{Độ phủ kiểm thử của auth-service}
+\end{figure}
+
+
+\begin{itemize}
+    \item \textbf{catalog-service}: độ phủ các lớp của service xử lý liên quan đến các bài hát.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/catalogservice-coverage.png}
+    \caption{Độ phủ kiểm thử của catalog-service}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{user-service}: độ phủ các lớp của service xử lý liên quan đến thông tin người dùng.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/userservice-coverage.png}
+    \caption{Độ phủ kiểm thử của user-service}
+\end{figure}
+
+\subsection{Kết quả đánh giá}
+\begin{itemize}
+    \item Cov. (Instructions Coverage): tổng số instruction được bao phủ đạt >= 93\% cho thấy hầu hết logic của service đã được chạy trong quá trình kiểm thử.
+    \item Cov. (Branches Coverage): đạt >= 94\%, tức hầu hết các nhánh điều kiện trong module đều đã được kiểm tra đầy đủ.
+\end{itemize}
+
+Nhìn chung, user-service đạt mức độ bao phủ rất cao ở hầu hết các chỉ số, điều này phản ánh bộ kiểm thử cho module này có chất lượng tốt, 
+đã bao phủ gần như toàn bộ logic quan trọng của service.
