@@ -1,1 +1,57 @@
 \chapter{Thu thập, phân tích và đặc tả yêu cầu}
+
+\section{Thu thập yêu cầu}
+
+\subsection{Yêu cầu chức năng}
+Nhóm liên tục lồng ghép lý do vào từng yêu cầu chức năng, khiến nó giống một bài giải trình giải pháp hơn là đặc tả kỹ thuật thuần túy. Ví dụ 
+\begin{itemize}
+\item Tại Yêu cầu 01 (Quản lý nhà): Thay vì chỉ nói "Cho phép nhập từ Excel", họ giải thích: "Để giải quyết vấn đề nhiều thông tin cần nhập liệu... ứng dụng cũng đã hỗ trợ thêm qua bảng tính"
+\item Tại Yêu cầu 06 (Quản lý hóa đơn): Bắt đầu bằng vấn đề của người dùng: "Việc kiểm soát hóa đơn của từng phòng sẽ là một vấn đề nhức nhối, rất tốn công sức". Sau đó mới đưa ra yêu cầu như một giải pháp: "Yêu cầu này đặt ra có thể tối ưu hóa quá trình... giảm thiểu hóa công sức".
+\item Tại Yêu cầu 09 (Chatbot): Nêu thực trạng "Các mâu thuẫn và thắc mắc liên quan đến luật... là thường xuyên" , từ đó mới đề xuất "Ứng dụng được đề xuất xây dựng với một AI Chatbot... nhằm hỗ trợ tư vấn".
+\end{itemize}
+Cách viết dài dòng, lan man, yêu cầu chỉ cần biết input là gì, output là gì. 
+
+\section{Phân tích và đặc tả yêu cầu}
+\subsection{Xác định luồng nghiệp vụ của hệ thống}
+Biểu đồ sơ sài, mới chỉ có 3 biểu đồ hoạt động còn thiếu nhiều. 
+\begin{itemize}
+\item Hình 3.1. Hình thoi là decision tức là chỉ đi 1 trong 2 đường, trong khi nhóm vẽ thế tức là có thể đi qua cả 2 đường dẫn đến không hợp lý. 
+\begin{figure}[H]
+    \includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figures/Hinh3.1.png}
+    \caption{Biểu đồ 3.1}
+    \centering
+    \label{fig:hinh3_1}
+\end{figure}
+
+\item Hình 3.2: Loop: sau khi vào bước còn tòa nhà cần có bước lấy tòa nhà tiếp theo, nếu không hệ thống sẽ lấy tòa nhà cũ và bị loop
+\begin{figure}[H]
+    \includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figures/hinh3.2.png}
+    \caption{Biểu đồ 3.2}
+    \centering
+    \label{fig:hinh3_2}
+\end{figure}
+\end{itemize}
+
+\subsection{Xác định tác nhân ca sử dụng và ca sử dụng chính của hệ thống}
+\begin{itemize}
+    \item Chưa thống nhất tên gọi: trong uc model hoặc các diagram thì để là lanlord, tenant nhưng trong đặc tả, diễn giải lại là chủ nhà, người thuê. 
+\item hình 3.5: sai mũi tên quan hệ include: ql dịch vụ  -> include -> ql nhà/phòng trọ?? (phần này do nhóm thiết kế thì mình không thể nói là sai, nhưng mình nghĩ ngược lại sẽ hợp lý hơn)
+\begin{figure}[H]
+    \includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figures/hinh3.5.png}
+    \caption{Biểu đồ 3.5}
+    \centering
+    \label{fig:hinh3_5}
+\end{figure}
+
+\end{itemize}
+
+\subsection{Đặc tả các ca sử dụng}
+\begin{itemize}
+\item Theo uc model hình 3.5, chỉ có landlord gắn với 1 uc quản lý hóa đơn, nhưng trong đặc tả 3.3.23 lại có uc hóa đơn có tác nhân là "Người thuê"
+\begin{figure}[H]
+    \includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{figures/hinh3.3.23.png}
+    \caption{Đặc tả 3.3.23}
+    \centering
+    \label{fig:hinh3_2_23}
+\end{figure}
+\end{itemize}
