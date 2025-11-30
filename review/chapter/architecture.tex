@@ -1,4 +1,24 @@
-\chapter{Thiết kế hệ thống}
+liệu\chapter{Thiết kế hệ thống}
+
+\section{Thiết kế mức cao}
+
+Đây là điểm yếu chính của dự án. Việc sử dụng kiến trúc và công nghệ của nhóm có khả năng dẫn tới nhiều vấn đề trong tương lai. Cụ thể,
+\begin{itemize}
+    \item Nhóm thiết kế theo kiến trúc client-server không chính xác. Client được kết nối trục tiếp với 3 server, system khác nhau mà không có 
+một tầng trung gian điều phối các request.
+    \item Firebase server kết nối không thông qua wrap, tương tự với các external system, việc đưa thẳng các kết nối vào client làm việc bảo trì trở nên khó 
+khăn khi chỉ cần hệ thống thay đổi cấu trúc API sẽ làm thay đổi client (tức là app mobile)
+    \item Việc sử dụng Firebase làm database chính là một lựa chọn không tối ưu về mặt chi phí và hiệu năng. Firebase phù hợp với các ứng dụng nhỏ,
+nhưng với các ứng dụng có lượng user lớn, việc sử dụng các database truyền thống như MySQL, PostgreSQL sẽ tối ưu hơn rất nhiều.
+    \item Tương tự, Firebase làm authentication server cũng là một lựa chọn không tối ưu. Việc này làm tăng độ phức tạp của hệ thống, và cũng làm tăng chi 
+phí vận hành.
+    \item Tính bảo mật của hệ thống giảm đi khi client kết nối trực tiếp với server, system bên ngoài.
+    \item Client đang đảm nhiệm quá nhiều chức năng, từ giao tiếp với người dùng, xử lý logic nghiệp vụ, đến việc kết nối với các server, system bên ngoài. Điều 
+này làm tăng độ phức tạp của ứng dụng mobile một cách không cần thiết.
+\end{itemize}
+Kết luận, kiến trúc hệ thống của nhóm chỉ đang phục vụ việc triển khai ý tưởng ban đầu, không có tính mở rộng và bảo trì trong tương lai. Tính ứng dụng và khả năng 
+triển khai thực tế của hệ thống là rất thấp.
+
 \section{Biểu đồ tuần tự}
 Hình 4.2-4.4: logic validate bị bỏ lửng, vẽ như thế tức là dù invalid input nó vẫn chạy tiếp tục hàm đằng sau. 
 \begin{figure}[H]
@@ -21,3 +41,7 @@ Hình 4.2-4.4: logic validate bị bỏ lửng, vẽ như thế tức là dù in
     \centering
     \label{fig:hinh4_4}
 \end{figure}
+
+\section{Thiết kế cơ sở dữ liệu}
+Cơ sở dữ liệu của nhóm hiện tại hoàn thiện. Tuy nhiên, với độ phức tạp lớn như nhóm trình bày, dự án càng chứng tỏ không thích hợp để triển khai
+cơ sở dữ liệu trên Firestore (hệ quản trị cơ sử dữ liệu NoSQL).
