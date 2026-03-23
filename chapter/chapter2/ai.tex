@@ -55,3 +55,35 @@ Dưới đây là kiến thức cần có để xây dựng hệ thống chatbot
 \end{itemize}
 
 Và được triển khai thông qua FastAPI.
+
+\subsection{Aider -- Công cụ lập trình cặp đôi với AI}
+\label{sec:aider}
+
+Aider~\cite{aider2024} là một công cụ lập trình cặp đôi (pair programming) mã nguồn mở chạy trên dòng lệnh (command-line), cho phép lập trình viên làm việc trực 
+tiếp cùng với các mô hình ngôn ngữ lớn (LLM) để xây dựng và cải tiến mã nguồn. Công cụ này hỗ trợ hầu hết các LLM phổ biến hiện nay như GPT-4o, Claude 3.7 Sonnet, 
+Gemini và DeepSeek, đồng thời tương thích với hơn 100 ngôn ngữ lập trình khác nhau.
+
+\subsubsection{Đặc điểm nổi bật}
+
+Aider có một số đặc điểm nổi bật giúp tăng năng suất phát triển phần mềm:
+\begin{itemize}
+    \item \textbf{Lập bản đồ mã nguồn (Repo map):} Aider tự động tạo bản đồ tổng quát của toàn bộ codebase, giúp LLM hiểu cấu trúc dự án và làm việc hiệu quả hơn 
+    trong các dự án lớn, ngay cả khi chỉ có một phần nhỏ của mã nguồn được đưa vào ngữ cảnh.
+    \item \textbf{Tích hợp Git:} Aider tự động tạo các commit với thông điệp có nghĩa sau mỗi thay đổi, giúp lập trình viên dễ dàng theo dõi lịch sử chỉnh sửa, 
+    so sánh (diff) và hoàn tác (undo) khi cần.
+    \item \textbf{Hỗ trợ đa LLM:} Aider kết nối được với hầu hết các nhà cung cấp LLM qua API, bao gồm cả các mô hình cục bộ (local models), đảm bảo tính 
+    linh hoạt trong việc lựa chọn mô hình phù hợp.
+    \item \textbf{Tích hợp IDE:} Aider có thể được sử dụng trực tiếp trong các trình soạn thảo mã nguồn thông qua tính năng theo dõi file (file watching), 
+    cho phép lập trình viên thêm chú thích vào mã để kích hoạt Aider thực hiện thay đổi.
+    \item \textbf{Hỗ trợ hình ảnh và trang web:} Aider cho phép đính kèm ảnh chụp màn hình, ảnh thiết kế hoặc trang web vào cuộc trò chuyện để cung cấp 
+    ngữ cảnh trực quan cho LLM.
+    \item \textbf{Giọng nói thành code (Voice-to-code):} Aider hỗ trợ nhập lệnh bằng giọng nói, giúp lập trình viên giao tiếp với AI mà không cần gõ phím.
+    \item \textbf{Kiểm tra tự động (Lint \& Test):} Sau mỗi lần thay đổi, Aider tự động chạy linter và bộ kiểm thử để phát hiện lỗi và có thể tự khắc phục 
+    những vấn đề được phát hiện.
+\end{itemize}
+
+\subsubsection{Ứng dụng trong dự án}
+
+Trong quá trình phát triển hệ thống \textbf{InsightTune}, chúng tôi sử dụng Aider như một trợ lý lập trình AI để tăng tốc độ xây dựng và gỡ lỗi mã nguồn. 
+Cụ thể, Aider được vận dụng trong các tác vụ như viết boilerplate code, tái cấu trúc (refactor) module, sinh tài liệu (docstring) và hỗ trợ debug. 
+Việc sử dụng Aider giúp rút ngắn đáng kể thời gian phát triển, đồng thời đảm bảo chất lượng mã nguồn nhờ vào khả năng phân tích toàn diện codebase của công cụ này.
